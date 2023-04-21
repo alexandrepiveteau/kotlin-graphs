@@ -1,0 +1,420 @@
+public class io/github/alexandrepiveteau/graphs/AdjacencyListDirectedGraph : io/github/alexandrepiveteau/graphs/AdjacencyListGraph, io/github/alexandrepiveteau/graphs/DirectedGraph {
+	public fun <init> ([Lio/github/alexandrepiveteau/graphs/VertexArray;)V
+	public fun contains--OaZVeM (J)Z
+}
+
+public abstract class io/github/alexandrepiveteau/graphs/AdjacencyListGraph : io/github/alexandrepiveteau/graphs/Graph {
+	public fun <init> ([Lio/github/alexandrepiveteau/graphs/VertexArray;)V
+	public fun contains-dT2TSiQ (I)Z
+	public fun get-1Pv3iCI (I)I
+	public fun get-_QOBl-4 (II)I
+	public fun get-dT2TSiQ (I)I
+	public fun get-vAesux8 (II)I
+	public fun getSize ()I
+	public fun neighbor-_QOBl-4 (II)I
+	public fun neighbor-vAesux8 (II)I
+	public fun neighborsSize (I)I
+	public fun neighborsSize-dT2TSiQ (I)I
+}
+
+public class io/github/alexandrepiveteau/graphs/AdjacencyListUndirectedGraph : io/github/alexandrepiveteau/graphs/AdjacencyListGraph, io/github/alexandrepiveteau/graphs/UndirectedGraph {
+	public fun <init> ([Lio/github/alexandrepiveteau/graphs/VertexArray;)V
+	public fun contains-zEWoN30 (J)Z
+}
+
+public class io/github/alexandrepiveteau/graphs/AdjacencyMatrixDirectedGraph : io/github/alexandrepiveteau/graphs/AdjacencyMatrixGraph, io/github/alexandrepiveteau/graphs/DirectedGraph {
+	public fun <init> ([[Z)V
+	public fun contains--OaZVeM (J)Z
+}
+
+public abstract class io/github/alexandrepiveteau/graphs/AdjacencyMatrixGraph : io/github/alexandrepiveteau/graphs/Graph {
+	public fun <init> ([[Z)V
+	public fun contains-dT2TSiQ (I)Z
+	public fun get-1Pv3iCI (I)I
+	public fun get-_QOBl-4 (II)I
+	public fun get-dT2TSiQ (I)I
+	public fun get-vAesux8 (II)I
+	public fun getSize ()I
+	public fun neighbor-_QOBl-4 (II)I
+	public fun neighbor-vAesux8 (II)I
+	public fun neighborsSize (I)I
+	public fun neighborsSize-dT2TSiQ (I)I
+}
+
+public class io/github/alexandrepiveteau/graphs/AdjacencyMatrixUndirectedGraph : io/github/alexandrepiveteau/graphs/AdjacencyMatrixGraph, io/github/alexandrepiveteau/graphs/UndirectedGraph {
+	public fun <init> ([[Z)V
+	public fun contains-zEWoN30 (J)Z
+}
+
+public final class io/github/alexandrepiveteau/graphs/Arc {
+	public static final synthetic fun box-impl (J)Lio/github/alexandrepiveteau/graphs/Arc;
+	public static final fun component1-IrpSQec (J)I
+	public static final fun component2-IrpSQec (J)I
+	public static fun constructor-impl (II)J
+	public static final fun contains-dT2TSiQ (JI)Z
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (JLjava/lang/Object;)Z
+	public static final fun equals-impl0 (JJ)Z
+	public static final fun getFrom-IrpSQec (J)I
+	public static final fun getTo-IrpSQec (J)I
+	public fun hashCode ()I
+	public static fun hashCode-impl (J)I
+	public static final fun reversed-Y8VU8FM (J)J
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (J)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()J
+}
+
+public final class io/github/alexandrepiveteau/graphs/ArcKt {
+	public static final fun arcTo-cK2_UGU (II)J
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/DirectedGraph : io/github/alexandrepiveteau/graphs/Graph {
+	public static final field Companion Lio/github/alexandrepiveteau/graphs/DirectedGraph$Companion;
+	public abstract fun contains--OaZVeM (J)Z
+}
+
+public final class io/github/alexandrepiveteau/graphs/DirectedGraph$Companion {
+}
+
+public final class io/github/alexandrepiveteau/graphs/DirectedGraph$DefaultImpls {
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedGraph;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedGraph;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/DirectedGraph;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedGraph;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedGraph;I)I
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/DirectedGraphBuilder : io/github/alexandrepiveteau/graphs/GraphBuilder {
+	public abstract fun addArc--OaZVeM (J)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/DirectedGraphBuilder$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/DirectedGraphBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public final class io/github/alexandrepiveteau/graphs/DirectedGraphBuilderKt {
+	public static final fun buildDirectedGraph (Lkotlin/jvm/functions/Function1;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
+}
+
+public final class io/github/alexandrepiveteau/graphs/DirectedGraph_transformationsKt {
+	public static final fun transposed (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
+}
+
+public final class io/github/alexandrepiveteau/graphs/DirectedGraph_traversalsKt {
+	public static final fun forEachArc (Lio/github/alexandrepiveteau/graphs/DirectedGraph;Lkotlin/jvm/functions/Function1;)V
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/DirectedNetwork : io/github/alexandrepiveteau/graphs/DirectedGraph, io/github/alexandrepiveteau/graphs/Network {
+	public static final field Companion Lio/github/alexandrepiveteau/graphs/DirectedNetwork$Companion;
+	public abstract fun weight--OaZVeM (J)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/DirectedNetwork$Companion {
+}
+
+public final class io/github/alexandrepiveteau/graphs/DirectedNetwork$DefaultImpls {
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;I)I
+	public static fun weight--OaZVeM (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;J)I
+	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/Edge {
+	public static final fun any-IrpSQec (J)I
+	public static final synthetic fun box-impl (J)Lio/github/alexandrepiveteau/graphs/Edge;
+	public static final fun component1-IrpSQec (J)I
+	public static final fun component2-IrpSQec (J)I
+	public static fun constructor-impl (II)J
+	public static final fun contains-dT2TSiQ (JI)Z
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (JLjava/lang/Object;)Z
+	public static final fun equals-impl0 (JJ)Z
+	public fun hashCode ()I
+	public static fun hashCode-impl (J)I
+	public static final fun other-yboj1fQ (JI)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (J)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()J
+}
+
+public final class io/github/alexandrepiveteau/graphs/EdgeKt {
+	public static final fun edgeTo-cK2_UGU (II)J
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/Graph {
+	public abstract fun contains-dT2TSiQ (I)Z
+	public abstract fun get-1Pv3iCI (I)I
+	public abstract fun get-_QOBl-4 (II)I
+	public abstract fun get-dT2TSiQ (I)I
+	public abstract fun get-vAesux8 (II)I
+	public abstract fun getSize ()I
+	public abstract fun neighbor-_QOBl-4 (II)I
+	public abstract fun neighbor-vAesux8 (II)I
+	public abstract fun neighborsSize (I)I
+	public abstract fun neighborsSize-dT2TSiQ (I)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/Graph$DefaultImpls {
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Graph;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Graph;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/Graph;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Graph;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Graph;I)I
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/GraphBuilder {
+	public abstract fun addVertex-IrpSQec ()I
+	public abstract fun addVertices ()Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public final class io/github/alexandrepiveteau/graphs/GraphBuilder$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/GraphBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public final class io/github/alexandrepiveteau/graphs/GraphBuilderKt {
+	public static final fun buildGraphData (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lio/github/alexandrepiveteau/graphs/GraphData;
+}
+
+public final class io/github/alexandrepiveteau/graphs/GraphData {
+	public fun <init> (ILio/github/alexandrepiveteau/graphs/internal/IntVector;)V
+	public final fun component1 ()I
+	public final fun component2 ()Lio/github/alexandrepiveteau/graphs/internal/IntVector;
+	public final fun copy (ILio/github/alexandrepiveteau/graphs/internal/IntVector;)Lio/github/alexandrepiveteau/graphs/GraphData;
+	public static synthetic fun copy$default (Lio/github/alexandrepiveteau/graphs/GraphData;ILio/github/alexandrepiveteau/graphs/internal/IntVector;ILjava/lang/Object;)Lio/github/alexandrepiveteau/graphs/GraphData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun forEachLink (Lkotlin/jvm/functions/Function2;)V
+	public final fun getLinks ()Lio/github/alexandrepiveteau/graphs/internal/IntVector;
+	public final fun getSize ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/GraphDataAdapter {
+	public abstract fun addLink-cK2_UGU (II)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/Graph_traversalsKt {
+	public static final fun forEachNeighbor-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
+	public static final fun forEachVertex (Lio/github/alexandrepiveteau/graphs/Graph;Lkotlin/jvm/functions/Function1;)V
+	public static final fun forEachVertexBreadthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
+	public static final fun forEachVertexDepthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/Network : io/github/alexandrepiveteau/graphs/Graph {
+	public abstract fun weight (II)I
+	public abstract fun weight-cK2_UGU (II)I
+	public abstract fun weight-iNgu2Tg (II)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/Network$DefaultImpls {
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Network;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Network;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/Network;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Network;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Network;I)I
+	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/Network;II)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/NoSuchArcException : java/util/NoSuchElementException {
+	public fun <init> ()V
+}
+
+public final class io/github/alexandrepiveteau/graphs/NoSuchEdgeException : java/util/NoSuchElementException {
+	public fun <init> ()V
+}
+
+public final class io/github/alexandrepiveteau/graphs/NoSuchVertexException : java/util/NoSuchElementException {
+	public fun <init> ()V
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/UndirectedGraph : io/github/alexandrepiveteau/graphs/Graph {
+	public static final field Companion Lio/github/alexandrepiveteau/graphs/UndirectedGraph$Companion;
+	public abstract fun contains-zEWoN30 (J)Z
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedGraph$Companion {
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedGraph$DefaultImpls {
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;I)I
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/UndirectedGraphBuilder : io/github/alexandrepiveteau/graphs/GraphBuilder {
+	public abstract fun addEdge-zEWoN30 (J)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedGraphBuilder$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/UndirectedGraphBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedGraphBuilderKt {
+	public static final fun buildUndirectedGraph (Lkotlin/jvm/functions/Function1;)Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_completeKt {
+	public static final fun complete (Lio/github/alexandrepiveteau/graphs/UndirectedGraph$Companion;I)Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
+	public static final fun complete (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork$Companion;II)Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;
+	public static final fun empty (Lio/github/alexandrepiveteau/graphs/UndirectedGraph$Companion;)Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
+	public static final fun empty (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork$Companion;)Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_transformationsKt {
+	public static final fun scc (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_traversalsKt {
+	public static final fun forEachEdge (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;Lkotlin/jvm/functions/Function1;)V
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/UndirectedNetwork : io/github/alexandrepiveteau/graphs/Network, io/github/alexandrepiveteau/graphs/UndirectedGraph {
+	public static final field Companion Lio/github/alexandrepiveteau/graphs/UndirectedNetwork$Companion;
+	public abstract fun weight-zEWoN30 (J)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedNetwork$Companion {
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedNetwork$DefaultImpls {
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;I)I
+	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
+	public static fun weight-zEWoN30 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;J)I
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/UndirectedGraphBuilder {
+	public abstract fun addEdge-4LiJEsM (JI)V
+	public abstract fun addEdge-zEWoN30 (J)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder$DefaultImpls {
+	public static synthetic fun addEdge-4LiJEsM$default (Lio/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder;JIILjava/lang/Object;)V
+	public static fun addEdge-zEWoN30 (Lio/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder;J)V
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public final class io/github/alexandrepiveteau/graphs/Vertex {
+	public static final synthetic fun box-impl (I)Lio/github/alexandrepiveteau/graphs/Vertex;
+	public static fun constructor-impl (I)I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (ILjava/lang/Object;)Z
+	public static final fun equals-impl0 (II)Z
+	public final fun getIndex ()I
+	public fun hashCode ()I
+	public static fun hashCode-impl (I)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()I
+}
+
+public final class io/github/alexandrepiveteau/graphs/VertexArray {
+	public static final synthetic fun box-impl ([I)Lio/github/alexandrepiveteau/graphs/VertexArray;
+	public static fun constructor-impl ([I)[I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl ([ILjava/lang/Object;)Z
+	public static final fun equals-impl0 ([I[I)Z
+	public static final fun get-1Pv3iCI ([II)I
+	public static final fun getSize-impl ([I)I
+	public fun hashCode ()I
+	public static fun hashCode-impl ([I)I
+	public static final fun iterator-impl ([I)Lio/github/alexandrepiveteau/graphs/VertexIterator;
+	public static final fun set-9scIZJg ([III)V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl ([I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()[I
+}
+
+public final class io/github/alexandrepiveteau/graphs/VertexArrayKt {
+	public static final fun VertexArray (I)[I
+	public static final fun VertexArray (ILkotlin/jvm/functions/Function1;)[I
+	public static final fun binarySearch-nPz1t30 ([IIII)I
+	public static synthetic fun binarySearch-nPz1t30$default ([IIIIILjava/lang/Object;)I
+	public static final fun copyInto-oWtyEuU ([I[IIII)[I
+	public static synthetic fun copyInto-oWtyEuU$default ([I[IIIIILjava/lang/Object;)[I
+	public static final fun copyOf-ONBMYxs ([II)[I
+	public static final fun copyOf-iaUUKik ([I)[I
+	public static final fun copyOfRange-R4BdYes ([III)[I
+	public static final fun toVertexArray ([I)[I
+}
+
+public abstract class io/github/alexandrepiveteau/graphs/VertexIterator : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {
+	public fun <init> ()V
+	public synthetic fun next ()Ljava/lang/Object;
+	public fun next-IrpSQec ()I
+	public abstract fun nextVertex-IrpSQec ()I
+	public fun remove ()V
+}
+
+public final class io/github/alexandrepiveteau/graphs/VertexMap {
+	public static final synthetic fun box-impl ([I)Lio/github/alexandrepiveteau/graphs/VertexMap;
+	public static fun constructor-impl ()[I
+	public static fun constructor-impl (I)[I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl ([ILjava/lang/Object;)Z
+	public static final fun equals-impl0 ([I[I)Z
+	public static final fun get-yboj1fQ ([II)I
+	public static final fun getSize-impl ([I)I
+	public fun hashCode ()I
+	public static fun hashCode-impl ([I)I
+	public static final fun set-cK2_UGU ([III)V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl ([I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()[I
+	public static final fun values-RsZHfP0 ([I)[I
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/Vertices {
+	public abstract fun component1-IrpSQec ()I
+	public abstract fun component2-IrpSQec ()I
+	public abstract fun component3-IrpSQec ()I
+	public abstract fun component4-IrpSQec ()I
+	public abstract fun component5-IrpSQec ()I
+	public abstract fun component6-IrpSQec ()I
+	public abstract fun component7-IrpSQec ()I
+	public abstract fun component8-IrpSQec ()I
+	public abstract fun component9-IrpSQec ()I
+	public abstract fun invoke-IrpSQec ()I
+}
+
+public final class io/github/alexandrepiveteau/graphs/Vertices$DefaultImpls {
+	public static fun component1-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component2-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component3-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component4-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component5-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component6-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component7-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component8-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component9-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/internal/IntDequeue {
+	public fun <init> ()V
+	public final fun addFirst (I)V
+	public final fun addLast (I)V
+	public final fun getSize ()I
+	public final fun peekFirst ()I
+	public final fun peekLast ()I
+	public final fun removeFirst ()I
+	public final fun removeLast ()I
+}
+
+public final class io/github/alexandrepiveteau/graphs/internal/IntVector {
+	public fun <init> ()V
+	public final fun get (I)I
+	public final fun getSize ()I
+	public final fun plusAssign (I)V
+	public final fun set (II)V
+	public final fun toIntArray ()[I
+}
+
