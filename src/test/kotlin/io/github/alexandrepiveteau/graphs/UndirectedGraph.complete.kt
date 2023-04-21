@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-class UndirectedTests {
+class UndirectedEmptyGraphTests {
 
   @Test
   fun `empty graph has no vertices`() {
@@ -13,7 +13,7 @@ class UndirectedTests {
   }
 }
 
-class UndirectedCompleteTests {
+class UndirectedCompleteGraphTests {
 
   @Test
   fun `complete graph has non-zero vertex count`() {
