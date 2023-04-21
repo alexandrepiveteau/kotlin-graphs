@@ -11,8 +11,8 @@ class EdgeTests {
   fun `opposite edges are equal`() {
     val a = Vertex(0)
     val b = Vertex(1)
-    val e = Edge(a, b)
-    val f = Edge(b, a)
+    val e = a edgeTo b
+    val f = b edgeTo a
     assertEquals(e, f)
   }
 
@@ -20,7 +20,7 @@ class EdgeTests {
   fun `edge contains both extremities`() {
     val a = Vertex(0)
     val b = Vertex(1)
-    val e = Edge(a, b)
+    val e = a edgeTo b
     assertTrue(a in e)
     assertTrue(b in e)
   }
@@ -29,7 +29,7 @@ class EdgeTests {
   fun `other returns other edge extremity`() {
     val a = Vertex(0)
     val b = Vertex(1)
-    val e = Edge(a, b)
+    val e = a edgeTo b
 
     assertEquals(a, e.other(b))
     assertEquals(b, e.other(a))
@@ -40,7 +40,7 @@ class EdgeTests {
     val a = Vertex(1000)
     val b = Vertex(1001)
 
-    val e = Edge(a, b)
+    val e = a edgeTo b
     assertTrue(e.any() in e)
   }
 
@@ -49,7 +49,7 @@ class EdgeTests {
     val a = Vertex(0)
     val b = Vertex(1)
     val c = Vertex(2)
-    val e = Edge(a, b)
+    val e = a edgeTo b
     assertFailsWith<IllegalArgumentException> { e.other(c) }
   }
 }

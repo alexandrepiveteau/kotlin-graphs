@@ -49,3 +49,6 @@ public value class Edge private constructor(private val encoded: Long) {
   /** Returns `true` if the given [vertex] is part of this edge, and `false` otherwise. */
   public operator fun contains(vertex: Vertex): Boolean = vertex == u || vertex == v
 }
+
+/** Returns an [Edge] that contains both this and the [other] [Vertex]. */
+public infix fun Vertex.edgeTo(other: Vertex): Edge = Edge(this, other)

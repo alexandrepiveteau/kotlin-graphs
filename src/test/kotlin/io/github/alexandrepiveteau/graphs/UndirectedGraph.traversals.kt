@@ -20,7 +20,7 @@ class UndirectedGraphDFSTests {
         var last = addVertex()
         for (i in 1 until count) {
           val next = addVertex()
-          addEdge(Edge(last, next))
+          addEdge(last edgeTo next)
           last = next
         }
       }
@@ -45,7 +45,7 @@ class UndirectedGraphDFSTests {
         var last = addVertex()
         for (i in 1 until count) {
           val next = addVertex()
-          addEdge(Edge(last, next))
+          addEdge(last edgeTo next)
           last = next
         }
       }

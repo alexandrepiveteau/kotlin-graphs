@@ -11,5 +11,5 @@ import kotlin.contracts.contract
  */
 public inline fun DirectedGraph.forEachArc(action: (Arc) -> Unit) {
   contract { callsInPlace(action) }
-  forEachVertex { u -> forEachNeighbor(u) { v -> action(Arc(u, v)) } }
+  forEachVertex { u -> forEachNeighbor(u) { v -> action(u arcTo v) } }
 }

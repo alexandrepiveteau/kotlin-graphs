@@ -30,3 +30,6 @@ public value class Arc private constructor(private val encoded: Long) {
   /** Returns an [Arc] that goes from [to] to [from]. */
   public fun reversed(): Arc = Arc(to, from)
 }
+
+/** Returns an [Arc] that goes from this [Vertex] to the [other] [Vertex]. */
+public infix fun Vertex.arcTo(other: Vertex): Arc = Arc(this, other)

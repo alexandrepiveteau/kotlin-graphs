@@ -11,5 +11,5 @@ import kotlin.contracts.contract
  */
 public inline fun UndirectedGraph.forEachEdge(action: (Edge) -> Unit) {
   contract { callsInPlace(action) }
-  forEachVertex { u -> forEachNeighbor(u) { v -> if (u.index <= v.index) action(Edge(u, v)) } }
+  forEachVertex { u -> forEachNeighbor(u) { v -> if (u.index <= v.index) action(u edgeTo v) } }
 }
