@@ -28,7 +28,7 @@ public interface Network : Graph {
    * @throws NoSuchVertexException if [vertex] or [neighbor] are not valid vertices.
    * @throws NoSuchEdgeException if there is no edge between [vertex] and [neighbor].
    */
-  public fun weight(vertex: Vertex, neighbor: Vertex): Int = weight(get(vertex), get(neighbor))
+  public fun weight(vertex: Vertex, neighbor: Vertex): Int = weight(get(vertex), neighbor)
 
   /**
    * Returns the weight of the edge between the [vertex] and the [Vertex] at [neighborIndex].
