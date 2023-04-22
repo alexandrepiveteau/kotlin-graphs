@@ -31,16 +31,17 @@ public fun Network.spfa(source: Vertex): IntArray {
   // TODO : Handle negative cycles and throw an exception when one is found. This will be the case
   //        when the number of relaxations exceeds a certain threshold.
   while (queue.size > 0) {
-    val i = queue.removeFirst()
-    enqueued[i] = false
-    for (j in 0 until neighborsSize(i)) {
-      val weight = weight(i, j)
-      // TODO : Handle overflows.
-      if (distances[i] != Int.MAX_VALUE && distances[i] + weight < distances[j]) {
-        distances[j] = distances[i] + weight
-        if (!enqueued[j]) {
-          enqueued[j] = true
-          queue.addLast(j)
+    val v1 = get(queue.removeFirst())
+    enqueued[get(v1)] = false
+    forEachNeighbor(v1) { v2 ->
+      val weight = weight(v1, v2)
+      val d1 = distances[get(v1)]
+      val d2 = distances[get(v2)]
+      if (d1 != Int.MAX_VALUE && (d2 == Int.MAX_VALUE || d1 + weight < d2)) {
+        distances[get(v2)] = d1 + weight
+        if (!enqueued[get(v2)]) {
+          enqueued[get(v2)] = true
+          queue.addLast(get(v2))
         }
       }
     }
