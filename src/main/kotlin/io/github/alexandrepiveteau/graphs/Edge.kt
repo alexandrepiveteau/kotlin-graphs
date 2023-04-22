@@ -1,5 +1,8 @@
 package io.github.alexandrepiveteau.graphs
 
+import io.github.alexandrepiveteau.graphs.util.packInts
+import io.github.alexandrepiveteau.graphs.util.unpackInt1
+import io.github.alexandrepiveteau.graphs.util.unpackInt2
 import kotlin.math.max
 import kotlin.math.min
 
@@ -16,15 +19,15 @@ public value class Edge private constructor(private val encoded: Long) {
   public constructor(
       u: Vertex,
       v: Vertex
-  ) : this(min(u.index, v.index).toLong() shl 32 or max(u.index, v.index).toLong())
+  ) : this(packInts(min(u.index, v.index), max(u.index, v.index)))
 
   /* Returns the vertex with the lowest id of this edge. Different from [v]. */
   private inline val u: Vertex
-    get() = Vertex(encoded.toInt())
+    get() = Vertex(unpackInt1(encoded))
 
   /* Returns the vertex with the highest id of this edge. Different from [u]. */
   private inline val v: Vertex
-    get() = Vertex((encoded ushr 32).toInt())
+    get() = Vertex(unpackInt2(encoded))
 
   /** Returns an arbitrary vertex from this edge. */
   public fun any(): Vertex = u

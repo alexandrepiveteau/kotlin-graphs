@@ -1,5 +1,9 @@
 package io.github.alexandrepiveteau.graphs
 
+import io.github.alexandrepiveteau.graphs.util.packInts
+import io.github.alexandrepiveteau.graphs.util.unpackInt1
+import io.github.alexandrepiveteau.graphs.util.unpackInt2
+
 /** A directed arc in a [UndirectedGraph] between two [Vertex]. */
 @JvmInline
 public value class Arc private constructor(private val encoded: Long) {
@@ -8,15 +12,15 @@ public value class Arc private constructor(private val encoded: Long) {
   public constructor(
       from: Vertex,
       to: Vertex,
-  ) : this(from.index.toLong() shl 32 or to.index.toLong())
+  ) : this(packInts(from.index, to.index))
 
   /** The origin vertex of this arc. */
   public val from: Vertex
-    get() = Vertex(encoded.ushr(32).toInt())
+    get() = Vertex(unpackInt1(encoded))
 
   /** The destination vertex of this arc. */
   public val to: Vertex
-    get() = Vertex(encoded.toInt())
+    get() = Vertex(unpackInt2(encoded))
 
   /** Returns the [from] [Vertex]. */
   public operator fun component1(): Vertex = from
