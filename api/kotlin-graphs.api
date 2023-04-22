@@ -550,3 +550,9 @@ public final class io/github/alexandrepiveteau/graphs/internal/IntVector {
 	public final fun toIntArray ()[I
 }
 
+public final class io/github/alexandrepiveteau/graphs/util/PackingKt {
+	public static final fun packInts (II)J
+	public static final fun unpackInt1 (J)I
+	public static final fun unpackInt2 (J)I
+}
+

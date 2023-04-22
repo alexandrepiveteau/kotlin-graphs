@@ -1,6 +1,9 @@
 package io.github.alexandrepiveteau.graphs
 
 import io.github.alexandrepiveteau.graphs.internal.IntVector
+import io.github.alexandrepiveteau.graphs.util.packInts
+import io.github.alexandrepiveteau.graphs.util.unpackInt1
+import io.github.alexandrepiveteau.graphs.util.unpackInt2
 
 /** A [NetworkBuilder] is a [GraphBuilder] for [Network]s. */
 public interface NetworkBuilder : GraphBuilder
@@ -46,18 +49,17 @@ internal fun compactToVertexAndWeightsArray(
             LongArray(neighbors[it].size) { i ->
                   val neighbor = neighbors[it][i]
                   val weight = weights[it][i]
-                  (neighbor.toLong() shl 32) or weight.toLong()
+                  packInts(neighbor, weight)
                 }
                 .apply { sort() }
         for (j in list.indices) {
-          val neighbor = (list[j] ushr 32).toInt()
-          val weight = list[j].toInt()
+          val neighbor = unpackInt1(list[j])
+          val weight = unpackInt2(list[j])
           if (neighbor != last) {
             list[count++] = list[j] // Update the array in place.
             last = neighbor
           } else {
-            // TODO : Handle overflows and mask the values.
-            list[count - 1] = list[count - 1] + weight // Sum the weights of the same neighbor.
+            list[count - 1] = packInts(neighbor, weight + unpackInt2(list[count - 1]))
           }
         }
         list.copyOf(count)

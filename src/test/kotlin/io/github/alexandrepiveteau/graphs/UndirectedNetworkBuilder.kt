@@ -28,4 +28,16 @@ class UndirectedNetworkBuilderTests {
     val b = network[1]
     assertEquals(3, network.weight(a, b))
   }
+
+  @Test
+  fun `builder with duplicate edges with negative sum`() {
+    val network = buildUndirectedNetwork {
+      val (a, b) = addVertices()
+      addEdge(a edgeTo b, 1)
+      addEdge(a edgeTo b, -2)
+    }
+    val a = network[0]
+    val b = network[1]
+    assertEquals(-1, network.weight(a, b))
+  }
 }
