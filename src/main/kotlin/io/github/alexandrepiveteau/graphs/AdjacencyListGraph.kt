@@ -6,7 +6,7 @@ package io.github.alexandrepiveteau.graphs
  * @param neighbors the adjacency list of the graph.
  */
 @PublishedApi
-internal abstract class AdjacencyListGraph(private val neighbors: Array<VertexArray>) : Graph {
+internal class AdjacencyListGraph(private val neighbors: Array<VertexArray>) : Graph {
 
   override val size: Int
     get() = neighbors.size
@@ -36,9 +36,9 @@ internal abstract class AdjacencyListGraph(private val neighbors: Array<VertexAr
 
 /** An implementation of [DirectedGraph] which uses an adjacency list to store the links. */
 @PublishedApi
-internal open class AdjacencyListDirectedGraph(
+internal class AdjacencyListDirectedGraph(
     private val neighbors: Array<VertexArray>,
-) : AdjacencyListGraph(neighbors), DirectedGraph {
+) : DirectedGraph, Graph by AdjacencyListGraph(neighbors) {
 
   override fun contains(arc: Arc): Boolean {
     val (u, v) = arc
@@ -49,9 +49,9 @@ internal open class AdjacencyListDirectedGraph(
 
 /** An implementation of [UndirectedGraph] which uses an adjacency list to store the links. */
 @PublishedApi
-internal open class AdjacencyListUndirectedGraph(
+internal class AdjacencyListUndirectedGraph(
     private val neighbors: Array<VertexArray>,
-) : AdjacencyListGraph(neighbors), UndirectedGraph {
+) : UndirectedGraph, Graph by AdjacencyListGraph(neighbors) {
 
   override fun contains(edge: Edge): Boolean {
     val (u, v) = edge
