@@ -120,6 +120,7 @@ public final class io/github/alexandrepiveteau/graphs/DirectedNetwork$DefaultImp
 	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
 	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;I)I
 	public static fun weight--OaZVeM (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;J)I
+	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
 }
 
@@ -216,6 +217,7 @@ public class io/github/alexandrepiveteau/graphs/MutableListUndirectedGraphBuilde
 
 public abstract interface class io/github/alexandrepiveteau/graphs/Network : io/github/alexandrepiveteau/graphs/Graph {
 	public abstract fun weight (II)I
+	public abstract fun weight-9scIZJg (II)I
 	public abstract fun weight-cK2_UGU (II)I
 	public abstract fun weight-iNgu2Tg (II)I
 }
@@ -226,6 +228,7 @@ public final class io/github/alexandrepiveteau/graphs/Network$DefaultImpls {
 	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/Network;II)I
 	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Network;II)I
 	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Network;I)I
+	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/Network;II)I
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/Network;II)I
 }
 
@@ -309,6 +312,7 @@ public final class io/github/alexandrepiveteau/graphs/UndirectedNetwork$DefaultI
 	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
 	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
 	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;I)I
+	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
 	public static fun weight-zEWoN30 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;J)I
 }

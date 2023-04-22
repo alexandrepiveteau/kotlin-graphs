@@ -17,7 +17,7 @@ public fun UndirectedGraph.Companion.empty(): UndirectedGraph = EmptyUndirectedG
 /** An implementation of [UndirectedNetwork] which is empty. */
 private object EmptyUndirectedNetwork : UndirectedNetwork, UndirectedGraph by EmptyUndirectedGraph {
   override fun weight(index: Int, neighborIndex: Int) = throw IndexOutOfBoundsException()
-  override fun weight(vertex: Vertex, neighbor: Vertex) = throw NoSuchVertexException()
+  override fun weight(index: Int, neighbor: Vertex) = throw IndexOutOfBoundsException()
 }
 
 /** Returns an empty [UndirectedNetwork], which is a network with no vertices and no edges. */
@@ -74,10 +74,10 @@ private class CompleteUndirectedNetwork(size: Int, private val weight: Int) :
     return weight
   }
 
-  override fun weight(vertex: Vertex, neighbor: Vertex): Int {
-    if (vertex.index < 0 || vertex.index >= size) throw NoSuchVertexException()
+  override fun weight(index: Int, neighbor: Vertex): Int {
+    if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     if (neighbor.index < 0 || neighbor.index >= size) throw NoSuchVertexException()
-    if (vertex.index == neighbor.index) throw NoSuchEdgeException()
+    if (index == neighbor.index) throw NoSuchEdgeException()
     return weight
   }
 }
