@@ -2,9 +2,19 @@ package io.github.alexandrepiveteau.graphs
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
 
 class ArcTests {
+
+  @Test
+  fun `opposite arcs are not equal`() {
+    val a = Vertex(0)
+    val b = Vertex(1)
+    val e = a arcTo b
+    val f = b arcTo a
+    assertNotEquals(e, f)
+  }
 
   @Test
   fun `arcs are properly reversed`() {
