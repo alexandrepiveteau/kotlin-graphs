@@ -15,12 +15,20 @@ public interface Network : Graph {
   public fun weight(index: Int, neighborIndex: Int): Int
 
   /**
+   * Returns the weight of the edge between the [Vertex] at [index] and its [neighbor].
+   *
+   * @throws IndexOutOfBoundsException if [index] is not a valid index.
+   * @throws NoSuchVertexException if [neighbor] is not a valid vertex.
+   */
+  public fun weight(index: Int, neighbor: Vertex): Int
+
+  /**
    * Returns the weight of the edge between the [vertex] and its [neighbor].
    *
    * @throws NoSuchVertexException if [vertex] or [neighbor] are not valid vertices.
    * @throws NoSuchEdgeException if there is no edge between [vertex] and [neighbor].
    */
-  public fun weight(vertex: Vertex, neighbor: Vertex): Int
+  public fun weight(vertex: Vertex, neighbor: Vertex): Int = weight(get(vertex), get(neighbor))
 
   /**
    * Returns the weight of the edge between the [vertex] and the [Vertex] at [neighborIndex].
