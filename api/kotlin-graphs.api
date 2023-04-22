@@ -123,6 +123,17 @@ public final class io/github/alexandrepiveteau/graphs/DirectedNetwork$DefaultImp
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
 }
 
+public abstract interface class io/github/alexandrepiveteau/graphs/DirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/DirectedGraphBuilder, io/github/alexandrepiveteau/graphs/NetworkBuilder {
+	public abstract fun addArc--OaZVeM (J)V
+	public abstract fun addArc-xiSrehs (JI)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/DirectedNetworkBuilder$DefaultImpls {
+	public static fun addArc--OaZVeM (Lio/github/alexandrepiveteau/graphs/DirectedNetworkBuilder;J)V
+	public static synthetic fun addArc-xiSrehs$default (Lio/github/alexandrepiveteau/graphs/DirectedNetworkBuilder;JIILjava/lang/Object;)V
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/DirectedNetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
 public final class io/github/alexandrepiveteau/graphs/Edge {
 	public static final fun any-IrpSQec (J)I
 	public static final synthetic fun box-impl (J)Lio/github/alexandrepiveteau/graphs/Edge;
@@ -219,6 +230,13 @@ public final class io/github/alexandrepiveteau/graphs/Network$DefaultImpls {
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/Network;II)I
 }
 
+public abstract interface class io/github/alexandrepiveteau/graphs/NetworkBuilder : io/github/alexandrepiveteau/graphs/GraphBuilder {
+}
+
+public final class io/github/alexandrepiveteau/graphs/NetworkBuilder$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/NetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
 public final class io/github/alexandrepiveteau/graphs/NoSuchArcException : java/util/NoSuchElementException {
 	public fun <init> ()V
 }
@@ -292,7 +310,7 @@ public final class io/github/alexandrepiveteau/graphs/UndirectedNetwork$DefaultI
 	public static fun weight-zEWoN30 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;J)I
 }
 
-public abstract interface class io/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/UndirectedGraphBuilder {
+public abstract interface class io/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/NetworkBuilder, io/github/alexandrepiveteau/graphs/UndirectedGraphBuilder {
 	public abstract fun addEdge-4LiJEsM (JI)V
 	public abstract fun addEdge-zEWoN30 (J)V
 }
