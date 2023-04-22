@@ -187,25 +187,7 @@ public final class io/github/alexandrepiveteau/graphs/GraphBuilder$DefaultImpls 
 }
 
 public final class io/github/alexandrepiveteau/graphs/GraphBuilderKt {
-	public static final fun buildGraphData (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lio/github/alexandrepiveteau/graphs/GraphData;
-}
-
-public final class io/github/alexandrepiveteau/graphs/GraphData {
-	public fun <init> (ILio/github/alexandrepiveteau/graphs/internal/IntVector;)V
-	public final fun component1 ()I
-	public final fun component2 ()Lio/github/alexandrepiveteau/graphs/internal/IntVector;
-	public final fun copy (ILio/github/alexandrepiveteau/graphs/internal/IntVector;)Lio/github/alexandrepiveteau/graphs/GraphData;
-	public static synthetic fun copy$default (Lio/github/alexandrepiveteau/graphs/GraphData;ILio/github/alexandrepiveteau/graphs/internal/IntVector;ILjava/lang/Object;)Lio/github/alexandrepiveteau/graphs/GraphData;
-	public fun equals (Ljava/lang/Object;)Z
-	public final fun forEachLink (Lkotlin/jvm/functions/Function2;)V
-	public final fun getLinks ()Lio/github/alexandrepiveteau/graphs/internal/IntVector;
-	public final fun getSize ()I
-	public fun hashCode ()I
-	public fun toString ()Ljava/lang/String;
-}
-
-public abstract interface class io/github/alexandrepiveteau/graphs/GraphDataAdapter {
-	public abstract fun addLink-cK2_UGU (II)V
+	public static final fun compactToVertexArray (Ljava/util/List;)[Lio/github/alexandrepiveteau/graphs/VertexArray;
 }
 
 public final class io/github/alexandrepiveteau/graphs/Graph_traversalsKt {
@@ -213,6 +195,23 @@ public final class io/github/alexandrepiveteau/graphs/Graph_traversalsKt {
 	public static final fun forEachVertex (Lio/github/alexandrepiveteau/graphs/Graph;Lkotlin/jvm/functions/Function1;)V
 	public static final fun forEachVertexBreadthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
 	public static final fun forEachVertexDepthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
+}
+
+public class io/github/alexandrepiveteau/graphs/MutableListDirectedGraphBuilder : io/github/alexandrepiveteau/graphs/MutableListGraphBuilder, io/github/alexandrepiveteau/graphs/DirectedGraphBuilder {
+	public fun <init> (Ljava/util/List;)V
+	public fun addArc--OaZVeM (J)V
+}
+
+public class io/github/alexandrepiveteau/graphs/MutableListGraphBuilder : io/github/alexandrepiveteau/graphs/GraphBuilder {
+	public fun <init> (Ljava/util/List;)V
+	public fun addVertex-IrpSQec ()I
+	public fun addVertices ()Lio/github/alexandrepiveteau/graphs/Vertices;
+	public final fun checkLink-cK2_UGU (II)V
+}
+
+public class io/github/alexandrepiveteau/graphs/MutableListUndirectedGraphBuilder : io/github/alexandrepiveteau/graphs/MutableListGraphBuilder, io/github/alexandrepiveteau/graphs/UndirectedGraphBuilder {
+	public fun <init> (Ljava/util/List;)V
+	public fun addEdge-zEWoN30 (J)V
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/Network : io/github/alexandrepiveteau/graphs/Graph {
@@ -359,6 +358,7 @@ public final class io/github/alexandrepiveteau/graphs/VertexArray {
 public final class io/github/alexandrepiveteau/graphs/VertexArrayKt {
 	public static final fun VertexArray (I)[I
 	public static final fun VertexArray (ILkotlin/jvm/functions/Function1;)[I
+	public static final fun asVertexArray ([I)[I
 	public static final fun binarySearch-nPz1t30 ([IIII)I
 	public static synthetic fun binarySearch-nPz1t30$default ([IIIIILjava/lang/Object;)I
 	public static final fun copyInto-oWtyEuU ([I[IIII)[I
@@ -366,7 +366,6 @@ public final class io/github/alexandrepiveteau/graphs/VertexArrayKt {
 	public static final fun copyOf-ONBMYxs ([II)[I
 	public static final fun copyOf-iaUUKik ([I)[I
 	public static final fun copyOfRange-R4BdYes ([III)[I
-	public static final fun toVertexArray ([I)[I
 }
 
 public abstract class io/github/alexandrepiveteau/graphs/VertexIterator : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {

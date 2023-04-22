@@ -32,37 +32,41 @@ public fun interface Vertices {
 // BUILDER HELPERS
 
 /**
- * A data structure which represents the data used to build a [Graph].
+ * An implementation of [GraphBuilder] which uses a [MutableList] to store the neighbors of each
+ * vertex.
  *
- * @param size the number of vertices in the graph.
- * @param links the list of links in the graph.
+ * @param neighbors the list of neighbors of each vertex.
  */
 @PublishedApi
-internal data class GraphData(val size: Int, val links: IntVector) {
-  inline fun forEachLink(action: (Int, Int) -> Unit) {
-    for (i in 0 until links.size step 2) action(links[i], links[i + 1])
+internal open class MutableListGraphBuilder(
+    private val neighbors: MutableList<IntVector>,
+) : GraphBuilder {
+  override fun addVertex(): Vertex = Vertex(neighbors.size).also { neighbors += IntVector() }
+  fun checkLink(u: Vertex, v: Vertex) {
+    if (u.index < 0 || u.index >= neighbors.size) throw IndexOutOfBoundsException()
+    if (v.index < 0 || v.index >= neighbors.size) throw IndexOutOfBoundsException()
   }
 }
 
+/**
+ * Compacts the given [neighbors] into an array of [VertexArray]s, suitable for being used in an
+ * adjacency list representation.
+ *
+ * @param neighbors the list of neighbors of each vertex.
+ * @return the array of [VertexArray]s.
+ */
 @PublishedApi
-internal fun interface GraphDataAdapter {
-  fun addLink(from: Vertex, to: Vertex)
-}
-
-@PublishedApi
-internal inline fun <B : GraphBuilder> buildGraphData(
-    scope: B.() -> Unit,
-    context: (GraphDataAdapter, GraphBuilder) -> B,
-): GraphData {
-  var size = 0
-  val links = IntVector()
-  val adapter = GraphDataAdapter { from, to ->
-    if (from.index < 0 || from.index >= size) throw NoSuchVertexException()
-    if (to.index < 0 || to.index >= size) throw NoSuchVertexException()
-    links += from.index
-    links += to.index
+internal fun compactToVertexArray(neighbors: MutableList<IntVector>): Array<VertexArray> {
+  return Array(neighbors.size) {
+    var last = -1 // This is an invalid vertex.
+    var count = 0
+    val list = neighbors[it].toIntArray().apply { sort() }
+    for (j in list.indices) {
+      if (list[j] != last) {
+        list[count++] = list[j] // Update the array in place.
+        last = list[j]
+      }
+    }
+    list.copyOf(count).asVertexArray() // Compact the array.
   }
-  val builder = GraphBuilder { Vertex(size++) }
-  context(adapter, builder).apply(scope)
-  return GraphData(size, links)
 }
