@@ -237,6 +237,10 @@ public final class io/github/alexandrepiveteau/graphs/NetworkBuilder$DefaultImpl
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/NetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
+public final class io/github/alexandrepiveteau/graphs/Network_traversalsKt {
+	public static final fun spfa-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)[I
+}
+
 public final class io/github/alexandrepiveteau/graphs/NoSuchArcException : java/util/NoSuchElementException {
 	public fun <init> ()V
 }
