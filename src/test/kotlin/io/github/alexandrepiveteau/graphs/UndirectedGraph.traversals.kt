@@ -2,8 +2,22 @@ package io.github.alexandrepiveteau.graphs
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 
 class UndirectedGraphDFSTests {
+
+  @Test
+  fun `forEachVertex iterates exactly once over each vertex`() {
+    for (count in 0..Repeats) {
+      val graph = UndirectedGraph.complete(count)
+      val visited = BooleanArray(count)
+      graph.forEachVertex {
+        assertFalse(visited[it.index])
+        visited[it.index] = true
+      }
+      assertEquals(true, visited.all { it })
+    }
+  }
 
   @Test
   fun `bfs on singleton graph visits one vertex`() {
