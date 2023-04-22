@@ -1,9 +1,39 @@
-public class io/github/alexandrepiveteau/graphs/AdjacencyListDirectedGraph : io/github/alexandrepiveteau/graphs/AdjacencyListGraph, io/github/alexandrepiveteau/graphs/DirectedGraph {
+public final class io/github/alexandrepiveteau/graphs/AdjacencyListDirectedGraph : io/github/alexandrepiveteau/graphs/DirectedGraph, io/github/alexandrepiveteau/graphs/Graph {
 	public fun <init> ([Lio/github/alexandrepiveteau/graphs/VertexArray;)V
 	public fun contains--OaZVeM (J)Z
+	public fun contains-dT2TSiQ (I)Z
+	public fun get-1Pv3iCI (I)I
+	public fun get-_QOBl-4 (II)I
+	public fun get-dT2TSiQ (I)I
+	public fun get-vAesux8 (II)I
+	public fun getSize ()I
+	public fun neighbor-_QOBl-4 (II)I
+	public fun neighbor-vAesux8 (II)I
+	public fun neighborsSize (I)I
+	public fun neighborsSize-dT2TSiQ (I)I
 }
 
-public abstract class io/github/alexandrepiveteau/graphs/AdjacencyListGraph : io/github/alexandrepiveteau/graphs/Graph {
+public final class io/github/alexandrepiveteau/graphs/AdjacencyListDirectedNetwork : io/github/alexandrepiveteau/graphs/DirectedNetwork, io/github/alexandrepiveteau/graphs/Network {
+	public fun <init> ([Lio/github/alexandrepiveteau/graphs/VertexArray;[[I)V
+	public fun contains--OaZVeM (J)Z
+	public fun contains-dT2TSiQ (I)Z
+	public fun get-1Pv3iCI (I)I
+	public fun get-_QOBl-4 (II)I
+	public fun get-dT2TSiQ (I)I
+	public fun get-vAesux8 (II)I
+	public fun getSize ()I
+	public fun neighbor-_QOBl-4 (II)I
+	public fun neighbor-vAesux8 (II)I
+	public fun neighborsSize (I)I
+	public fun neighborsSize-dT2TSiQ (I)I
+	public fun weight (II)I
+	public fun weight--OaZVeM (J)I
+	public fun weight-9scIZJg (II)I
+	public fun weight-cK2_UGU (II)I
+	public fun weight-iNgu2Tg (II)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/AdjacencyListGraph : io/github/alexandrepiveteau/graphs/Graph {
 	public fun <init> ([Lio/github/alexandrepiveteau/graphs/VertexArray;)V
 	public fun contains-dT2TSiQ (I)Z
 	public fun get-1Pv3iCI (I)I
@@ -17,9 +47,57 @@ public abstract class io/github/alexandrepiveteau/graphs/AdjacencyListGraph : io
 	public fun neighborsSize-dT2TSiQ (I)I
 }
 
-public class io/github/alexandrepiveteau/graphs/AdjacencyListUndirectedGraph : io/github/alexandrepiveteau/graphs/AdjacencyListGraph, io/github/alexandrepiveteau/graphs/UndirectedGraph {
+public final class io/github/alexandrepiveteau/graphs/AdjacencyListNetwork : io/github/alexandrepiveteau/graphs/Graph, io/github/alexandrepiveteau/graphs/Network {
+	public fun <init> ([Lio/github/alexandrepiveteau/graphs/VertexArray;[[I)V
+	public fun contains-dT2TSiQ (I)Z
+	public fun get-1Pv3iCI (I)I
+	public fun get-_QOBl-4 (II)I
+	public fun get-dT2TSiQ (I)I
+	public fun get-vAesux8 (II)I
+	public fun getSize ()I
+	public fun neighbor-_QOBl-4 (II)I
+	public fun neighbor-vAesux8 (II)I
+	public fun neighborsSize (I)I
+	public fun neighborsSize-dT2TSiQ (I)I
+	public fun weight (II)I
+	public fun weight-9scIZJg (II)I
+	public fun weight-cK2_UGU (II)I
+	public fun weight-iNgu2Tg (II)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/AdjacencyListUndirectedGraph : io/github/alexandrepiveteau/graphs/Graph, io/github/alexandrepiveteau/graphs/UndirectedGraph {
 	public fun <init> ([Lio/github/alexandrepiveteau/graphs/VertexArray;)V
+	public fun contains-dT2TSiQ (I)Z
 	public fun contains-zEWoN30 (J)Z
+	public fun get-1Pv3iCI (I)I
+	public fun get-_QOBl-4 (II)I
+	public fun get-dT2TSiQ (I)I
+	public fun get-vAesux8 (II)I
+	public fun getSize ()I
+	public fun neighbor-_QOBl-4 (II)I
+	public fun neighbor-vAesux8 (II)I
+	public fun neighborsSize (I)I
+	public fun neighborsSize-dT2TSiQ (I)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/AdjacencyListUndirectedNetwork : io/github/alexandrepiveteau/graphs/Network, io/github/alexandrepiveteau/graphs/UndirectedNetwork {
+	public fun <init> ([Lio/github/alexandrepiveteau/graphs/VertexArray;[[I)V
+	public fun contains-dT2TSiQ (I)Z
+	public fun contains-zEWoN30 (J)Z
+	public fun get-1Pv3iCI (I)I
+	public fun get-_QOBl-4 (II)I
+	public fun get-dT2TSiQ (I)I
+	public fun get-vAesux8 (II)I
+	public fun getSize ()I
+	public fun neighbor-_QOBl-4 (II)I
+	public fun neighbor-vAesux8 (II)I
+	public fun neighborsSize (I)I
+	public fun neighborsSize-dT2TSiQ (I)I
+	public fun weight (II)I
+	public fun weight-9scIZJg (II)I
+	public fun weight-cK2_UGU (II)I
+	public fun weight-iNgu2Tg (II)I
+	public fun weight-zEWoN30 (J)I
 }
 
 public class io/github/alexandrepiveteau/graphs/AdjacencyMatrixDirectedGraph : io/github/alexandrepiveteau/graphs/AdjacencyMatrixGraph, io/github/alexandrepiveteau/graphs/DirectedGraph {
@@ -135,6 +213,10 @@ public final class io/github/alexandrepiveteau/graphs/DirectedNetworkBuilder$Def
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/DirectedNetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
+public final class io/github/alexandrepiveteau/graphs/DirectedNetworkBuilderKt {
+	public static final fun buildDirectedNetwork (Lkotlin/jvm/functions/Function1;)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+}
+
 public final class io/github/alexandrepiveteau/graphs/Edge {
 	public static final fun any-IrpSQec (J)I
 	public static final synthetic fun box-impl (J)Lio/github/alexandrepiveteau/graphs/Edge;
@@ -203,6 +285,12 @@ public class io/github/alexandrepiveteau/graphs/MutableListDirectedGraphBuilder 
 	public fun addArc--OaZVeM (J)V
 }
 
+public class io/github/alexandrepiveteau/graphs/MutableListDirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/MutableListNetworkBuilder, io/github/alexandrepiveteau/graphs/DirectedNetworkBuilder {
+	public fun <init> (Ljava/util/List;Ljava/util/List;)V
+	public fun addArc--OaZVeM (J)V
+	public fun addArc-xiSrehs (JI)V
+}
+
 public class io/github/alexandrepiveteau/graphs/MutableListGraphBuilder : io/github/alexandrepiveteau/graphs/GraphBuilder {
 	public fun <init> (Ljava/util/List;)V
 	public fun addVertex-IrpSQec ()I
@@ -210,8 +298,19 @@ public class io/github/alexandrepiveteau/graphs/MutableListGraphBuilder : io/git
 	public final fun checkLink-cK2_UGU (II)V
 }
 
+public class io/github/alexandrepiveteau/graphs/MutableListNetworkBuilder : io/github/alexandrepiveteau/graphs/MutableListGraphBuilder {
+	public fun <init> (Ljava/util/List;Ljava/util/List;)V
+	public fun addVertex-IrpSQec ()I
+}
+
 public class io/github/alexandrepiveteau/graphs/MutableListUndirectedGraphBuilder : io/github/alexandrepiveteau/graphs/MutableListGraphBuilder, io/github/alexandrepiveteau/graphs/UndirectedGraphBuilder {
 	public fun <init> (Ljava/util/List;)V
+	public fun addEdge-zEWoN30 (J)V
+}
+
+public class io/github/alexandrepiveteau/graphs/MutableListUndirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/MutableListNetworkBuilder, io/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder {
+	public fun <init> (Ljava/util/List;Ljava/util/List;)V
+	public fun addEdge-4LiJEsM (JI)V
 	public fun addEdge-zEWoN30 (J)V
 }
 
@@ -237,6 +336,10 @@ public abstract interface class io/github/alexandrepiveteau/graphs/NetworkBuilde
 
 public final class io/github/alexandrepiveteau/graphs/NetworkBuilder$DefaultImpls {
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/NetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public final class io/github/alexandrepiveteau/graphs/NetworkBuilderKt {
+	public static final fun compactToVertexAndWeightsArray (Ljava/util/List;Ljava/util/List;)Lkotlin/Pair;
 }
 
 public final class io/github/alexandrepiveteau/graphs/Network_traversalsKt {
@@ -326,6 +429,10 @@ public final class io/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder$D
 	public static synthetic fun addEdge-4LiJEsM$default (Lio/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder;JIILjava/lang/Object;)V
 	public static fun addEdge-zEWoN30 (Lio/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder;J)V
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/UndirectedNetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public final class io/github/alexandrepiveteau/graphs/UndirectedNetworkBuilderKt {
+	public static final fun buildUndirectedNetwork (Lkotlin/jvm/functions/Function1;)Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;
 }
 
 public final class io/github/alexandrepiveteau/graphs/Vertex {
