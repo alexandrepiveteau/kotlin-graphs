@@ -56,7 +56,8 @@ internal fun compactToVertexAndWeightsArray(
             list[count++] = list[j] // Update the array in place.
             last = neighbor
           } else {
-            weights[it][count - 1] += weight // Sum the weights of the same neighbor.
+            // TODO : Handle overflows and mask the values.
+            list[count - 1] = list[count - 1] + weight // Sum the weights of the same neighbor.
           }
         }
         list.copyOf(count)
