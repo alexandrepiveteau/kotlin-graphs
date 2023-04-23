@@ -16,6 +16,8 @@ jobs:
       - name: 📚 Generate documentation
         run: ./gradlew dokkaHtml
       - name: 📦 Publish documentation
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           cd build/dokka/html
           git init . && git branch -m dokka
@@ -23,5 +25,5 @@ jobs:
           git config user.name "${{github.actor}}"
           git config user.email "${{github.actor}}@users.noreply.github.com"
           git commit -m "🚀 Publish documentation"
-          git remote add origin https://${{github.token}}@github.com/${{github.repository}}.git
+          git remote add origin https://x-access-token:$GITHUB_TOKEN@github.com/${{github.repository}}
           git push -u origin dokka --force
