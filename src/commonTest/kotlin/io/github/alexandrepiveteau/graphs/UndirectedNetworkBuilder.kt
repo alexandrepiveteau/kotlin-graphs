@@ -6,19 +6,19 @@ import kotlin.test.assertEquals
 class UndirectedNetworkBuilderTests {
 
   @Test
-  fun `empty builder creates empty network`() {
+  fun emptyBuilderCreatesEmptyNetwork() {
     val network = buildUndirectedNetwork {}
     assertEquals(0, network.size)
   }
 
   @Test
-  fun `builder with one vertex creates singleton network`() {
+  fun builderWithOneVertexCreatesSingletonNetwork() {
     val network = buildUndirectedNetwork { addVertex() }
     assertEquals(1, network.size)
   }
 
   @Test
-  fun `builder with duplicate edge adds weights`() {
+  fun builderWithDuplicateEdgeAddsWeights() {
     val network = buildUndirectedNetwork {
       val (a, b) = addVertices()
       addEdge(a edgeTo b, 1)
@@ -31,7 +31,7 @@ class UndirectedNetworkBuilderTests {
   }
 
   @Test
-  fun `builder with duplicate edges with negative sum`() {
+  fun builderWithDuplicateEdgesWithNegativeSum() {
     val network = buildUndirectedNetwork {
       val (a, b) = addVertices()
       addEdge(a edgeTo b, 1)

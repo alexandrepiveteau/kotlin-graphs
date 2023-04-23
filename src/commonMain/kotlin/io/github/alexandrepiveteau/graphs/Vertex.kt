@@ -1,5 +1,7 @@
 package io.github.alexandrepiveteau.graphs
 
+import kotlin.jvm.JvmInline
+
 /**
  * A vertex in a [Graph], which is uniquely identified. Vertices can be compared to each other, and
  * are totally ordered within a [Graph] instance.

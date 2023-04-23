@@ -1,5 +1,7 @@
 package io.github.alexandrepiveteau.graphs
 
+import kotlin.jvm.JvmInline
+
 /**
  * Creates a new [VertexMap] with the given [size], with all elements initialized to the result of
  * calling the specified [init] function on the index of each element.

@@ -3,6 +3,7 @@ package io.github.alexandrepiveteau.graphs
 import io.github.alexandrepiveteau.graphs.util.packInts
 import io.github.alexandrepiveteau.graphs.util.unpackInt1
 import io.github.alexandrepiveteau.graphs.util.unpackInt2
+import kotlin.jvm.JvmInline
 
 /** A directed arc in a [UndirectedGraph] between two [Vertex]. */
 @JvmInline

@@ -3,6 +3,7 @@ package io.github.alexandrepiveteau.graphs
 import io.github.alexandrepiveteau.graphs.util.packInts
 import io.github.alexandrepiveteau.graphs.util.unpackInt1
 import io.github.alexandrepiveteau.graphs.util.unpackInt2
+import kotlin.jvm.JvmInline
 import kotlin.math.max
 import kotlin.math.min
 
