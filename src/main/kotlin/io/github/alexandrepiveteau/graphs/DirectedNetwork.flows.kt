@@ -3,12 +3,14 @@ package io.github.alexandrepiveteau.graphs
 import kotlin.math.min
 
 /** Returns the residual network of this [DirectedNetwork], given the current [flow]. */
-private fun DirectedNetwork.residual(flow: DirectedNetwork): Network {
+private fun DirectedNetwork.residual(flow: DirectedNetwork): DirectedNetwork {
   return buildDirectedNetwork {
     forEachVertex { addVertex() }
     forEachArc { arc ->
-      val capacity = weight(arc) - flow.weight(arc)
-      if (capacity > 0) addArc(arc, capacity)
+      val forwardCapacity = weight(arc) - flow.weight(arc)
+      if (forwardCapacity > 0) addArc(arc, forwardCapacity)
+      val backwardCapacity = flow.weight(arc)
+      if (backwardCapacity > 0) addArc(arc.reversed(), backwardCapacity)
     }
   }
 }
@@ -23,7 +25,10 @@ private inline fun VertexArray.forEachArc(action: (Arc) -> Unit) {
 /** Returns the remaining capacity of the [flow] in the [path]. */
 private fun DirectedNetwork.remainingCapacity(flow: DirectedNetwork, path: VertexArray): Int {
   var capacity = Int.MAX_VALUE
-  path.forEachArc { arc -> capacity = min(capacity, this.weight(arc) - flow.weight(arc)) }
+  path.forEachArc { arc ->
+    val local = if (arc in this) weight(arc) - flow.weight(arc) else flow.weight(arc.reversed())
+    capacity = min(capacity, local)
+  }
   return capacity
 }
 
@@ -32,7 +37,9 @@ private fun DirectedNetwork.augment(path: VertexArray, flow: Int): DirectedNetwo
   return buildDirectedNetwork {
     forEachVertex { addVertex() }
     forEachArc { (u, v) -> addArc(u arcTo v, weight(u arcTo v)) }
-    path.forEachArc { arc -> addArc(arc, flow) }
+    path.forEachArc { arc ->
+      if (arc in this@augment) addArc(arc, flow) else addArc(arc.reversed(), -flow)
+    }
   }
 }
 
@@ -53,7 +60,8 @@ public fun DirectedNetwork.maxFlowEdmondsKarp(from: Vertex, to: Vertex): Directe
     forEachArc { (u, v) -> addArc(u arcTo v, 0) }
   }
   while (true) {
-    val path = residual(maxFlow).shortestPathBreadthFirst(from, to) ?: break
+    val residual = residual(maxFlow)
+    val path = residual.shortestPathBreadthFirst(from, to) ?: break
     val flow = remainingCapacity(maxFlow, path)
     maxFlow = maxFlow.augment(path, flow)
   }
