@@ -20,6 +20,9 @@ public inline fun VertexArray(
 /** Returns a [VertexArray] for the corresponding [IntArray]. */
 public fun IntArray.asVertexArray(): VertexArray = VertexArray(this)
 
+/** Returns an [IntArray] for the corresponding [VertexArray]. */
+public fun VertexArray.asIntArray(): IntArray = array
+
 /**
  * An array of [Vertex]. When targeting the JVM, instances of this class are represented as `int[]`.
  *
