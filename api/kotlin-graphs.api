@@ -176,6 +176,7 @@ public final class io/github/alexandrepiveteau/graphs/DirectedGraphBuilderKt {
 }
 
 public final class io/github/alexandrepiveteau/graphs/DirectedGraph_transformationsKt {
+	public static final fun toUndirectedGraph (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
 	public static final fun transposed (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
 }
 
@@ -395,6 +396,7 @@ public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_completeKt
 
 public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_transformationsKt {
 	public static final fun scc (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
+	public static final fun toDirectedGraph (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
 }
 
 public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_traversalsKt {
