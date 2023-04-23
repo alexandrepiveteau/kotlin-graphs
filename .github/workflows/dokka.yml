@@ -1,0 +1,28 @@
+name: dokka
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎁 Checkout repo
+        uses: actions/checkout@v3
+      - name: 🐘 Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: 📚 Generate documentation
+        run: ./gradlew dokkaHtml
+      - name: 📦 Publish documentation
+        run: |
+          cd build/dokka/html
+          git init .
+          git add .
+          git config --global user.name "Alexandre Piveteau"
+          git config --global user.email "alexandre@piveteau.email"
+          git commit -m "Publish documentation"
+          git checkout -b docs
+          git remote add origin git@github.com:alexandrepiveteau/kotlin-graphs.git 
+          git push -u origin docs --force
