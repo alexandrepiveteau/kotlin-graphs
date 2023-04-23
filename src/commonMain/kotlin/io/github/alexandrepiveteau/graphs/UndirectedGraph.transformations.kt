@@ -22,7 +22,7 @@ public fun UndirectedGraph.toDirectedGraph(): DirectedGraph = buildDirectedGraph
  *   of edges in this graph.
  * - **Space complexity**: `O(|N|)`, where |N| is the number of vertices in this graph.
  */
-public fun UndirectedGraph.scc(): Pair<UndirectedGraph, VertexMap> {
+public fun UndirectedGraph.connectedComponents(): Pair<UndirectedGraph, VertexMap> {
   val map = VertexMap(size)
   val visited = BooleanArray(size)
   // TODO : We could use a specific implementation of Graph which has no edges between vertices.

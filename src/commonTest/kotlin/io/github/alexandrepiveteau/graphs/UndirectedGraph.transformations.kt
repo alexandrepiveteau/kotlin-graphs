@@ -9,7 +9,7 @@ class SCCTests {
   @Test
   fun emptyGraphHasNoScc() {
     val graph = UndirectedGraph.empty()
-    val (scc, map) = graph.scc()
+    val (scc, map) = graph.connectedComponents()
     assertEquals(0, scc.size)
     assertEquals(0, map.size)
   }
@@ -18,7 +18,7 @@ class SCCTests {
   fun completeGraphHasOneScc() {
     for (count in 1..Repeats) {
       val graph = UndirectedGraph.complete(count)
-      val (scc, map) = graph.scc()
+      val (scc, map) = graph.connectedComponents()
       assertEquals(1, scc.size)
       repeat(count) { assertEquals(scc[0], map[graph[it]]) }
     }
@@ -28,7 +28,7 @@ class SCCTests {
   fun disjointGraphWithNVerticesHasNScc() {
     for (count in 1..Repeats) {
       val graph = buildUndirectedGraph { repeat(count) { addVertex() } }
-      val (scc, map) = graph.scc()
+      val (scc, map) = graph.connectedComponents()
       assertEquals(count, scc.size)
       repeat(count) { assertEquals(scc[it], map[graph[it]]) }
     }
