@@ -1,5 +1,6 @@
 package io.github.alexandrepiveteau.graphs
 
+import io.github.alexandrepiveteau.graphs.util.Repeats
 import io.github.alexandrepiveteau.graphs.util.assertEquals as assertEqualsGraph
 import io.github.alexandrepiveteau.graphs.util.assertFlowValid
 import kotlin.test.Test
@@ -108,5 +109,29 @@ class DirectedNetworkFlowsTests {
     val flow = capacities.maxFlowEdmondsKarp(a, g)
 
     assertFlowValid(flow, capacities, a, g, total = 5)
+  }
+
+  @Test
+  fun `complete graphs`() {
+    for (count in 2 until Repeats) {
+      val capacities = buildDirectedNetwork {
+        val vertices = VertexArray(count) { addVertex() }
+        for (i in 0 until count) {
+          for (j in 0 until count) {
+            if (i != j) {
+              addArc(vertices[i] arcTo vertices[j], 1)
+            }
+          }
+        }
+      }
+
+      val a = capacities[0]
+      val b = capacities[1]
+      val flow = capacities.maxFlowEdmondsKarp(a, b)
+
+      // The maximum flow is the number of vertices minus one, because we can reach the second
+      // vertex directly, or by going through any other vertex and then to the second vertex.
+      assertFlowValid(flow, capacities, a, b, total = count - 1)
+    }
   }
 }
