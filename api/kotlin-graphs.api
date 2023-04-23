@@ -176,6 +176,7 @@ public final class io/github/alexandrepiveteau/graphs/DirectedGraphBuilderKt {
 }
 
 public final class io/github/alexandrepiveteau/graphs/DirectedGraph_transformationsKt {
+	public static final fun stronglyConnectedComponentsKosaraju (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lkotlin/Pair;
 	public static final fun toUndirectedGraph (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
 	public static final fun transposed (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
 }
@@ -282,7 +283,12 @@ public final class io/github/alexandrepiveteau/graphs/Graph_traversalsKt {
 	public static final fun forEachNeighbor-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
 	public static final fun forEachVertex (Lio/github/alexandrepiveteau/graphs/Graph;Lkotlin/jvm/functions/Function1;)V
 	public static final fun forEachVertexBreadthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
-	public static final fun forEachVertexDepthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
+	public static final fun forEachVertexDepthFirst-YQfbarM (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun forEachVertexDepthFirst-YQfbarM$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun forEachVertexDepthFirstHelper-wZYKThQ (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun forEachVertexDepthFirstHelper-wZYKThQ$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun forEachVertexDepthFirstPostOrder-YQfbarM (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun forEachVertexDepthFirstPostOrder-YQfbarM$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 	public static final fun shortestPathBreadthFirst-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Graph;II)[I
 }
 
@@ -481,6 +487,7 @@ public final class io/github/alexandrepiveteau/graphs/VertexArray {
 public final class io/github/alexandrepiveteau/graphs/VertexArrayKt {
 	public static final fun VertexArray (I)[I
 	public static final fun VertexArray (ILkotlin/jvm/functions/Function1;)[I
+	public static final fun asIntArray-iaUUKik ([I)[I
 	public static final fun asVertexArray ([I)[I
 	public static final fun binarySearch-nPz1t30 ([IIII)I
 	public static synthetic fun binarySearch-nPz1t30$default ([IIIIILjava/lang/Object;)I

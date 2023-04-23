@@ -34,6 +34,8 @@ public value class Arc private constructor(private val encoded: Long) {
 
   /** Returns an [Arc] that goes from [to] to [from]. */
   public fun reversed(): Arc = Arc(to, from)
+
+  override fun toString(): String = "Arc(from=$from, to=$to)"
 }
 
 /** Returns an [Arc] that goes from this [Vertex] to the [other] [Vertex]. */
