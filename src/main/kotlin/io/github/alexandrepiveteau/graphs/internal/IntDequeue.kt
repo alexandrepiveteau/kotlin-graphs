@@ -54,4 +54,13 @@ internal class IntDequeue {
     size--
     return last
   }
+
+  fun toIntArray(): IntArray {
+    val array = IntArray(size)
+    // TODO : Chunk copy using copyInto.
+    for (i in 0 until size) {
+      array[i] = buffer[(from + i).mod(buffer.size)]
+    }
+    return array
+  }
 }

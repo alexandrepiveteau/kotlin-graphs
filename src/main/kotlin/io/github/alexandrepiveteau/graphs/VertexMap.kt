@@ -1,6 +1,25 @@
 package io.github.alexandrepiveteau.graphs
 
 /**
+ * Creates a new [VertexMap] with the given [size], with all elements initialized to the result of
+ * calling the specified [init] function on the index of each element.
+ *
+ * @param size the number of elements in the map.
+ * @param init the function used to initialize the value of each element.
+ * @return a new [VertexMap] with the specified [size].
+ */
+public inline fun VertexMap(
+    size: Int,
+    init: (index: Vertex) -> Vertex,
+): VertexMap {
+  return VertexMap(size).apply {
+    for (index in 0 until size) {
+      this[Vertex(index)] = init(Vertex(index))
+    }
+  }
+}
+
+/**
  * A map of [Vertex] to [Vertex]. When targeting the JVM, instances of this class are represented as
  * `int[]`. The key vertices must be consecutive, starting from 0, and the [size] of the map will
  * remain fixed.
@@ -45,4 +64,19 @@ public value class VertexMap private constructor(private val array: VertexArray)
    * the original map.
    */
   public fun values(): VertexArray = array.copyOf()
+}
+
+/**
+ * Iterates over the [Vertex]s of this [VertexMap], and calls the specified [action] for each
+ * vertex.
+ *
+ * @param action the action to be performed for each vertex.
+ * @return the original [VertexMap].
+ * @receiver the [VertexMap] to iterate over.
+ */
+public inline fun VertexMap.forEach(action: (Vertex, Vertex) -> Unit) {
+  for (index in 0 until size) {
+    val v = Vertex(index)
+    action(v, this[v])
+  }
 }

@@ -1,7 +1,7 @@
 package io.github.alexandrepiveteau.graphs
 
 /**
- * A [Graph] is a ser of [Vertex], which may be linked together by some undirected [Edge]s or some
+ * A [Graph] is a set of [Vertex], which may be linked together by some undirected [Edge]s or some
  * directed [Arc]s. Graphs can be iterated over, and their [size] can be queried.
  *
  * Vertices and links are indexed, and [Graph] provides a number of methods to access vertices and
