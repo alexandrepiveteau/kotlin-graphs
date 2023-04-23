@@ -400,7 +400,7 @@ public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_completeKt
 }
 
 public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_transformationsKt {
-	public static final fun scc (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
+	public static final fun connectedComponents (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
 	public static final fun toDirectedGraph (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
 }
 
