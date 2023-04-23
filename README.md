@@ -15,7 +15,3 @@ perform computations on them on Kotlin multiplatform.
 ## Usage
 
 **Coming soon**
-
-## License
-
-**Coming soon**
