@@ -3,6 +3,7 @@ package io.github.alexandrepiveteau.graphs
 import io.github.alexandrepiveteau.graphs.util.Repeats
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNotEquals
 
 class DirectedGraphSCCTests {
 
@@ -85,5 +86,39 @@ class DirectedGraphSCCTests {
           map.values().asIntArray().asSequence().groupingBy { it }.eachCount(),
       )
     }
+  }
+
+  @Test
+  fun geeksForGeeksExample() {
+    // https://www.geeksforgeeks.org/strongly-connected-components/
+    val graph = buildDirectedGraph {
+      val (v0, v1, v2, v3, v4) = addVertices()
+      addArc(v0 arcTo v2)
+      addArc(v2 arcTo v1)
+      addArc(v1 arcTo v0)
+      addArc(v0 arcTo v3)
+      addArc(v3 arcTo v4)
+    }
+    val (scc, map) = graph.stronglyConnectedComponentsKosaraju()
+
+    assertEquals(3, scc.size)
+    assertEquals(5, map.size)
+
+    // First SCC (v0, v1, v2).
+    assertEquals(scc[map[graph[0]]], scc[map[graph[1]]])
+    assertEquals(scc[map[graph[1]]], scc[map[graph[2]]])
+    assertEquals(scc[map[graph[0]]], scc[map[graph[2]]])
+
+    // Second SCC (v3).
+    assertNotEquals(scc[map[graph[0]]], scc[map[graph[3]]])
+    assertNotEquals(scc[map[graph[1]]], scc[map[graph[3]]])
+    assertNotEquals(scc[map[graph[2]]], scc[map[graph[3]]])
+    assertNotEquals(scc[map[graph[4]]], scc[map[graph[3]]])
+
+    // Third SCC (v4).
+    assertNotEquals(scc[map[graph[0]]], scc[map[graph[4]]])
+    assertNotEquals(scc[map[graph[1]]], scc[map[graph[4]]])
+    assertNotEquals(scc[map[graph[2]]], scc[map[graph[4]]])
+    assertNotEquals(scc[map[graph[3]]], scc[map[graph[4]]])
   }
 }
