@@ -17,7 +17,7 @@ import io.github.alexandrepiveteau.graphs.internal.IntDequeue
  * @return an array of distances from the index of the source vertex to all the other vertices in
  *   the network.
  */
-public fun Network.spfa(source: Vertex): IntArray {
+public fun Network.shortestPathFasterAlgorithm(source: Vertex): IntArray {
   if (source !in this) throw NoSuchVertexException()
 
   val enqueued = BooleanArray(size)

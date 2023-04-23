@@ -9,13 +9,15 @@ class UndirectedNetworkTraversalTests {
 
   @Test
   fun `spfa on empty network throws exception`() {
-    assertFailsWith<NoSuchVertexException> { UndirectedNetwork.empty().spfa(Vertex(0)) }
+    assertFailsWith<NoSuchVertexException> {
+      UndirectedNetwork.empty().shortestPathFasterAlgorithm(Vertex(0))
+    }
   }
 
   @Test
   fun `spfa on singleton associates distance zero`() {
     val graph = buildUndirectedNetwork { addVertex() }
-    val spfa = graph.spfa(graph[0])
+    val spfa = graph.shortestPathFasterAlgorithm(graph[0])
     assertEquals(0, spfa[0])
   }
 
@@ -23,7 +25,7 @@ class UndirectedNetworkTraversalTests {
   fun `spfa on complete graph associates distance one except for source`() {
     for (count in 1 until Repeats) {
       val graph = UndirectedNetwork.complete(count, 1)
-      val spfa = graph.spfa(graph[0])
+      val spfa = graph.shortestPathFasterAlgorithm(graph[0])
       assertEquals(0, spfa[0])
       for (i in 1 until count) {
         assertEquals(1, spfa[i])
@@ -41,7 +43,7 @@ class UndirectedNetworkTraversalTests {
       addEdge(c edgeTo e, 1)
       addEdge(d edgeTo e, 1)
     }
-    val spfa = graph.spfa(graph[0])
+    val spfa = graph.shortestPathFasterAlgorithm(graph[0])
     assertEquals(0, spfa[0])
     assertEquals(1, spfa[1])
     assertEquals(2, spfa[2])

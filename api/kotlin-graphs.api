@@ -218,6 +218,10 @@ public final class io/github/alexandrepiveteau/graphs/DirectedNetworkBuilderKt {
 	public static final fun buildDirectedNetwork (Lkotlin/jvm/functions/Function1;)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
 }
 
+public final class io/github/alexandrepiveteau/graphs/DirectedNetwork_flowsKt {
+	public static final fun maxFlowEdmondsKarp-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+}
+
 public final class io/github/alexandrepiveteau/graphs/Edge {
 	public static final fun any-IrpSQec (J)I
 	public static final synthetic fun box-impl (J)Lio/github/alexandrepiveteau/graphs/Edge;
@@ -279,6 +283,7 @@ public final class io/github/alexandrepiveteau/graphs/Graph_traversalsKt {
 	public static final fun forEachVertex (Lio/github/alexandrepiveteau/graphs/Graph;Lkotlin/jvm/functions/Function1;)V
 	public static final fun forEachVertexBreadthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
 	public static final fun forEachVertexDepthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
+	public static final fun shortestPathBreadthFirst-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Graph;II)[I
 }
 
 public class io/github/alexandrepiveteau/graphs/MutableListDirectedGraphBuilder : io/github/alexandrepiveteau/graphs/MutableListGraphBuilder, io/github/alexandrepiveteau/graphs/DirectedGraphBuilder {
@@ -344,7 +349,7 @@ public final class io/github/alexandrepiveteau/graphs/NetworkBuilderKt {
 }
 
 public final class io/github/alexandrepiveteau/graphs/Network_traversalsKt {
-	public static final fun spfa-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)[I
+	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)[I
 }
 
 public final class io/github/alexandrepiveteau/graphs/NoSuchArcException : java/util/NoSuchElementException {
@@ -438,6 +443,7 @@ public final class io/github/alexandrepiveteau/graphs/UndirectedNetworkBuilderKt
 }
 
 public final class io/github/alexandrepiveteau/graphs/Vertex {
+	public static final field Companion Lio/github/alexandrepiveteau/graphs/Vertex$Companion;
 	public static final synthetic fun box-impl (I)Lio/github/alexandrepiveteau/graphs/Vertex;
 	public static fun constructor-impl (I)I
 	public fun equals (Ljava/lang/Object;)Z
@@ -449,6 +455,10 @@ public final class io/github/alexandrepiveteau/graphs/Vertex {
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (I)Ljava/lang/String;
 	public final synthetic fun unbox-impl ()I
+}
+
+public final class io/github/alexandrepiveteau/graphs/Vertex$Companion {
+	public final fun getInvalid-IrpSQec ()I
 }
 
 public final class io/github/alexandrepiveteau/graphs/VertexArray {
@@ -507,6 +517,11 @@ public final class io/github/alexandrepiveteau/graphs/VertexMap {
 	public static final fun values-RsZHfP0 ([I)[I
 }
 
+public final class io/github/alexandrepiveteau/graphs/VertexMapKt {
+	public static final fun VertexMap (ILkotlin/jvm/functions/Function1;)[I
+	public static final fun forEach-TXWKjJg ([ILkotlin/jvm/functions/Function2;)V
+}
+
 public abstract interface class io/github/alexandrepiveteau/graphs/Vertices {
 	public abstract fun component1-IrpSQec ()I
 	public abstract fun component2-IrpSQec ()I
@@ -541,6 +556,7 @@ public final class io/github/alexandrepiveteau/graphs/internal/IntDequeue {
 	public final fun peekLast ()I
 	public final fun removeFirst ()I
 	public final fun removeLast ()I
+	public final fun toIntArray ()[I
 }
 
 public final class io/github/alexandrepiveteau/graphs/internal/IntVector {

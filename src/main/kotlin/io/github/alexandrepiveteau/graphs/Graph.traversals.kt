@@ -92,3 +92,67 @@ public inline fun Graph.forEachVertexBreadthFirst(from: Vertex, action: (Vertex)
     }
   }
 }
+
+/**
+ * Returns the [VertexArray] containing all the vertices traversed to go from the [from] vertex to
+ * the [to] vertex, using the given [parents] map.
+ *
+ * @param parents the map containing the parents of each vertex.
+ * @param from the starting vertex.
+ * @param to the ending vertex.
+ * @return the [VertexArray] containing all the vertices traversed to go from the [from] vertex to
+ *   the [to] vertex.
+ * @receiver the [Graph] on which the traversal was performed.
+ */
+private fun Graph.computePath(parents: VertexMap, from: Vertex, to: Vertex): VertexArray {
+  val path = IntDequeue()
+  var current = to
+  while (current != from) {
+    path.addFirst(get(current))
+    current = parents[current]
+  }
+  path.addFirst(get(from))
+  return VertexArray(path.toIntArray())
+}
+
+// TODO : Use this to compute the graph of the shortest path between two vertices.
+private fun Graph.computeGraph(parents: VertexMap): DirectedGraph {
+  return buildDirectedGraph {
+    forEachVertex { addVertex() }
+    parents.forEach { vertex, parent ->
+      if (parent != Vertex.Invalid) {
+        addArc(parent arcTo vertex)
+      }
+    }
+  }
+}
+
+/**
+ * Returns a [VertexArray] with the shortest path going from the [from] vertex to the [to] vertex,
+ * using breadth-first search.
+ *
+ * ## Asymptotic complexity
+ * - **Time complexity**: O(|N| + |E|), where |N| is the number of vertices in this graph and |E| is
+ *   the number of edges in this graph.
+ * - **Space complexity**: O(|N|), where |N| is the number of vertices in this graph.
+ *
+ * @param from the starting vertex.
+ * @param to the ending vertex.
+ * @return the [VertexArray] with the shortest path going from the [from] vertex to the [to] vertex,
+ *   or `null` if there is no path between the two vertices.
+ */
+public fun Graph.shortestPathBreadthFirst(from: Vertex, to: Vertex): VertexArray? {
+  if (from !in this) throw NoSuchVertexException()
+  if (to !in this) throw NoSuchVertexException()
+
+  val parents = VertexMap(size) { Vertex.Invalid }
+
+  forEachVertexBreadthFirst(from) { u ->
+    forEachNeighbor(u) { v ->
+      if (parents[v] == Vertex.Invalid) parents[v] = u
+      if (v == to) return computePath(parents, from, to)
+    }
+  }
+
+  return null
+}
