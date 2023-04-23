@@ -9,7 +9,7 @@ import kotlin.test.assertFalse
 class UndirectedEmptyGraphTests {
 
   @Test
-  fun `empty graph has no vertices nor edges`() {
+  fun emptyGraphHasNoVerticesNorEdges() {
     val graph = UndirectedGraph.empty()
 
     assertEquals(0, graph.size)
@@ -25,12 +25,12 @@ class UndirectedEmptyGraphTests {
 class UndirectedCompleteGraphTests {
 
   @Test
-  fun `complete graph has non-zero vertex count`() {
+  fun completeGraphHasNonZeroVertexCount() {
     assertFailsWith<IllegalArgumentException> { UndirectedGraph.complete(-1) }
   }
 
   @Test
-  fun `complete graph has all edges`() {
+  fun completeGraphHasAllEdges() {
     for (count in 0..Repeats) {
       val graph = UndirectedGraph.complete(count)
       for (i in 0 until count) {
@@ -46,7 +46,7 @@ class UndirectedCompleteGraphTests {
   }
 
   @Test
-  fun `complete graph has no self-edges`() {
+  fun completeGraphHasNoSelfEdges() {
     for (count in 0..Repeats) {
       val graph = UndirectedGraph.complete(count)
       for (i in 0 until count) {

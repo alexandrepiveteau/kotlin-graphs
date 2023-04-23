@@ -8,7 +8,7 @@ import kotlin.test.assertFalse
 class UndirectedGraphDFSTests {
 
   @Test
-  fun `forEachVertex iterates exactly once over each vertex`() {
+  fun forEachVertexIteratesExactlyOnceOverEachVertex() {
     for (count in 0..Repeats) {
       val graph = UndirectedGraph.complete(count)
       val visited = BooleanArray(count)
@@ -21,7 +21,7 @@ class UndirectedGraphDFSTests {
   }
 
   @Test
-  fun `bfs on singleton graph visits one vertex`() {
+  fun bfsOnSingletonGraphVisitsOneVertex() {
     val graph = UndirectedGraph.complete(1)
     var visited = 0
     graph.forEachVertexBreadthFirst(graph[0]) { visited++ }
@@ -29,7 +29,7 @@ class UndirectedGraphDFSTests {
   }
 
   @Test
-  fun `bfs on line graph visits all vertices`() {
+  fun bfsOnLineGraphVisitsAllVertices() {
     for (count in 1..Repeats) {
       val graph = buildUndirectedGraph {
         var last = addVertex()
@@ -46,7 +46,7 @@ class UndirectedGraphDFSTests {
   }
 
   @Test
-  fun `dfs on singleton graph visits one vertex`() {
+  fun dfsOnSingletonGraphVisitsOneVertex() {
     val graph = UndirectedGraph.complete(1)
     var visited = 0
     graph.forEachVertexDepthFirst(graph[0]) { visited++ }
@@ -54,7 +54,7 @@ class UndirectedGraphDFSTests {
   }
 
   @Test
-  fun `dfs on line graph visits all vertices`() {
+  fun dfsOnLineGraphVisitsAllVertices() {
     for (count in 1..Repeats) {
       val graph = buildUndirectedGraph {
         var last = addVertex()

@@ -8,7 +8,7 @@ import kotlin.test.assertTrue
 class ArcTests {
 
   @Test
-  fun `opposite arcs are not equal`() {
+  fun oppositeArcsAreNotEqual() {
     val a = Vertex(0)
     val b = Vertex(1)
     val e = a arcTo b
@@ -17,7 +17,7 @@ class ArcTests {
   }
 
   @Test
-  fun `arcs are properly reversed`() {
+  fun arcsAreProperlyReversed() {
     val a = Vertex(0)
     val b = Vertex(1)
     val e = a arcTo b
@@ -27,7 +27,7 @@ class ArcTests {
   }
 
   @Test
-  fun `arc contains both extremities`() {
+  fun arcContainsBothExtremities() {
     val a = Vertex(0)
     val b = Vertex(1)
     val e = a arcTo b
@@ -36,7 +36,7 @@ class ArcTests {
   }
 
   @Test
-  fun `arc destructuring returns extremities in order`() {
+  fun arcDestructuringReturnsExtremitiesInOrder() {
     val a = Vertex(0)
     val b = Vertex(1)
     val e = a arcTo b

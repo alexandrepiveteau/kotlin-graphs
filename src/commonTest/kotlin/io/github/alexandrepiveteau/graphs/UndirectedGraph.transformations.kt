@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 class SCCTests {
 
   @Test
-  fun `empty graph has no scc`() {
+  fun emptyGraphHasNoScc() {
     val graph = UndirectedGraph.empty()
     val (scc, map) = graph.scc()
     assertEquals(0, scc.size)
@@ -15,7 +15,7 @@ class SCCTests {
   }
 
   @Test
-  fun `complete graph has one scc`() {
+  fun completeGraphHasOneScc() {
     for (count in 1..Repeats) {
       val graph = UndirectedGraph.complete(count)
       val (scc, map) = graph.scc()
@@ -25,7 +25,7 @@ class SCCTests {
   }
 
   @Test
-  fun `disjoint graph with n vertices has n scc`() {
+  fun disjointGraphWithNVerticesHasNScc() {
     for (count in 1..Repeats) {
       val graph = buildUndirectedGraph { repeat(count) { addVertex() } }
       val (scc, map) = graph.scc()

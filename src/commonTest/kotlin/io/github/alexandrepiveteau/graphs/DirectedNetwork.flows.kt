@@ -8,7 +8,7 @@ import kotlin.test.Test
 class DirectedNetworkFlowsTests {
 
   @Test
-  fun `no edges has empty flow`() {
+  fun noEdgesHasEmptyFlow() {
     val capacities = buildDirectedNetwork {
       addVertex()
       addVertex()
@@ -22,7 +22,7 @@ class DirectedNetworkFlowsTests {
   }
 
   @Test
-  fun `single arc has non-empty flow`() {
+  fun singleArcHasNonEmptyFlow() {
     val capacities = buildDirectedNetwork {
       val (a, b) = addVertices()
       addArc(a arcTo b, 1)
@@ -41,7 +41,7 @@ class DirectedNetworkFlowsTests {
   }
 
   @Test
-  fun `two arcs has minimum of capacities`() {
+  fun twoArcsHasMinimumOfCapacities() {
     val capacities = buildDirectedNetwork {
       val (a, b, c) = addVertices()
       addArc(a arcTo b, 1)
@@ -62,7 +62,7 @@ class DirectedNetworkFlowsTests {
   }
 
   @Test
-  fun `three arcs has sum of capacities`() {
+  fun threeArcsHasSumOfCapacities() {
     val capacities = buildDirectedNetwork {
       val (a, b, c, d) = addVertices()
       addArc(a arcTo b, 1)
@@ -87,7 +87,7 @@ class DirectedNetworkFlowsTests {
   }
 
   @Test
-  fun `wikipedia example has right total flow`() {
+  fun wikipediaExampleHasCorrectTotalFlow() {
     // Source: https://en.wikipedia.org/wiki/Edmonds–Karp_algorithm
     val capacities = buildDirectedNetwork {
       val (a, b, c, d, e, f, g) = addVertices()
@@ -112,7 +112,7 @@ class DirectedNetworkFlowsTests {
   }
 
   @Test
-  fun `complete graphs`() {
+  fun completeGraphsHaveCorrectTotalFlow() {
     for (count in 2 until Repeats) {
       val capacities = buildDirectedNetwork {
         val vertices = VertexArray(count) { addVertex() }

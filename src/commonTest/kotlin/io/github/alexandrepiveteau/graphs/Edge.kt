@@ -8,7 +8,7 @@ import kotlin.test.assertTrue
 class EdgeTests {
 
   @Test
-  fun `opposite edges are equal`() {
+  fun oppositeEdgesAreEqual() {
     val a = Vertex(0)
     val b = Vertex(1)
     val e = a edgeTo b
@@ -17,7 +17,7 @@ class EdgeTests {
   }
 
   @Test
-  fun `edge contains both extremities`() {
+  fun edgeContainsBothExtremities() {
     val a = Vertex(0)
     val b = Vertex(1)
     val e = a edgeTo b
@@ -26,7 +26,7 @@ class EdgeTests {
   }
 
   @Test
-  fun `other returns other edge extremity`() {
+  fun otherReturnsOtherEdgeExtremity() {
     val a = Vertex(0)
     val b = Vertex(1)
     val e = a edgeTo b
@@ -36,7 +36,7 @@ class EdgeTests {
   }
 
   @Test
-  fun `any returns an extremity`() {
+  fun anyReturnsAnExtremity() {
     val a = Vertex(1000)
     val b = Vertex(1001)
 
@@ -45,7 +45,7 @@ class EdgeTests {
   }
 
   @Test
-  fun `other with an unknown vertex throws an IllegalArgumentException`() {
+  fun otherWithAnUnknownVertexThrowsAnIllegalArgumentException() {
     val a = Vertex(0)
     val b = Vertex(1)
     val c = Vertex(2)

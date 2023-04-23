@@ -1,5 +1,7 @@
 package io.github.alexandrepiveteau.graphs
 
+import kotlin.jvm.JvmInline
+
 /** Creates a new array of the specified [size], with all elements initialized to zero. */
 public fun VertexArray(size: Int): VertexArray = VertexArray(IntArray(size))
 
@@ -152,4 +154,26 @@ public fun VertexArray.binarySearch(
     element: Vertex,
     fromIndex: Int = 0,
     toIndex: Int = size,
-): Int = array.binarySearch(element.index, fromIndex, toIndex)
+): Int {
+  if (fromIndex < 0) throw IndexOutOfBoundsException()
+  if (toIndex > size) throw IndexOutOfBoundsException()
+  if (fromIndex > toIndex) throw IllegalArgumentException()
+
+  var low = fromIndex
+  var high = toIndex - 1
+
+  while (low <= high) {
+    val mid = (low + high).ushr(1) // safe from overflows
+    val midVal = get(mid)
+    val cmp = midVal.index.compareTo(element.index)
+
+    if (cmp < 0) {
+      low = mid + 1
+    } else if (cmp > 0) {
+      high = mid - 1
+    } else {
+      return mid
+    } // key found
+  }
+  return -(low + 1) // key not found
+}
