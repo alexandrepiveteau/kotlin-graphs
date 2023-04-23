@@ -18,11 +18,10 @@ jobs:
       - name: 📦 Publish documentation
         run: |
           cd build/dokka/html
-          git init .
+          git init . && git branch -m dokka
           git add .
           git config --global user.name "GitHub Actions"
           git config --global user.email "alexandrepiveteau@users.noreply.github.com"
-          git commit -m "Publish documentation"
-          git checkout -b docs
-          git remote add origin git@github.com:alexandrepiveteau/kotlin-graphs.git 
-          git push -u origin docs --force
+          git commit -m "🚀 Publish documentation"
+          git remote add origin https://${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
+          git push -u origin dokka --force
