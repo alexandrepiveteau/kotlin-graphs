@@ -1,5 +1,6 @@
 package io.github.alexandrepiveteau.graphs
 
+import io.github.alexandrepiveteau.graphs.util.Repeats
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
