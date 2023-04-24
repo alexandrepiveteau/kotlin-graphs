@@ -5,6 +5,13 @@
 Model directed, undirected, weighted and unweighted graphs and perform
 computations on them in Kotlin multiplatform.
 
+> :warning: This library is still in heavy development, and you should expect
+> the following:
+>
+> + The API is not stable, and may change at any time.
+> + The algorithms are not well tested, and may contain correctness bugs.
+> + The algorithms are not optimized, and may have performance issues.
+
 ## Features
 
 + Written in uncomplicated Kotlin
@@ -30,6 +37,41 @@ dependencies {
 ```
 
 ## Usage
+
+### Shortest path using Shortest Path Faster Algorithm
+
+```mermaid
+graph LR
+    a ---|1| b
+    b ---|1| c
+    c ---|1| d
+    d ---|1| e
+    e ---|5| a
+```
+
+```kotlin
+val graph = buildUndirectedNetwork {
+  val (a, b, c, d, e) = addVertices()
+  addEdge(a edgeTo b, 1)
+  addEdge(b edgeTo c, 1)
+  addEdge(c edgeTo d, 1)
+  addEdge(d edgeTo e, 1)
+  addEdge(e edgeTo a, 5)
+}
+val expected = buildDirectedNetwork {
+  val (a, b, c, d, e) = addVertices()
+  addArc(a arcTo b, 1)
+  addArc(b arcTo c, 1)
+  addArc(c arcTo d, 1)
+  addArc(d arcTo e, 1)
+}
+
+val spfa = graph.shortestPathFasterAlgorithm(graph[0])
+
+// Checks that the graphs have the same structure and the same weights.
+assertEqualsGraph(expected, spfa)
+
+```
 
 ### Maximum flow using the Ford-Fulkerson / Edmonds-Karp algorithm
 
