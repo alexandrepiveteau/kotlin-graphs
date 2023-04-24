@@ -12,6 +12,15 @@ computations on them in Kotlin multiplatform.
 > + The algorithms are not well tested, and may contain correctness bugs.
 > + The algorithms are not optimized, and may have performance issues.
 
+## Features
+
++ Written in uncomplicated Kotlin
++ Supports various graph types with a type-safe API
+    - Directed and undirected
+    - Weighted and unweighted
++ Reasonably fast and avoids auto-boxing on JVM
++ Works on Kotlin/JVM, Kotlin/JS and Kotlin/Native
+
 > :unicorn: Contributions are welcome and appreciated! In particular, the
 > following contributions would be very useful:
 >
@@ -21,15 +30,6 @@ computations on them in Kotlin multiplatform.
 >
 > If you're interested in contributing, please take a look at the list of
 > [open issues](https://github.com/alexandrepiveteau/kotlin-graphs/issues)!
-
-## Features
-
-+ Written in uncomplicated Kotlin
-+ Supports various graph types with a type-safe API
-    - Directed and undirected
-    - Weighted and unweighted
-+ Reasonably fast and avoids auto-boxing on JVM
-+ Works on Kotlin/JVM, Kotlin/JS and Kotlin/Native
 
 ## Installation
 
