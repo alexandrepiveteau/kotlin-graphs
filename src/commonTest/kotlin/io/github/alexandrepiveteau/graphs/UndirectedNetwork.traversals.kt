@@ -1,8 +1,8 @@
 package io.github.alexandrepiveteau.graphs
 
 import io.github.alexandrepiveteau.graphs.util.Repeats
+import io.github.alexandrepiveteau.graphs.util.assertEquals as assertGraphEquals
 import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class UndirectedNetworkTraversalTests {
@@ -17,19 +17,21 @@ class UndirectedNetworkTraversalTests {
   @Test
   fun spfaOnSingletonAssociatesDistanceZero() {
     val graph = buildUndirectedNetwork { addVertex() }
+    val expected = buildDirectedNetwork { addVertex() }
     val spfa = graph.shortestPathFasterAlgorithm(graph[0])
-    assertEquals(0, spfa[0])
+    assertGraphEquals(expected, spfa)
   }
 
   @Test
   fun spfaOnCompleteGraphAssociatesDistanceOneExceptForSource() {
     for (count in 1 until Repeats) {
       val graph = UndirectedNetwork.complete(count, 1)
-      val spfa = graph.shortestPathFasterAlgorithm(graph[0])
-      assertEquals(0, spfa[0])
-      for (i in 1 until count) {
-        assertEquals(1, spfa[i])
+      val expected = buildDirectedNetwork {
+        val from = addVertex()
+        repeat(count - 1) { addArc(from arcTo addVertex(), 1) }
       }
+      val spfa = graph.shortestPathFasterAlgorithm(graph[0])
+      assertGraphEquals(expected, spfa)
     }
   }
 
@@ -39,15 +41,19 @@ class UndirectedNetworkTraversalTests {
       val (a, b, c, d, e) = addVertices()
       addEdge(a edgeTo b, 1)
       addEdge(b edgeTo c, 1)
-      addEdge(a edgeTo d, 4)
-      addEdge(c edgeTo e, 1)
+      addEdge(c edgeTo d, 1)
       addEdge(d edgeTo e, 1)
+      addEdge(e edgeTo a, 5)
     }
+    val expected = buildDirectedNetwork {
+      val (a, b, c, d, e) = addVertices()
+      addArc(a arcTo b, 1)
+      addArc(b arcTo c, 1)
+      addArc(c arcTo d, 1)
+      addArc(d arcTo e, 1)
+    }
+
     val spfa = graph.shortestPathFasterAlgorithm(graph[0])
-    assertEquals(0, spfa[0])
-    assertEquals(1, spfa[1])
-    assertEquals(2, spfa[2])
-    assertEquals(4, spfa[3])
-    assertEquals(3, spfa[4])
+    assertGraphEquals(expected, spfa)
   }
 }

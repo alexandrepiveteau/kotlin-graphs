@@ -355,7 +355,8 @@ public final class io/github/alexandrepiveteau/graphs/NetworkBuilderKt {
 }
 
 public final class io/github/alexandrepiveteau/graphs/Network_traversalsKt {
-	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)[I
+	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+	public static final fun shortestPathFasterAlgorithm-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Network;II)[I
 }
 
 public final class io/github/alexandrepiveteau/graphs/NoSuchArcException : java/util/NoSuchElementException {
