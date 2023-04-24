@@ -1,7 +1,7 @@
 package io.github.alexandrepiveteau.graphs
 
 import io.github.alexandrepiveteau.graphs.util.Repeats
-import io.github.alexandrepiveteau.graphs.util.assertEquals as assertGraphEquals
+import io.github.alexandrepiveteau.graphs.util.assertEquals as assertEqualsGraph
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
 
@@ -19,7 +19,7 @@ class UndirectedNetworkTraversalTests {
     val graph = buildUndirectedNetwork { addVertex() }
     val expected = buildDirectedNetwork { addVertex() }
     val spfa = graph.shortestPathFasterAlgorithm(graph[0])
-    assertGraphEquals(expected, spfa)
+    assertEqualsGraph(expected, spfa)
   }
 
   @Test
@@ -31,7 +31,7 @@ class UndirectedNetworkTraversalTests {
         repeat(count - 1) { addArc(from arcTo addVertex(), 1) }
       }
       val spfa = graph.shortestPathFasterAlgorithm(graph[0])
-      assertGraphEquals(expected, spfa)
+      assertEqualsGraph(expected, spfa)
     }
   }
 
@@ -54,6 +54,6 @@ class UndirectedNetworkTraversalTests {
     }
 
     val spfa = graph.shortestPathFasterAlgorithm(graph[0])
-    assertGraphEquals(expected, spfa)
+    assertEqualsGraph(expected, spfa)
   }
 }
