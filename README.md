@@ -12,6 +12,16 @@ computations on them in Kotlin multiplatform.
 > + The algorithms are not well tested, and may contain correctness bugs.
 > + The algorithms are not optimized, and may have performance issues.
 
+> :unicorn: Contributions are welcome and appreciated! In particular, the
+> following contributions would be very useful:
+>
+> + Adding some tests for the current algorithms.
+> + Benchmarking the implementation against comparable libraries.
+> + Improving the documentation.
+>
+> If you're interested in contributing, please take a look at the list of
+> [open issues](https://github.com/alexandrepiveteau/kotlin-graphs/issues)!
+
 ## Features
 
 + Written in uncomplicated Kotlin
