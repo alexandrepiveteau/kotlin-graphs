@@ -1,6 +1,6 @@
 # kotlin-graphs
 
-[![Tests](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/tests.yml/badge.svg)](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/tests.yml)
+[![Build](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/build.yml/badge.svg)](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/build.yml)
 
 Model directed, undirected, weighted and unweighted graphs and perform
 computations on them in Kotlin multiplatform.
