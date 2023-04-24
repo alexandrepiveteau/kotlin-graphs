@@ -14,9 +14,9 @@ import kotlin.test.assertEquals
 fun assertEquals(expected: Graph, actual: Graph) {
   assertEquals(expected.size, actual.size)
   for (i in 0 until expected.size) {
-    assertEquals(expected.neighborsSize(i), actual.neighborsSize(i))
+    assertEquals(expected.neighborsSize(i), actual.neighborsSize(i), "neighbors size different: $i")
     for (j in 0 until expected.neighborsSize(i)) {
-      assertEquals(expected.neighbor(i, j), actual.neighbor(i, j))
+      assertEquals(expected.neighbor(i, j), actual.neighbor(i, j), "neighbor different: $i, $j")
     }
   }
 }

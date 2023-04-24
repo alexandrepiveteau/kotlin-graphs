@@ -161,27 +161,18 @@ public inline fun Graph.forEachVertexBreadthFirst(from: Vertex, action: (Vertex)
  *   the [to] vertex.
  * @receiver the [Graph] on which the traversal was performed.
  */
-private fun Graph.computePath(parents: VertexMap, from: Vertex, to: Vertex): VertexArray {
+internal fun Graph.computePath(parents: VertexMap, from: Vertex, to: Vertex): VertexArray? {
+  if (from == Vertex.Invalid) throw IllegalArgumentException()
+  if (to == Vertex.Invalid) throw IllegalArgumentException()
   val path = IntDequeue()
   var current = to
   while (current != from) {
+    if (current == Vertex.Invalid) return null
     path.addFirst(get(current))
     current = parents[current]
   }
   path.addFirst(get(from))
   return VertexArray(path.toIntArray())
-}
-
-// TODO : Use this to compute the graph of the shortest path between two vertices.
-private fun Graph.computeGraph(parents: VertexMap): DirectedGraph {
-  return buildDirectedGraph {
-    forEachVertex { addVertex() }
-    parents.forEach { vertex, parent ->
-      if (parent != Vertex.Invalid) {
-        addArc(parent arcTo vertex)
-      }
-    }
-  }
 }
 
 /**
