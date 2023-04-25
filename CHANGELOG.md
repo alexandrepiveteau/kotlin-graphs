@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
++ Add a topological sort algorithm.
+
 ## [0.2.0] - 2023-04-25
 
 + Moved algorithms to the `io.github.alexandrepiveteau.graphs.algorithms`
