@@ -1,7 +1,7 @@
 # kotlin-graphs
 
 [![Build](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/build.yml/badge.svg)](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/build.yml)
-[![MavenCentral](https://maven-badges.herokuapp.com/maven-central/io.github.alexandrepiveteau/kotlin-graphs/badge.svg)](https://search.maven.org/search?q=g:io.github.alexandrepiveteau.kotlin-graphs)
+[![MavenCentral](https://img.shields.io/maven-central/v/io.github.alexandrepiveteau/kotlin-graphs)](https://search.maven.org/search?q=io.github.alexandrepiveteau.kotlin-graphs)
 [![Sonatype Nexus](https://img.shields.io/nexus/s/https/s01.oss.sonatype.org/io.github.alexandrepiveteau/kotlin-graphs.svg)](#installation)
 
 Model directed, undirected, weighted and unweighted graphs and perform
