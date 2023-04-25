@@ -2,6 +2,7 @@ package io.github.alexandrepiveteau.graphs
 
 import io.github.alexandrepiveteau.graphs.algorithms.forEachEdge
 import io.github.alexandrepiveteau.graphs.algorithms.forEachVertex
+import io.github.alexandrepiveteau.graphs.builder.buildDirectedGraph
 
 /** A [UndirectedGraph] is a [Graph] where [Vertex]s are linked using [Edge]s. */
 public interface UndirectedGraph : Graph {

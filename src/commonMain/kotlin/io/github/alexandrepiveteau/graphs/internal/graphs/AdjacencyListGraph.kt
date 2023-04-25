@@ -1,11 +1,12 @@
-package io.github.alexandrepiveteau.graphs
+package io.github.alexandrepiveteau.graphs.internal.graphs
+
+import io.github.alexandrepiveteau.graphs.*
 
 /**
  * An implementation of [Graph] which uses an adjacency list to store the links.
  *
  * @param neighbors the adjacency list of the graph.
  */
-@PublishedApi
 internal class AdjacencyListGraph(private val neighbors: Array<VertexArray>) : Graph {
 
   override val size: Int
@@ -35,7 +36,6 @@ internal class AdjacencyListGraph(private val neighbors: Array<VertexArray>) : G
 }
 
 /** An implementation of [DirectedGraph] which uses an adjacency list to store the links. */
-@PublishedApi
 internal class AdjacencyListDirectedGraph(
     private val neighbors: Array<VertexArray>,
 ) : DirectedGraph, Graph by AdjacencyListGraph(neighbors) {
@@ -48,7 +48,6 @@ internal class AdjacencyListDirectedGraph(
 }
 
 /** An implementation of [UndirectedGraph] which uses an adjacency list to store the links. */
-@PublishedApi
 internal class AdjacencyListUndirectedGraph(
     private val neighbors: Array<VertexArray>,
 ) : UndirectedGraph, Graph by AdjacencyListGraph(neighbors) {

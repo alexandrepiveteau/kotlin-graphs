@@ -1,4 +1,6 @@
-package io.github.alexandrepiveteau.graphs
+package io.github.alexandrepiveteau.graphs.internal.graphs
+
+import io.github.alexandrepiveteau.graphs.*
 
 /**
  * An implementation of [Network] which uses an adjacency list to store the links and weights.
@@ -6,7 +8,6 @@ package io.github.alexandrepiveteau.graphs
  * @param neighbors the adjacency list of the graph.
  * @param weights the weights of the graph.
  */
-@PublishedApi
 internal class AdjacencyListNetwork(
     private val neighbors: Array<VertexArray>,
     private val weights: Array<IntArray>,
@@ -29,7 +30,6 @@ internal class AdjacencyListNetwork(
 }
 
 /** An implementation of [DirectedNetwork] which uses an adjacency list to store the links. */
-@PublishedApi
 internal class AdjacencyListDirectedNetwork(
     private val neighbors: Array<VertexArray>,
     weights: Array<IntArray>,
@@ -43,7 +43,6 @@ internal class AdjacencyListDirectedNetwork(
 }
 
 /** An implementation of [UndirectedNetwork] which uses an adjacency list to store the links. */
-@PublishedApi
 internal class AdjacencyListUndirectedNetwork(
     private val neighbors: Array<VertexArray>,
     weights: Array<IntArray>,

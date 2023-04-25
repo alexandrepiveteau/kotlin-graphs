@@ -3,7 +3,7 @@ package io.github.alexandrepiveteau.graphs.algorithms
 import io.github.alexandrepiveteau.graphs.VertexArray
 import io.github.alexandrepiveteau.graphs.arcTo
 import io.github.alexandrepiveteau.graphs.asIntArray
-import io.github.alexandrepiveteau.graphs.buildDirectedGraph
+import io.github.alexandrepiveteau.graphs.builder.buildDirectedGraph
 import io.github.alexandrepiveteau.graphs.util.Repeats
 import kotlin.test.Test
 import kotlin.test.assertEquals

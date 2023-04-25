@@ -4,6 +4,7 @@
 package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.*
+import io.github.alexandrepiveteau.graphs.builder.buildDirectedNetwork
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 import kotlin.math.min

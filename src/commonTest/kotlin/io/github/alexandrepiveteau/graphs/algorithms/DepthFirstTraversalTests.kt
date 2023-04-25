@@ -1,7 +1,7 @@
 package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.UndirectedGraph
-import io.github.alexandrepiveteau.graphs.buildUndirectedGraph
+import io.github.alexandrepiveteau.graphs.builder.buildUndirectedGraph
 import io.github.alexandrepiveteau.graphs.complete
 import io.github.alexandrepiveteau.graphs.edgeTo
 import io.github.alexandrepiveteau.graphs.util.Repeats

@@ -1,6 +1,8 @@
 package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.*
+import io.github.alexandrepiveteau.graphs.builder.buildDirectedNetwork
+import io.github.alexandrepiveteau.graphs.builder.buildUndirectedNetwork
 import io.github.alexandrepiveteau.graphs.util.Repeats
 import io.github.alexandrepiveteau.graphs.util.assertEquals
 import kotlin.test.Test

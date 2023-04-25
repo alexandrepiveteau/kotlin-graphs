@@ -1,5 +1,6 @@
 package io.github.alexandrepiveteau.graphs
 
+import io.github.alexandrepiveteau.graphs.builder.buildUndirectedNetwork
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

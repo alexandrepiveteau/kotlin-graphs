@@ -5,7 +5,7 @@ package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.Graph
 import io.github.alexandrepiveteau.graphs.Vertex
-import io.github.alexandrepiveteau.graphs.internal.IntDequeue
+import io.github.alexandrepiveteau.graphs.internal.collections.IntDequeue
 import kotlin.contracts.contract
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName

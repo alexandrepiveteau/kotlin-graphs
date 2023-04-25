@@ -2,6 +2,8 @@ package io.github.alexandrepiveteau.graphs
 
 import io.github.alexandrepiveteau.graphs.algorithms.forEachArc
 import io.github.alexandrepiveteau.graphs.algorithms.forEachVertex
+import io.github.alexandrepiveteau.graphs.builder.buildDirectedGraph
+import io.github.alexandrepiveteau.graphs.builder.buildUndirectedGraph
 
 /** A [DirectedGraph] is a [Graph] where [Vertex]s are linked using [Arc]s. */
 public interface DirectedGraph : Graph {

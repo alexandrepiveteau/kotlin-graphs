@@ -1,4 +1,4 @@
-package io.github.alexandrepiveteau.graphs.internal
+package io.github.alexandrepiveteau.graphs.internal.collections
 
 /** A double-ended queue of integers. */
 // TODO : Document this.

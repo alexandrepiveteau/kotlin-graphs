@@ -1,27 +1,29 @@
-package io.github.alexandrepiveteau.graphs
+package io.github.alexandrepiveteau.graphs.builder
 
-import io.github.alexandrepiveteau.graphs.internal.IntVector
+import io.github.alexandrepiveteau.graphs.Network
+import io.github.alexandrepiveteau.graphs.Vertex
+import io.github.alexandrepiveteau.graphs.VertexArray
+import io.github.alexandrepiveteau.graphs.internal.collections.IntVector
 import io.github.alexandrepiveteau.graphs.util.packInts
 import io.github.alexandrepiveteau.graphs.util.unpackInt1
 import io.github.alexandrepiveteau.graphs.util.unpackInt2
 
 /** A [NetworkBuilder] is a [GraphBuilder] for [Network]s. */
-public interface NetworkBuilder : GraphBuilder
+public interface NetworkBuilder : GraphBuilder, NetworkBuilderScope {
+  override fun toGraph(): Network
+}
 
 // BUILDER HELPERS
 
 /**
  * An implementation of [NetworkBuilder] which uses a [MutableList] to store the neighbors of each
  * vertex.
- *
- * @param neighbors the list of neighbors of each vertex.
- * @param weights the list of weights of each vertex.
  */
-@PublishedApi
-internal open class MutableListNetworkBuilder(
-    private val neighbors: MutableList<IntVector>,
-    private val weights: MutableList<IntVector>,
-) : MutableListGraphBuilder(neighbors) {
+internal abstract class MutableListNetworkBuilder : MutableListGraphBuilder() {
+
+  /** The list of weights of each vertex. */
+  protected val weights: MutableList<IntVector> = mutableListOf()
+
   override fun addVertex(): Vertex = super.addVertex().also { weights += IntVector() }
 }
 
@@ -33,7 +35,6 @@ internal open class MutableListNetworkBuilder(
  * @param weights the list of weights of each vertex.
  * @return the pair of arrays of [VertexArray]s and [IntArray]s.
  */
-@PublishedApi
 internal fun compactToVertexAndWeightsArray(
     neighbors: MutableList<IntVector>,
     weights: MutableList<IntVector>,

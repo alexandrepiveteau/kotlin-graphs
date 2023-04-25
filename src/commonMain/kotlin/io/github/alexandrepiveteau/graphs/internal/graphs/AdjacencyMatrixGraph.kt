@@ -1,11 +1,12 @@
-package io.github.alexandrepiveteau.graphs
+package io.github.alexandrepiveteau.graphs.internal.graphs
+
+import io.github.alexandrepiveteau.graphs.*
 
 /**
  * An implementation of [Graph] which uses an adjacency matrix to store the edges.
  *
  * @param present the adjacency matrix of the graph.
  */
-@PublishedApi
 internal abstract class AdjacencyMatrixGraph(private val present: Array<BooleanArray>) : Graph {
 
   // TODO : Precompute the neighbors using AdjacencyListGraph ?
@@ -42,7 +43,6 @@ internal abstract class AdjacencyMatrixGraph(private val present: Array<BooleanA
 }
 
 /** An implementation of [DirectedGraph] which uses an adjacency matrix to store the edges. */
-@PublishedApi
 internal open class AdjacencyMatrixDirectedGraph(
     private val present: Array<BooleanArray>,
 ) : AdjacencyMatrixGraph(present), DirectedGraph {
@@ -54,7 +54,6 @@ internal open class AdjacencyMatrixDirectedGraph(
 }
 
 /** An implementation of [UndirectedGraph] which uses an adjacency matrix to store the edges. */
-@PublishedApi
 internal open class AdjacencyMatrixUndirectedGraph(
     private val present: Array<BooleanArray>,
 ) : AdjacencyMatrixGraph(present), UndirectedGraph {

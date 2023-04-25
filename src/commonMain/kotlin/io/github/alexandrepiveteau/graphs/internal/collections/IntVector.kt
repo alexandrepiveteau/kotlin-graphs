@@ -1,4 +1,4 @@
-package io.github.alexandrepiveteau.graphs.internal
+package io.github.alexandrepiveteau.graphs.internal.collections
 
 /** A vector of integers, which will always grow in size when new elements are inserted. */
 @PublishedApi

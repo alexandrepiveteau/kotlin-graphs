@@ -5,7 +5,7 @@ package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.UndirectedGraph
 import io.github.alexandrepiveteau.graphs.VertexMap
-import io.github.alexandrepiveteau.graphs.buildUndirectedGraph
+import io.github.alexandrepiveteau.graphs.builder.buildUndirectedGraph
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 

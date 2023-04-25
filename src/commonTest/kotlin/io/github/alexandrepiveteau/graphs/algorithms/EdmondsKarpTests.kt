@@ -2,7 +2,7 @@ package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.VertexArray
 import io.github.alexandrepiveteau.graphs.arcTo
-import io.github.alexandrepiveteau.graphs.buildDirectedNetwork
+import io.github.alexandrepiveteau.graphs.builder.buildDirectedNetwork
 import io.github.alexandrepiveteau.graphs.util.Repeats
 import io.github.alexandrepiveteau.graphs.util.assertEquals
 import io.github.alexandrepiveteau.graphs.util.assertFlowValid

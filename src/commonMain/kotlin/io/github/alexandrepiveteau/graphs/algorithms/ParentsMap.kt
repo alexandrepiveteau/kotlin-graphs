@@ -1,7 +1,8 @@
 package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.*
-import io.github.alexandrepiveteau.graphs.internal.IntDequeue
+import io.github.alexandrepiveteau.graphs.builder.buildDirectedNetwork
+import io.github.alexandrepiveteau.graphs.internal.collections.IntDequeue
 
 /**
  * Returns the [VertexArray] containing all the vertices traversed to go from the [from] vertex to
