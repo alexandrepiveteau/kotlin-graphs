@@ -1,16 +1,8 @@
-package io.github.alexandrepiveteau.graphs
+package io.github.alexandrepiveteau.graphs.algorithms
 
-/**
- * Transforms the [UndirectedGraph] into a [DirectedGraph], by adding an arc between each pair of
- * vertices that are connected by an edge in both directions.
- */
-public fun UndirectedGraph.toDirectedGraph(): DirectedGraph = buildDirectedGraph {
-  forEachVertex { addVertex() }
-  forEachEdge { (u, v) ->
-    addArc(u arcTo v)
-    addArc(v arcTo u)
-  }
-}
+import io.github.alexandrepiveteau.graphs.UndirectedGraph
+import io.github.alexandrepiveteau.graphs.VertexMap
+import io.github.alexandrepiveteau.graphs.buildUndirectedGraph
 
 /**
  * Computes the strongly connected components of this [UndirectedGraph], and returns a new

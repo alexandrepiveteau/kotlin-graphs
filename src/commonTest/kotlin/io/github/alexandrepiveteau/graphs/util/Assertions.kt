@@ -1,8 +1,12 @@
 package io.github.alexandrepiveteau.graphs.util
 
-import io.github.alexandrepiveteau.graphs.*
-import io.github.alexandrepiveteau.graphs.util.assertEquals as assertEqualsGraph
+import io.github.alexandrepiveteau.graphs.DirectedNetwork
+import io.github.alexandrepiveteau.graphs.Graph
+import io.github.alexandrepiveteau.graphs.Network
+import io.github.alexandrepiveteau.graphs.Vertex
+import io.github.alexandrepiveteau.graphs.algorithms.forEachArc
 import kotlin.test.assertEquals
+import io.github.alexandrepiveteau.graphs.util.assertEquals as assertEqualsGraph
 
 /**
  * Asserts that two graphs are strictly equal, i.e. that they have the same size, and that they

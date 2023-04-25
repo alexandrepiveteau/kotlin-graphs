@@ -1,13 +1,17 @@
-package io.github.alexandrepiveteau.graphs
+package io.github.alexandrepiveteau.graphs.algorithms
 
+import io.github.alexandrepiveteau.graphs.UndirectedGraph
+import io.github.alexandrepiveteau.graphs.buildUndirectedGraph
+import io.github.alexandrepiveteau.graphs.complete
+import io.github.alexandrepiveteau.graphs.empty
 import io.github.alexandrepiveteau.graphs.util.Repeats
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class SCCTests {
+class ConnectedComponentsTests {
 
   @Test
-  fun emptyGraphHasNoScc() {
+  fun emptyGraphHasNoCc() {
     val graph = UndirectedGraph.empty()
     val (scc, map) = graph.connectedComponents()
     assertEquals(0, scc.size)
@@ -15,7 +19,7 @@ class SCCTests {
   }
 
   @Test
-  fun completeGraphHasOneScc() {
+  fun completeGraphHasOneCc() {
     for (count in 1..Repeats) {
       val graph = UndirectedGraph.complete(count)
       val (scc, map) = graph.connectedComponents()
@@ -25,7 +29,7 @@ class SCCTests {
   }
 
   @Test
-  fun disjointGraphWithNVerticesHasNScc() {
+  fun disjointGraphWithNVerticesHasNCc() {
     for (count in 1..Repeats) {
       val graph = buildUndirectedGraph { repeat(count) { addVertex() } }
       val (scc, map) = graph.connectedComponents()

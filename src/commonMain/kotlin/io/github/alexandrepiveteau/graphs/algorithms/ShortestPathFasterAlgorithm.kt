@@ -1,24 +1,7 @@
-package io.github.alexandrepiveteau.graphs
+package io.github.alexandrepiveteau.graphs.algorithms
 
+import io.github.alexandrepiveteau.graphs.*
 import io.github.alexandrepiveteau.graphs.internal.IntDequeue
-
-/**
- * Returns the [DirectedNetwork] for the subgraph of this [Network] defined by the [parents] map.
- *
- * @param parents the [VertexMap] that maps each vertex to its parent in the shortest path tree.
- * @return the [DirectedNetwork] for the subgraph of this [Network] defined by the [parents] map.
- * @receiver the [Network] to transform.
- */
-private fun Network.computeNetwork(parents: VertexMap): DirectedNetwork {
-  return buildDirectedNetwork {
-    forEachVertex { addVertex() }
-    parents.forEach { vertex, parent ->
-      if (parent != Vertex.Invalid) {
-        addArc(parent arcTo vertex, weight(parent, vertex))
-      }
-    }
-  }
-}
 
 /**
  * Returns the list of parents for each vertex in the shortest path tree from the [from] vertex.

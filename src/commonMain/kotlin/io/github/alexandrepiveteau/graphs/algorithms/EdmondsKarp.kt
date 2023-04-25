@@ -1,5 +1,6 @@
-package io.github.alexandrepiveteau.graphs
+package io.github.alexandrepiveteau.graphs.algorithms
 
+import io.github.alexandrepiveteau.graphs.*
 import kotlin.math.min
 
 /** Returns the residual network of this [DirectedNetwork], given the current [flow]. */

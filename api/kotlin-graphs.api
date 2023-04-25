@@ -175,14 +175,9 @@ public final class io/github/alexandrepiveteau/graphs/DirectedGraphBuilderKt {
 	public static final fun buildDirectedGraph (Lkotlin/jvm/functions/Function1;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
 }
 
-public final class io/github/alexandrepiveteau/graphs/DirectedGraph_transformationsKt {
-	public static final fun stronglyConnectedComponentsKosaraju (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lkotlin/Pair;
+public final class io/github/alexandrepiveteau/graphs/DirectedGraphKt {
 	public static final fun toUndirectedGraph (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
 	public static final fun transposed (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
-}
-
-public final class io/github/alexandrepiveteau/graphs/DirectedGraph_traversalsKt {
-	public static final fun forEachArc (Lio/github/alexandrepiveteau/graphs/DirectedGraph;Lkotlin/jvm/functions/Function1;)V
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/DirectedNetwork : io/github/alexandrepiveteau/graphs/DirectedGraph, io/github/alexandrepiveteau/graphs/Network {
@@ -217,10 +212,6 @@ public final class io/github/alexandrepiveteau/graphs/DirectedNetworkBuilder$Def
 
 public final class io/github/alexandrepiveteau/graphs/DirectedNetworkBuilderKt {
 	public static final fun buildDirectedNetwork (Lkotlin/jvm/functions/Function1;)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
-}
-
-public final class io/github/alexandrepiveteau/graphs/DirectedNetwork_flowsKt {
-	public static final fun maxFlowEdmondsKarp-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
 }
 
 public final class io/github/alexandrepiveteau/graphs/Edge {
@@ -277,19 +268,6 @@ public final class io/github/alexandrepiveteau/graphs/GraphBuilder$DefaultImpls 
 
 public final class io/github/alexandrepiveteau/graphs/GraphBuilderKt {
 	public static final fun compactToVertexArray (Ljava/util/List;)[Lio/github/alexandrepiveteau/graphs/VertexArray;
-}
-
-public final class io/github/alexandrepiveteau/graphs/Graph_traversalsKt {
-	public static final fun forEachNeighbor-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
-	public static final fun forEachVertex (Lio/github/alexandrepiveteau/graphs/Graph;Lkotlin/jvm/functions/Function1;)V
-	public static final fun forEachVertexBreadthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
-	public static final fun forEachVertexDepthFirst-YQfbarM (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;)V
-	public static synthetic fun forEachVertexDepthFirst-YQfbarM$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-	public static final fun forEachVertexDepthFirstHelper-wZYKThQ (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-	public static synthetic fun forEachVertexDepthFirstHelper-wZYKThQ$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-	public static final fun forEachVertexDepthFirstPostOrder-YQfbarM (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;)V
-	public static synthetic fun forEachVertexDepthFirstPostOrder-YQfbarM$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-	public static final fun shortestPathBreadthFirst-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Graph;II)[I
 }
 
 public class io/github/alexandrepiveteau/graphs/MutableListDirectedGraphBuilder : io/github/alexandrepiveteau/graphs/MutableListGraphBuilder, io/github/alexandrepiveteau/graphs/DirectedGraphBuilder {
@@ -354,11 +332,6 @@ public final class io/github/alexandrepiveteau/graphs/NetworkBuilderKt {
 	public static final fun compactToVertexAndWeightsArray (Ljava/util/List;Ljava/util/List;)Lkotlin/Pair;
 }
 
-public final class io/github/alexandrepiveteau/graphs/Network_traversalsKt {
-	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
-	public static final fun shortestPathFasterAlgorithm-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Network;II)[I
-}
-
 public final class io/github/alexandrepiveteau/graphs/NoSuchArcException : java/util/NoSuchElementException {
 	public fun <init> ()V
 }
@@ -399,20 +372,15 @@ public final class io/github/alexandrepiveteau/graphs/UndirectedGraphBuilderKt {
 	public static final fun buildUndirectedGraph (Lkotlin/jvm/functions/Function1;)Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
 }
 
+public final class io/github/alexandrepiveteau/graphs/UndirectedGraphKt {
+	public static final fun toDirectedGraph (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
+}
+
 public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_completeKt {
 	public static final fun complete (Lio/github/alexandrepiveteau/graphs/UndirectedGraph$Companion;I)Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
 	public static final fun complete (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork$Companion;II)Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;
 	public static final fun empty (Lio/github/alexandrepiveteau/graphs/UndirectedGraph$Companion;)Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
 	public static final fun empty (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork$Companion;)Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;
-}
-
-public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_transformationsKt {
-	public static final fun connectedComponents (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
-	public static final fun toDirectedGraph (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lio/github/alexandrepiveteau/graphs/DirectedGraph;
-}
-
-public final class io/github/alexandrepiveteau/graphs/UndirectedGraph_traversalsKt {
-	public static final fun forEachEdge (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;Lkotlin/jvm/functions/Function1;)V
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/UndirectedNetwork : io/github/alexandrepiveteau/graphs/Network, io/github/alexandrepiveteau/graphs/UndirectedGraph {
@@ -553,6 +521,44 @@ public final class io/github/alexandrepiveteau/graphs/Vertices$DefaultImpls {
 	public static fun component7-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
 	public static fun component8-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
 	public static fun component9-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+}
+
+public final class io/github/alexandrepiveteau/graphs/algorithms/BasicTraversalKt {
+	public static final fun forEachArc (Lio/github/alexandrepiveteau/graphs/DirectedGraph;Lkotlin/jvm/functions/Function1;)V
+	public static final fun forEachEdge (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;Lkotlin/jvm/functions/Function1;)V
+	public static final fun forEachNeighbor-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
+	public static final fun forEachVertex (Lio/github/alexandrepiveteau/graphs/Graph;Lkotlin/jvm/functions/Function1;)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/algorithms/BreadthFirstTraversalKt {
+	public static final fun forEachVertexBreadthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
+	public static final fun shortestPathBreadthFirst-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Graph;II)[I
+}
+
+public final class io/github/alexandrepiveteau/graphs/algorithms/ConnectedComponentsKt {
+	public static final fun connectedComponents (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
+}
+
+public final class io/github/alexandrepiveteau/graphs/algorithms/DepthFirstTraversalKt {
+	public static final fun forEachVertexDepthFirst-YQfbarM (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun forEachVertexDepthFirst-YQfbarM$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun forEachVertexDepthFirstHelper-wZYKThQ (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun forEachVertexDepthFirstHelper-wZYKThQ$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun forEachVertexDepthFirstPostOrder-YQfbarM (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;)V
+	public static synthetic fun forEachVertexDepthFirstPostOrder-YQfbarM$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/algorithms/EdmondsKarpKt {
+	public static final fun maxFlowEdmondsKarp-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+}
+
+public final class io/github/alexandrepiveteau/graphs/algorithms/KosarajuKt {
+	public static final fun stronglyConnectedComponentsKosaraju (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lkotlin/Pair;
+}
+
+public final class io/github/alexandrepiveteau/graphs/algorithms/ShortestPathFasterAlgorithmKt {
+	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+	public static final fun shortestPathFasterAlgorithm-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Network;II)[I
 }
 
 public final class io/github/alexandrepiveteau/graphs/internal/IntDequeue {

@@ -1,11 +1,14 @@
-package io.github.alexandrepiveteau.graphs
+package io.github.alexandrepiveteau.graphs.algorithms
 
+import io.github.alexandrepiveteau.graphs.VertexArray
+import io.github.alexandrepiveteau.graphs.arcTo
+import io.github.alexandrepiveteau.graphs.buildDirectedNetwork
 import io.github.alexandrepiveteau.graphs.util.Repeats
-import io.github.alexandrepiveteau.graphs.util.assertEquals as assertEqualsGraph
+import io.github.alexandrepiveteau.graphs.util.assertEquals
 import io.github.alexandrepiveteau.graphs.util.assertFlowValid
 import kotlin.test.Test
 
-class DirectedNetworkFlowsTests {
+class EdmondsKarpTests {
 
   @Test
   fun noEdgesHasEmptyFlow() {
@@ -37,7 +40,7 @@ class DirectedNetworkFlowsTests {
     val flow = capacities.maxFlowEdmondsKarp(a, b)
 
     assertFlowValid(flow, capacities, a, b, total = 1)
-    assertEqualsGraph(expected, flow)
+    assertEquals(expected, flow)
   }
 
   @Test
@@ -58,7 +61,7 @@ class DirectedNetworkFlowsTests {
     val flow = capacities.maxFlowEdmondsKarp(a, c)
 
     assertFlowValid(flow, capacities, a, c, total = 1)
-    assertEqualsGraph(expected, flow)
+    assertEquals(expected, flow)
   }
 
   @Test
@@ -83,7 +86,7 @@ class DirectedNetworkFlowsTests {
     val flow = capacities.maxFlowEdmondsKarp(a, d)
 
     assertFlowValid(flow, capacities, a, d, total = 2)
-    assertEqualsGraph(expected, flow)
+    assertEquals(expected, flow)
   }
 
   @Test

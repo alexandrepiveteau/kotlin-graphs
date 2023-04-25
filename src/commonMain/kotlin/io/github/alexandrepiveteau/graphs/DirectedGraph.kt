@@ -1,5 +1,8 @@
 package io.github.alexandrepiveteau.graphs
 
+import io.github.alexandrepiveteau.graphs.algorithms.forEachArc
+import io.github.alexandrepiveteau.graphs.algorithms.forEachVertex
+
 /** A [DirectedGraph] is a [Graph] where [Vertex]s are linked using [Arc]s. */
 public interface DirectedGraph : Graph {
 
@@ -11,4 +14,19 @@ public interface DirectedGraph : Graph {
    * factory methods to create [DirectedGraph]s.
    */
   public companion object
+}
+
+/**
+ * Transforms the [DirectedGraph] into an [UndirectedGraph], by adding an edge between each pair of
+ * vertices that are connected by an arc.
+ */
+public fun DirectedGraph.toUndirectedGraph(): UndirectedGraph = buildUndirectedGraph {
+  forEachVertex { addVertex() }
+  forEachArc { (u, v) -> addEdge(u edgeTo v) }
+}
+
+/** Returns the transposed [DirectedGraph], where the direction of arcs has been reversed. */
+public fun DirectedGraph.transposed(): DirectedGraph = buildDirectedGraph {
+  forEachVertex { addVertex() }
+  forEachArc { addArc(it.reversed()) }
 }
