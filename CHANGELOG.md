@@ -6,6 +6,10 @@
 
 + Add a topological sort algorithm.
 
+### API Changes
+
++ Add `Array<Vertex>.toVertexArray()` and `VertexArray.toTypedArray()` extension methods.
+
 ## [0.2.0] - 2023-04-25
 
 + Moved algorithms to the `io.github.alexandrepiveteau.graphs.algorithms` package.
