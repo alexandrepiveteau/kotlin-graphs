@@ -17,6 +17,12 @@ public inline fun VertexArray(
     init: (Int) -> Vertex,
 ): VertexArray = VertexArray(IntArray(size) { init(it).index })
 
+/** Transforms the given [Array] of [Vertex] to a [VertexArray]. */
+public fun Array<Vertex>.toVertexArray(): VertexArray = VertexArray(size) { this[it] }
+
+/** Transforms the given [VertexArray] to an [Array] of [Vertex]. */
+public fun VertexArray.toTypedArray(): Array<Vertex> = Array(size) { this[it] }
+
 /** Returns a [VertexArray] for the corresponding [IntArray]. */
 public fun IntArray.asVertexArray(): VertexArray = VertexArray(this)
 

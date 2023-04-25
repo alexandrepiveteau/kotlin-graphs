@@ -1,12 +1,9 @@
 package io.github.alexandrepiveteau.graphs.util
 
-import io.github.alexandrepiveteau.graphs.DirectedNetwork
-import io.github.alexandrepiveteau.graphs.Graph
-import io.github.alexandrepiveteau.graphs.Network
-import io.github.alexandrepiveteau.graphs.Vertex
+import io.github.alexandrepiveteau.graphs.*
 import io.github.alexandrepiveteau.graphs.algorithms.forEachArc
-import kotlin.test.assertEquals
 import io.github.alexandrepiveteau.graphs.util.assertEquals as assertEqualsGraph
+import kotlin.test.assertEquals
 
 /**
  * Asserts that two graphs are strictly equal, i.e. that they have the same size, and that they
@@ -73,4 +70,17 @@ fun assertFlowValid(
     assertEquals(outgoing[i], incoming[i], "Vertex $i has unbalanced flow.")
   }
   assertEquals(total, outgoing[source.index], "Total flow is different.")
+}
+
+/**
+ * Asserts that the contents of the two [VertexArray]s are equal.
+ *
+ * @param expected the expected [VertexArray].
+ * @param actual the actual [VertexArray].
+ */
+fun assertContentEquals(expected: VertexArray, actual: VertexArray) {
+  assertEquals(expected.size, actual.size)
+  for (i in 0 until expected.size) {
+    assertEquals(expected[i], actual[i])
+  }
 }

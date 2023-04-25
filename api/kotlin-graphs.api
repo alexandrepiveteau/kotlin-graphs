@@ -227,6 +227,8 @@ public final class io/github/alexandrepiveteau/graphs/VertexArrayKt {
 	public static final fun copyOf-ONBMYxs ([II)[I
 	public static final fun copyOf-iaUUKik ([I)[I
 	public static final fun copyOfRange-R4BdYes ([III)[I
+	public static final fun toTypedArray-iaUUKik ([I)[Lio/github/alexandrepiveteau/graphs/Vertex;
+	public static final fun toVertexArray ([Lio/github/alexandrepiveteau/graphs/Vertex;)[I
 }
 
 public abstract class io/github/alexandrepiveteau/graphs/VertexIterator : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {
@@ -266,6 +268,7 @@ public final class io/github/alexandrepiveteau/graphs/algorithms/Algorithms {
 	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
 	public static final fun shortestPathFasterAlgorithm-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Network;II)[I
 	public static final fun stronglyConnectedComponentsKosaraju (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lkotlin/Pair;
+	public static final fun topologicalSort (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)[I
 }
 
 public final class io/github/alexandrepiveteau/graphs/algorithms/Traversals {
