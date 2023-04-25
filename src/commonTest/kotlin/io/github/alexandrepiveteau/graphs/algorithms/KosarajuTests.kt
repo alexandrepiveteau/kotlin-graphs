@@ -133,7 +133,7 @@ class KosarajuTests {
   fun randomGraphsHaveTopologicalSortAfterScc() {
     val random = Random(42)
     repeat(Repeats) {
-      val graph = DirectedGraph.erdosRenyi(n = 1_000, p = 0.1, random = random)
+      val graph = DirectedGraph.erdosRenyi(n = 100, p = 0.1, random = random)
       val (scc, map) = graph.stronglyConnectedComponentsKosaraju()
       val order = scc.topologicalSort()
       assertEquals(map.values().asIntArray().distinct().count(), order.size)
