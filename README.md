@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    implementation "io.github.alexandrepiveteau:kotlin-graphs:0.1.0"
+    implementation "io.github.alexandrepiveteau:kotlin-graphs:0.1.1"
 }
 
 ```
