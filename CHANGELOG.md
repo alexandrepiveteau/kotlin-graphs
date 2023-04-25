@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
++ Moved algorithms to the `io.github.alexandrepiveteau.graphs.algorithms`
+  package.
+
 ## [0.1.1] - 2023-04-25
 
 ### Documentation
