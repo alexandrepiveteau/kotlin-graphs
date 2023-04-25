@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.3.1] - 2023-04-26
+
+### Fixes
+
++ Make int packing functions non-inline.
+
 ## [0.3.0] - 2023-04-26
 
 ### Algorithms
@@ -28,7 +34,9 @@
 Initial release
 
 
-[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.3.1...HEAD
+
+[0.3.1]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.3.1
 
 [0.3.0]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.3.0
 
