@@ -30,7 +30,10 @@ kotlin {
   sourceSets {
     val commonMain by getting { dependencies { implementation(kotlin("stdlib-common")) } }
     val commonTest by getting { dependencies { implementation(kotlin("test")) } }
-    all { languageSettings.optIn("kotlin.contracts.ExperimentalContracts") }
+    all {
+      languageSettings.optIn("kotlin.contracts.ExperimentalContracts")
+      languageSettings.optIn("kotlin.time.ExperimentalTime")
+    }
   }
 }
 

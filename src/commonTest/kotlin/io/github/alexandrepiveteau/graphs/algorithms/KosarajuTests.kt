@@ -1,10 +1,13 @@
 package io.github.alexandrepiveteau.graphs.algorithms
 
+import io.github.alexandrepiveteau.graphs.DirectedGraph
 import io.github.alexandrepiveteau.graphs.VertexArray
 import io.github.alexandrepiveteau.graphs.arcTo
 import io.github.alexandrepiveteau.graphs.asIntArray
 import io.github.alexandrepiveteau.graphs.builder.buildDirectedGraph
+import io.github.alexandrepiveteau.graphs.builder.erdosRenyi
 import io.github.alexandrepiveteau.graphs.util.Repeats
+import kotlin.random.Random
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
@@ -124,5 +127,16 @@ class KosarajuTests {
     assertNotEquals(scc[map[graph[1]]], scc[map[graph[4]]])
     assertNotEquals(scc[map[graph[2]]], scc[map[graph[4]]])
     assertNotEquals(scc[map[graph[3]]], scc[map[graph[4]]])
+  }
+
+  @Test
+  fun randomGraphsHaveTopologicalSortAfterScc() {
+    val random = Random(42)
+    repeat(Repeats) {
+      val graph = DirectedGraph.erdosRenyi(n = 1_000, p = 0.1, random = random)
+      val (scc, map) = graph.stronglyConnectedComponentsKosaraju()
+      val order = scc.topologicalSort()
+      assertEquals(map.values().asIntArray().distinct().count(), order.size)
+    }
   }
 }
