@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2023-04-26
+
 ### Algorithms
 
 + Add a topological sort algorithm.
@@ -26,7 +28,9 @@
 Initial release
 
 
-[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.2.0...HEAD
+[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.3.0...HEAD
+
+[0.3.0]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.3.0
 
 [0.2.0]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.2.0
 
