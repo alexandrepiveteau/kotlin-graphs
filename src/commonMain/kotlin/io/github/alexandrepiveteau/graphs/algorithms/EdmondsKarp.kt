@@ -1,6 +1,11 @@
+@file:JvmName("Algorithms")
+@file:JvmMultifileClass
+
 package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.*
+import kotlin.jvm.JvmMultifileClass
+import kotlin.jvm.JvmName
 import kotlin.math.min
 
 /** Returns the residual network of this [DirectedNetwork], given the current [flow]. */

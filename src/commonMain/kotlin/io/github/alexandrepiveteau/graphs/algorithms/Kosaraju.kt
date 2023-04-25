@@ -1,7 +1,12 @@
+@file:JvmName("Algorithms")
+@file:JvmMultifileClass
+
 package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.*
 import io.github.alexandrepiveteau.graphs.internal.IntDequeue
+import kotlin.jvm.JvmMultifileClass
+import kotlin.jvm.JvmName
 
 /**
  * Returns the [DirectedGraph] where each vertex is replaced by its strongly connected component.

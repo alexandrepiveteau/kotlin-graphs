@@ -523,42 +523,27 @@ public final class io/github/alexandrepiveteau/graphs/Vertices$DefaultImpls {
 	public static fun component9-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
 }
 
-public final class io/github/alexandrepiveteau/graphs/algorithms/BasicTraversalKt {
+public final class io/github/alexandrepiveteau/graphs/algorithms/Algorithms {
+	public static final fun connectedComponents (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
+	public static final fun maxFlowEdmondsKarp-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+	public static final fun shortestPathFasterAlgorithm-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Network;II)[I
+	public static final fun stronglyConnectedComponentsKosaraju (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lkotlin/Pair;
+}
+
+public final class io/github/alexandrepiveteau/graphs/algorithms/Traversals {
 	public static final fun forEachArc (Lio/github/alexandrepiveteau/graphs/DirectedGraph;Lkotlin/jvm/functions/Function1;)V
 	public static final fun forEachEdge (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;Lkotlin/jvm/functions/Function1;)V
 	public static final fun forEachNeighbor-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
 	public static final fun forEachVertex (Lio/github/alexandrepiveteau/graphs/Graph;Lkotlin/jvm/functions/Function1;)V
-}
-
-public final class io/github/alexandrepiveteau/graphs/algorithms/BreadthFirstTraversalKt {
 	public static final fun forEachVertexBreadthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
-	public static final fun shortestPathBreadthFirst-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Graph;II)[I
-}
-
-public final class io/github/alexandrepiveteau/graphs/algorithms/ConnectedComponentsKt {
-	public static final fun connectedComponents (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
-}
-
-public final class io/github/alexandrepiveteau/graphs/algorithms/DepthFirstTraversalKt {
 	public static final fun forEachVertexDepthFirst-YQfbarM (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;)V
 	public static synthetic fun forEachVertexDepthFirst-YQfbarM$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 	public static final fun forEachVertexDepthFirstHelper-wZYKThQ (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
 	public static synthetic fun forEachVertexDepthFirstHelper-wZYKThQ$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 	public static final fun forEachVertexDepthFirstPostOrder-YQfbarM (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;)V
 	public static synthetic fun forEachVertexDepthFirstPostOrder-YQfbarM$default (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-}
-
-public final class io/github/alexandrepiveteau/graphs/algorithms/EdmondsKarpKt {
-	public static final fun maxFlowEdmondsKarp-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
-}
-
-public final class io/github/alexandrepiveteau/graphs/algorithms/KosarajuKt {
-	public static final fun stronglyConnectedComponentsKosaraju (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lkotlin/Pair;
-}
-
-public final class io/github/alexandrepiveteau/graphs/algorithms/ShortestPathFasterAlgorithmKt {
-	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
-	public static final fun shortestPathFasterAlgorithm-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Network;II)[I
+	public static final fun shortestPathBreadthFirst-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Graph;II)[I
 }
 
 public final class io/github/alexandrepiveteau/graphs/internal/IntDequeue {

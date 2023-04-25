@@ -1,9 +1,14 @@
+@file:JvmName("Traversals")
+@file:JvmMultifileClass
+
 package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.Graph
 import io.github.alexandrepiveteau.graphs.Vertex
 import io.github.alexandrepiveteau.graphs.internal.IntDequeue
 import kotlin.contracts.contract
+import kotlin.jvm.JvmMultifileClass
+import kotlin.jvm.JvmName
 
 /**
  * Traverses the graph in depth-first order, starting from the given [from] vertex, and performs the

@@ -1,8 +1,13 @@
+@file:JvmName("Algorithms")
+@file:JvmMultifileClass
+
 package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.UndirectedGraph
 import io.github.alexandrepiveteau.graphs.VertexMap
 import io.github.alexandrepiveteau.graphs.buildUndirectedGraph
+import kotlin.jvm.JvmMultifileClass
+import kotlin.jvm.JvmName
 
 /**
  * Computes the strongly connected components of this [UndirectedGraph], and returns a new

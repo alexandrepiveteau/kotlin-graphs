@@ -1,7 +1,12 @@
+@file:JvmName("Algorithms")
+@file:JvmMultifileClass
+
 package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.*
 import io.github.alexandrepiveteau.graphs.internal.IntDequeue
+import kotlin.jvm.JvmMultifileClass
+import kotlin.jvm.JvmName
 
 /**
  * Returns the list of parents for each vertex in the shortest path tree from the [from] vertex.
