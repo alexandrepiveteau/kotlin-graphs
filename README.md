@@ -1,6 +1,7 @@
 # kotlin-graphs
 
 [![Build](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/build.yml/badge.svg)](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/build.yml)
+[![Sonatype Nexus](https://img.shields.io/nexus/s/https/oss.sonatype.org/io.github.alexandrepiveteau/kotlin-graphs.svg)](#installation)
 
 Model directed, undirected, weighted and unweighted graphs and perform
 computations on them in Kotlin multiplatform.
@@ -41,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    implementation "io.github.alexandrepiveteau:kotlin-graphs:$version"
+    implementation "io.github.alexandrepiveteau:kotlin-graphs:0.1.0-SNAPSHOT"
 }
 
 ```
