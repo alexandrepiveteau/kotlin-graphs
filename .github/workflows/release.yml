@@ -37,3 +37,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           body: ${{ steps.release_notes.outputs.release_notes }}
+          makeLatest: true
+          allowUpdates: true
