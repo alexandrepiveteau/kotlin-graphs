@@ -65,10 +65,33 @@ object ShortestPathTestCases {
     addArc(a arcTo b, -1)
   }
 
+  // https://en.wikipedia.org/wiki/Bellman–Ford_algorithm
+  private val BellmanFordWikipedia = buildDirectedNetwork {
+    val (s, t, x, y, z) = addVertices()
+    addArc(s arcTo t, 6)
+    addArc(s arcTo y, 7)
+    addArc(t arcTo y, 8)
+    addArc(t arcTo z, -4)
+    addArc(t arcTo x, 5)
+    addArc(y arcTo z, 9)
+    addArc(y arcTo x, -3)
+    addArc(z arcTo s, 2)
+    addArc(z arcTo x, 7)
+    addArc(x arcTo t, -2)
+  }
+  private val BellmanFordWikipediaSolution = buildDirectedNetwork {
+    val (s, t, x, y, z) = addVertices()
+    addArc(s arcTo y, 7)
+    addArc(y arcTo x, -3)
+    addArc(x arcTo t, -2)
+    addArc(t arcTo z, -4)
+  }
+
   /** Returns a [Sequence] of all the test cases with only negative weights. */
   fun negativeWeights() =
       sequenceOf(
           Triple(NegativeEdge, NegativeEdge[0], NegativeEdgeSolution),
+          Triple(BellmanFordWikipedia, BellmanFordWikipedia[0], BellmanFordWikipediaSolution),
       )
 
   /** Returns a [Sequence] of all the test cases with both positive and negative weights. */
