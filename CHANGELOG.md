@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2023-04-27
+
+### Algorithms
+
++ Add Dijkstra's shortest path algorithm.
+
 ## [0.3.1] - 2023-04-26
 
 ### Fixes
@@ -34,7 +40,9 @@
 Initial release
 
 
-[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.3.1...HEAD
+[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.4.0...HEAD
+
+[0.4.0]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.4.0
 
 [0.3.1]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.3.1
 

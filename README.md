@@ -36,7 +36,7 @@ repositories {
 }
 
 dependencies {
-    implementation "io.github.alexandrepiveteau:kotlin-graphs:0.3.1"
+    implementation "io.github.alexandrepiveteau:kotlin-graphs:0.4.0"
 }
 
 ```
@@ -53,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    implementation "io.github.alexandrepiveteau:kotlin-graphs:0.4.0-SNAPSHOT"
+    implementation "io.github.alexandrepiveteau:kotlin-graphs:0.5.0-SNAPSHOT"
 }
 ```
 
