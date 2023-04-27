@@ -30,6 +30,15 @@ internal class IntVector {
     size++
   }
 
+  /**
+   * Removes the last element of the vector. If the vector is empty, an [IndexOutOfBoundsException]
+   * is thrown.
+   */
+  fun removeLast() {
+    if (size == 0) throw IndexOutOfBoundsException()
+    size--
+  }
+
   /** Returns a copy of the vector as an [IntArray]. */
   fun toIntArray(): IntArray = buffer.copyOf(size)
 }

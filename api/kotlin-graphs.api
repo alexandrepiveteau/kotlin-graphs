@@ -265,6 +265,8 @@ public final class io/github/alexandrepiveteau/graphs/VertexMapKt {
 public final class io/github/alexandrepiveteau/graphs/algorithms/Algorithms {
 	public static final fun connectedComponents (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
 	public static final fun maxFlowEdmondsKarp-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+	public static final fun shortestPathDijkstra-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+	public static final fun shortestPathDijkstra-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Network;II)[I
 	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
 	public static final fun shortestPathFasterAlgorithm-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Network;II)[I
 	public static final fun stronglyConnectedComponentsKosaraju (Lio/github/alexandrepiveteau/graphs/DirectedGraph;)Lkotlin/Pair;
@@ -443,6 +445,7 @@ public final class io/github/alexandrepiveteau/graphs/internal/collections/IntVe
 	public final fun get (I)I
 	public final fun getSize ()I
 	public final fun plusAssign (I)V
+	public final fun removeLast ()V
 	public final fun set (II)V
 	public final fun toIntArray ()[I
 }

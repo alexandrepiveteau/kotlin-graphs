@@ -2,7 +2,6 @@ package io.github.alexandrepiveteau.graphs.algorithms
 
 import io.github.alexandrepiveteau.graphs.*
 import io.github.alexandrepiveteau.graphs.builder.buildDirectedNetwork
-import io.github.alexandrepiveteau.graphs.builder.buildUndirectedNetwork
 import io.github.alexandrepiveteau.graphs.util.Repeats
 import io.github.alexandrepiveteau.graphs.util.assertEquals
 import kotlin.test.Test
@@ -15,14 +14,6 @@ class ShortestPathFasterAlgorithmTests {
     assertFailsWith<NoSuchVertexException> {
       UndirectedNetwork.empty().shortestPathFasterAlgorithm(Vertex(0))
     }
-  }
-
-  @Test
-  fun spfaOnSingletonAssociatesDistanceZero() {
-    val graph = buildUndirectedNetwork { addVertex() }
-    val expected = buildDirectedNetwork { addVertex() }
-    val spfa = graph.shortestPathFasterAlgorithm(graph[0])
-    assertEquals(expected, spfa)
   }
 
   @Test
@@ -39,24 +30,10 @@ class ShortestPathFasterAlgorithmTests {
   }
 
   @Test
-  fun spfaComputesMinimumDistanceOnSimpleGraph() {
-    val graph = buildUndirectedNetwork {
-      val (a, b, c, d, e) = addVertices()
-      addEdge(a edgeTo b, 1)
-      addEdge(b edgeTo c, 1)
-      addEdge(c edgeTo d, 1)
-      addEdge(d edgeTo e, 1)
-      addEdge(e edgeTo a, 5)
+  fun testCases() {
+    for ((graph, from, expected) in ShortestPathTestCases.allWeights()) {
+      val spfa = graph.shortestPathFasterAlgorithm(from)
+      assertEquals(expected, spfa)
     }
-    val expected = buildDirectedNetwork {
-      val (a, b, c, d, e) = addVertices()
-      addArc(a arcTo b, 1)
-      addArc(b arcTo c, 1)
-      addArc(c arcTo d, 1)
-      addArc(d arcTo e, 1)
-    }
-
-    val spfa = graph.shortestPathFasterAlgorithm(graph[0])
-    assertEquals(expected, spfa)
   }
 }
