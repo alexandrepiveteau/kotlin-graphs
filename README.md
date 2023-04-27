@@ -16,32 +16,6 @@ println(path) // [v1, v2, v3]
 
 ```
 
-> :warning: This library is still in heavy development, and you should expect
-> the following:
->
-> + The API is not stable, and may change at any time.
-> + The algorithms are not well tested, and may contain correctness bugs.
-> + The algorithms are not optimized, and may have performance issues.
-
-## Features
-
-+ Written in uncomplicated Kotlin
-+ Supports various graph types with a type-safe API
-    - Directed and undirected
-    - Weighted and unweighted
-+ Reasonably fast and avoids auto-boxing on JVM
-+ Works on Kotlin/JVM, Kotlin/JS and Kotlin/Native
-
-> :unicorn: Contributions are welcome and appreciated! In particular, the
-> following contributions would be very useful:
->
-> + Adding some tests for the current algorithms.
-> + Benchmarking the implementation against comparable libraries.
-> + Improving the documentation.
->
-> If you're interested in contributing, please take a look at the list of
-> [open issues](https://github.com/alexandrepiveteau/kotlin-graphs/issues)!
-
 ## Download
 
 ```groovy
@@ -74,9 +48,40 @@ dependencies {
 </p>
 </details>
 
+## Features
+
++ Written in uncomplicated Kotlin
++ Supports various graph types with a type-safe API
+    - Directed and undirected
+    - Weighted and unweighted
++ Reasonably fast and avoids auto-boxing on JVM
++ Works on Kotlin/JVM, Kotlin/JS and Kotlin/Native
+
+> :warning: This library is still in heavy development, and you should expect
+> the following:
+>
+> + The API is not stable, and may change at any time.
+> + The algorithms are not well tested, and may contain correctness bugs.
+> + The algorithms are not optimized, and may have performance issues.
+
 ## Usage
 
-### Shortest path using Shortest Path Faster Algorithm
+A `Graph` is a collection of `Vertex`, connected by `Edge`s (for undirected graphs) or `Arc`s (for directed graphs).
+Each arc or edge may have an `Int` weight, in which case the graph is a `Network`.
+
+```kotlin
+val undirectedGraph = buildUndirectedGraph { /* Write me. */}
+val directedGraph = buildDirectedGraph { /* Write me. */}
+val undirectedNetwork = buildUndirectedNetwork { /* Write me. */}
+val directedNetwork = buildDirectedNetwork { /* Write me. */}
+
+```
+
+## Examples
+
+<details>
+<summary>Shortest path using Shortest Path Faster Algorithm</summary>
+<p>
 
 ```mermaid
 graph LR
@@ -111,7 +116,12 @@ assertEqualsGraph(expected, spfa)
 
 ```
 
-### Maximum flow using the Ford-Fulkerson / Edmonds-Karp algorithm
+</p>
+</details>
+
+<details>
+<summary>Maximum flow using the Ford-Fulkerson / Edmonds-Karp algorithm</summary>
+<p>
 
 ```mermaid
 graph LR
@@ -145,3 +155,16 @@ val flow = capacities.maxFlowEdmondsKarp(a, d)
 assertEqualsGraph(expected, flow)
 
 ```
+
+</p>
+</details>
+
+## Contributing
+
+:unicorn: Contributions are welcomed and appreciated! In particular, the following contributions would be very useful:
+
++ Adding some tests for the current algorithms.
++ Benchmarking the implementation against comparable libraries.
++ Improving the documentation.
+
+If you're interested in contributing, please take a look at the list of [open issues](https://github.com/alexandrepiveteau/kotlin-graphs/issues)!
