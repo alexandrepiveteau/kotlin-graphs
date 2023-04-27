@@ -26,9 +26,8 @@ private fun Network.shortestPathDijkstraParents(from: Vertex): VertexMap {
   while (queue.size > 0) {
     val v1 = get(queue.remove())
     visited[get(v1)] = true
-    forEachNeighbor(v1) { v2 ->
+    forEachNeighbor(v1) { v2, weight ->
       if (!visited[get(v2)]) {
-        val weight = weight(v1, v2)
         // Note : we only throw on negative weights if they are visited, so a graph with negative
         //        weights in a component disconnected from the source will not throw.
         if (weight < 0) throw IllegalArgumentException("Negative weights are not supported.")
