@@ -2,6 +2,20 @@
 
 Directed, undirected, weighted and unweighted graph algorithms for Kotlin Multiplatform.
 
+```kotlin
+val graph = buildUndirectedNetwork {
+  val (v1, v2, v3) = addVertices()
+  addEdge(v1 edgeTo v3, 4)
+  addEdge(v1 edgeTo v2, 1)
+  addEdge(v2 edgeTo v3, 2)
+}
+
+val path = graph.shortestPathDijkstra(graph[0], graph[3])
+
+println(path) // [v1, v2, v3]
+
+```
+
 > :warning: This library is still in heavy development, and you should expect
 > the following:
 >
