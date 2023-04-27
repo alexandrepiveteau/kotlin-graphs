@@ -265,7 +265,7 @@ public final class io/github/alexandrepiveteau/graphs/VertexMapKt {
 public final class io/github/alexandrepiveteau/graphs/algorithms/Algorithms {
 	public static final fun connectedComponents (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
 	public static final fun maxFlowEdmondsKarp-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
-	public static final fun minimumSpanningTree-9scIZJg (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
+	public static final fun minimumSpanningTreePrim-9scIZJg (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
 	public static final fun shortestPathDijkstra-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
 	public static final fun shortestPathDijkstra-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Network;II)[I
 	public static final fun shortestPathFasterAlgorithm-9scIZJg (Lio/github/alexandrepiveteau/graphs/Network;I)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
