@@ -1,11 +1,6 @@
 # kotlin-graphs
 
-[![Build](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/build.yml/badge.svg)](https://github.com/alexandrepiveteau/kotlin-graphs/actions/workflows/build.yml)
-[![MavenCentral](https://img.shields.io/maven-central/v/io.github.alexandrepiveteau/kotlin-graphs)](https://search.maven.org/search?q=io.github.alexandrepiveteau.kotlin-graphs)
-[![Sonatype Nexus](https://img.shields.io/nexus/s/https/s01.oss.sonatype.org/io.github.alexandrepiveteau/kotlin-graphs.svg)](#installation)
-
-Model directed, undirected, weighted and unweighted graphs and perform
-computations on them in Kotlin multiplatform.
+Directed, undirected, weighted and unweighted graph algorithms for Kotlin Multiplatform.
 
 > :warning: This library is still in heavy development, and you should expect
 > the following:
@@ -33,9 +28,7 @@ computations on them in Kotlin multiplatform.
 > If you're interested in contributing, please take a look at the list of
 > [open issues](https://github.com/alexandrepiveteau/kotlin-graphs/issues)!
 
-## Installation
-
-### Gradle
+## Download
 
 ```groovy
 repositories {
@@ -47,6 +40,25 @@ dependencies {
 }
 
 ```
+
+<details>
+<summary>Snapshots of the development version are available in Sonatype's snapshots repository.</summary>
+<p>
+
+```groovy
+repositories {
+    maven {
+        url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    implementation "io.github.alexandrepiveteau:kotlin-graphs:0.4.0-SNAPSHOT"
+}
+```
+
+</p>
+</details>
 
 ## Usage
 
