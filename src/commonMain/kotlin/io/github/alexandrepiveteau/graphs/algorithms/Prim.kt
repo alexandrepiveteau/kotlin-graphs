@@ -8,7 +8,7 @@ import io.github.alexandrepiveteau.graphs.internal.collections.IntMinPriorityQue
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
-private fun UndirectedNetwork.primParents(from: Vertex): VertexMap {
+private fun UndirectedNetwork.minimumSpanningTreePrimParents(from: Vertex): VertexMap {
   if (size == 0) return VertexMap(0)
 
   val parents = VertexMap(size) { Vertex.Invalid }
@@ -33,7 +33,7 @@ private fun UndirectedNetwork.primParents(from: Vertex): VertexMap {
   return parents
 }
 
-public fun UndirectedNetwork.minimumSpanningTree(from: Vertex): DirectedNetwork {
+public fun UndirectedNetwork.minimumSpanningTreePrim(from: Vertex): DirectedNetwork {
   if (from !in this) throw NoSuchVertexException()
-  return computeNetwork(primParents(from))
+  return computeNetwork(minimumSpanningTreePrimParents(from))
 }
