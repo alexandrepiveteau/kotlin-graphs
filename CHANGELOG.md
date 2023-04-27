@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
++ Add overloads to `forEachNeighbor`, `forEachArc` and `forEachEdge` with weights.
+
 ## [0.4.0] - 2023-04-27
 
 ### Algorithms
