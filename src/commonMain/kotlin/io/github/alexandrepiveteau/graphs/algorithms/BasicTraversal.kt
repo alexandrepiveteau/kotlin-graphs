@@ -34,6 +34,19 @@ public inline fun Graph.forEachNeighbor(vertex: Vertex, action: (Vertex) -> Unit
 }
 
 /**
+ * Performs the given [action] on each neighbor of the given [vertex], along with its weight.
+ *
+ * ## Asymptotic complexity
+ * - **Time complexity**: O(|N|), where |N| is the number of neighbors of the given [vertex].
+ * - **Space complexity**: O(1).
+ */
+public inline fun Network.forEachNeighbor(vertex: Vertex, action: (Vertex, Int) -> Unit) {
+  contract { callsInPlace(action) }
+  val index = get(vertex)
+  for (i in 0 until neighborsSize(index)) action(get(vertex, i), weight(vertex, i))
+}
+
+/**
  * Performs the given [action] on each arc in this graph.
  *
  * ## Asymptotic complexity
@@ -46,6 +59,18 @@ public inline fun DirectedGraph.forEachArc(action: (Arc) -> Unit) {
 }
 
 /**
+ * Performs the given [action] on each arc in this graph, along with its weight.
+ *
+ * ## Asymptotic complexity
+ * - **Time complexity**: O(|A|), where |A| is the number of arcs in this graph.
+ * - **Space complexity**: O(1).
+ */
+public inline fun DirectedNetwork.forEachArc(action: (Arc, Int) -> Unit) {
+  contract { callsInPlace(action) }
+  forEachVertex { u -> forEachNeighbor(u) { v, w -> action(u arcTo v, w) } }
+}
+
+/**
  * Performs the given [action] on each edge in this graph.
  *
  * ## Asymptotic complexity
@@ -55,4 +80,18 @@ public inline fun DirectedGraph.forEachArc(action: (Arc) -> Unit) {
 public inline fun UndirectedGraph.forEachEdge(action: (Edge) -> Unit) {
   contract { callsInPlace(action) }
   forEachVertex { u -> forEachNeighbor(u) { v -> if (u.index <= v.index) action(u edgeTo v) } }
+}
+
+/**
+ * Performs the given [action] on each edge in this graph, along with its weight.
+ *
+ * ## Asymptotic complexity
+ * - **Time complexity**: O(|E|), where |E| is the number of edges in this graph.
+ * - **Space complexity**: O(1).
+ */
+public inline fun UndirectedNetwork.forEachEdge(action: (Edge, Int) -> Unit) {
+  contract { callsInPlace(action) }
+  forEachVertex { u ->
+    forEachNeighbor(u) { v, w -> if (u.index <= v.index) action(u edgeTo v, w) }
+  }
 }

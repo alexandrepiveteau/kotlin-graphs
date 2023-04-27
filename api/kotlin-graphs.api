@@ -275,8 +275,11 @@ public final class io/github/alexandrepiveteau/graphs/algorithms/Algorithms {
 
 public final class io/github/alexandrepiveteau/graphs/algorithms/Traversals {
 	public static final fun forEachArc (Lio/github/alexandrepiveteau/graphs/DirectedGraph;Lkotlin/jvm/functions/Function1;)V
+	public static final fun forEachArc (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;Lkotlin/jvm/functions/Function2;)V
 	public static final fun forEachEdge (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;Lkotlin/jvm/functions/Function1;)V
+	public static final fun forEachEdge (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;Lkotlin/jvm/functions/Function2;)V
 	public static final fun forEachNeighbor-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
+	public static final fun forEachNeighbor-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Network;ILkotlin/jvm/functions/Function2;)V
 	public static final fun forEachVertex (Lio/github/alexandrepiveteau/graphs/Graph;Lkotlin/jvm/functions/Function1;)V
 	public static final fun forEachVertexBreadthFirst-zrzjTAw (Lio/github/alexandrepiveteau/graphs/Graph;ILkotlin/jvm/functions/Function1;)V
 	public static final fun forEachVertexDepthFirst-YQfbarM (Lio/github/alexandrepiveteau/graphs/Graph;I[ZLkotlin/jvm/functions/Function1;)V

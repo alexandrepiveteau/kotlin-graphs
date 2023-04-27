@@ -29,8 +29,7 @@ private fun Network.shortestPathFasterAlgorithmParents(from: Vertex): VertexMap 
   while (queue.size > 0) {
     val v1 = get(queue.removeFirst())
     enqueued[get(v1)] = false
-    forEachNeighbor(v1) { v2 ->
-      val weight = weight(v1, v2)
+    forEachNeighbor(v1) { v2, weight ->
       val d1 = distances[get(v1)]
       val d2 = distances[get(v2)]
       if (d1 != Int.MAX_VALUE && (d2 == Int.MAX_VALUE || d1 + weight < d2)) {
