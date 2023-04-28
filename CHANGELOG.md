@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## Algorithms
+
++ Add Prim's minimum spanning tree algorithm.
 + Add overloads to `forEachNeighbor`, `forEachArc` and `forEachEdge` with weights.
 
 ## [0.4.0] - 2023-04-27
