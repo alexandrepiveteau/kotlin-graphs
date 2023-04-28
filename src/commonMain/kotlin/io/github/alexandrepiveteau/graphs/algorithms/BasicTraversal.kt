@@ -79,7 +79,7 @@ public inline fun DirectedNetwork.forEachArc(action: (Arc, Int) -> Unit) {
  */
 public inline fun UndirectedGraph.forEachEdge(action: (Edge) -> Unit) {
   contract { callsInPlace(action) }
-  forEachVertex { u -> forEachNeighbor(u) { v -> if (u.index <= v.index) action(u edgeTo v) } }
+  forEachVertex { u -> forEachNeighbor(u) { v -> if (get(u) <= get(v)) action(u edgeTo v) } }
 }
 
 /**
@@ -91,7 +91,5 @@ public inline fun UndirectedGraph.forEachEdge(action: (Edge) -> Unit) {
  */
 public inline fun UndirectedNetwork.forEachEdge(action: (Edge, Int) -> Unit) {
   contract { callsInPlace(action) }
-  forEachVertex { u ->
-    forEachNeighbor(u) { v, w -> if (u.index <= v.index) action(u edgeTo v, w) }
-  }
+  forEachVertex { u -> forEachNeighbor(u) { v, w -> if (get(u) <= get(v)) action(u edgeTo v, w) } }
 }
