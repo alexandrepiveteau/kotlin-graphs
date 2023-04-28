@@ -104,6 +104,60 @@ public final class io/github/alexandrepiveteau/graphs/Graph$DefaultImpls {
 	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Graph;I)I
 }
 
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope : io/github/alexandrepiveteau/graphs/MutableGraphScope {
+	public abstract fun addArc--OaZVeM (J)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraphScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableDirectedNetworkScope : io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope, io/github/alexandrepiveteau/graphs/MutableNetworkScope {
+	public abstract fun addArc--OaZVeM (J)V
+	public abstract fun addArc-xiSrehs (JI)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableDirectedNetworkScope$DefaultImpls {
+	public static fun addArc--OaZVeM (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetworkScope;J)V
+	public static synthetic fun addArc-xiSrehs$default (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetworkScope;JIILjava/lang/Object;)V
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetworkScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableGraphScope {
+	public abstract fun addVertex-IrpSQec ()I
+	public abstract fun addVertices ()Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableGraphScope$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableGraphScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableNetworkScope : io/github/alexandrepiveteau/graphs/MutableGraphScope {
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableNetworkScope$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableNetworkScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope : io/github/alexandrepiveteau/graphs/MutableGraphScope {
+	public abstract fun addEdge-zEWoN30 (J)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableUndirectedNetworkScope : io/github/alexandrepiveteau/graphs/MutableNetworkScope, io/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope {
+	public abstract fun addEdge-4LiJEsM (JI)V
+	public abstract fun addEdge-zEWoN30 (J)V
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableUndirectedNetworkScope$DefaultImpls {
+	public static synthetic fun addEdge-4LiJEsM$default (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetworkScope;JIILjava/lang/Object;)V
+	public static fun addEdge-zEWoN30 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetworkScope;J)V
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetworkScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
 public abstract interface class io/github/alexandrepiveteau/graphs/Network : io/github/alexandrepiveteau/graphs/Graph {
 	public abstract fun weight (II)I
 	public abstract fun weight-9scIZJg (II)I
@@ -262,6 +316,31 @@ public final class io/github/alexandrepiveteau/graphs/VertexMapKt {
 	public static final fun forEach-TXWKjJg ([ILkotlin/jvm/functions/Function2;)V
 }
 
+public abstract interface class io/github/alexandrepiveteau/graphs/Vertices {
+	public abstract fun component1-IrpSQec ()I
+	public abstract fun component2-IrpSQec ()I
+	public abstract fun component3-IrpSQec ()I
+	public abstract fun component4-IrpSQec ()I
+	public abstract fun component5-IrpSQec ()I
+	public abstract fun component6-IrpSQec ()I
+	public abstract fun component7-IrpSQec ()I
+	public abstract fun component8-IrpSQec ()I
+	public abstract fun component9-IrpSQec ()I
+	public abstract fun invoke-IrpSQec ()I
+}
+
+public final class io/github/alexandrepiveteau/graphs/Vertices$DefaultImpls {
+	public static fun component1-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component2-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component3-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component4-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component5-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component6-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component7-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component8-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+	public static fun component9-IrpSQec (Lio/github/alexandrepiveteau/graphs/Vertices;)I
+}
+
 public final class io/github/alexandrepiveteau/graphs/algorithms/Algorithms {
 	public static final fun connectedComponents (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;)Lkotlin/Pair;
 	public static final fun maxFlowEdmondsKarp-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
@@ -292,57 +371,29 @@ public final class io/github/alexandrepiveteau/graphs/algorithms/Traversals {
 	public static final fun shortestPathBreadthFirst-SPb1_vQ (Lio/github/alexandrepiveteau/graphs/Graph;II)[I
 }
 
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilder : io/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilderScope, io/github/alexandrepiveteau/graphs/builder/GraphBuilder {
+public abstract interface class io/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilder : io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope, io/github/alexandrepiveteau/graphs/builder/GraphBuilder {
 	public abstract fun toGraph ()Lio/github/alexandrepiveteau/graphs/DirectedGraph;
 }
 
 public final class io/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilder$DefaultImpls {
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilder;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilderScope : io/github/alexandrepiveteau/graphs/builder/GraphBuilderScope {
-	public abstract fun addArc--OaZVeM (J)V
-}
-
-public final class io/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilderScope$DefaultImpls {
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilderScope;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
-}
-
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilderScope, io/github/alexandrepiveteau/graphs/builder/NetworkBuilder {
+public abstract interface class io/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/MutableDirectedNetworkScope, io/github/alexandrepiveteau/graphs/builder/NetworkBuilder {
 	public abstract fun toGraph ()Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
 }
 
 public final class io/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilder$DefaultImpls {
 	public static fun addArc--OaZVeM (Lio/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilder;J)V
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilder;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilderScope : io/github/alexandrepiveteau/graphs/builder/DirectedGraphBuilderScope, io/github/alexandrepiveteau/graphs/builder/NetworkBuilderScope {
-	public abstract fun addArc--OaZVeM (J)V
-	public abstract fun addArc-xiSrehs (JI)V
-}
-
-public final class io/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilderScope$DefaultImpls {
-	public static fun addArc--OaZVeM (Lio/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilderScope;J)V
-	public static synthetic fun addArc-xiSrehs$default (Lio/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilderScope;JIILjava/lang/Object;)V
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/DirectedNetworkBuilderScope;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
-}
-
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/GraphBuilder : io/github/alexandrepiveteau/graphs/builder/GraphBuilderScope {
+public abstract interface class io/github/alexandrepiveteau/graphs/builder/GraphBuilder : io/github/alexandrepiveteau/graphs/MutableGraphScope {
 	public abstract fun toGraph ()Lio/github/alexandrepiveteau/graphs/Graph;
 }
 
 public final class io/github/alexandrepiveteau/graphs/builder/GraphBuilder$DefaultImpls {
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/GraphBuilder;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
-}
-
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/GraphBuilderScope {
-	public abstract fun addVertex-IrpSQec ()I
-	public abstract fun addVertices ()Lio/github/alexandrepiveteau/graphs/builder/Vertices;
-}
-
-public final class io/github/alexandrepiveteau/graphs/builder/GraphBuilderScope$DefaultImpls {
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/GraphBuilderScope;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/GraphBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
 public final class io/github/alexandrepiveteau/graphs/builder/GraphBuilders {
@@ -356,80 +407,29 @@ public final class io/github/alexandrepiveteau/graphs/builder/GraphBuilders {
 	public static final fun undirectedNetwork (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork$Companion;)Lio/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilder;
 }
 
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/NetworkBuilder : io/github/alexandrepiveteau/graphs/builder/GraphBuilder, io/github/alexandrepiveteau/graphs/builder/NetworkBuilderScope {
+public abstract interface class io/github/alexandrepiveteau/graphs/builder/NetworkBuilder : io/github/alexandrepiveteau/graphs/MutableNetworkScope, io/github/alexandrepiveteau/graphs/builder/GraphBuilder {
 	public abstract fun toGraph ()Lio/github/alexandrepiveteau/graphs/Network;
 }
 
 public final class io/github/alexandrepiveteau/graphs/builder/NetworkBuilder$DefaultImpls {
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/NetworkBuilder;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/NetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/NetworkBuilderScope : io/github/alexandrepiveteau/graphs/builder/GraphBuilderScope {
-}
-
-public final class io/github/alexandrepiveteau/graphs/builder/NetworkBuilderScope$DefaultImpls {
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/NetworkBuilderScope;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
-}
-
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilder : io/github/alexandrepiveteau/graphs/builder/GraphBuilder, io/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilderScope {
+public abstract interface class io/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilder : io/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope, io/github/alexandrepiveteau/graphs/builder/GraphBuilder {
 	public abstract fun toGraph ()Lio/github/alexandrepiveteau/graphs/UndirectedGraph;
 }
 
 public final class io/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilder$DefaultImpls {
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilder;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilderScope : io/github/alexandrepiveteau/graphs/builder/GraphBuilderScope {
-	public abstract fun addEdge-zEWoN30 (J)V
-}
-
-public final class io/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilderScope$DefaultImpls {
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilderScope;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
-}
-
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/builder/NetworkBuilder, io/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilderScope {
+public abstract interface class io/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilder : io/github/alexandrepiveteau/graphs/MutableUndirectedNetworkScope, io/github/alexandrepiveteau/graphs/builder/NetworkBuilder {
 	public abstract fun toGraph ()Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;
 }
 
 public final class io/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilder$DefaultImpls {
 	public static fun addEdge-zEWoN30 (Lio/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilder;J)V
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilder;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
-}
-
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilderScope : io/github/alexandrepiveteau/graphs/builder/NetworkBuilderScope, io/github/alexandrepiveteau/graphs/builder/UndirectedGraphBuilderScope {
-	public abstract fun addEdge-4LiJEsM (JI)V
-	public abstract fun addEdge-zEWoN30 (J)V
-}
-
-public final class io/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilderScope$DefaultImpls {
-	public static synthetic fun addEdge-4LiJEsM$default (Lio/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilderScope;JIILjava/lang/Object;)V
-	public static fun addEdge-zEWoN30 (Lio/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilderScope;J)V
-	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilderScope;)Lio/github/alexandrepiveteau/graphs/builder/Vertices;
-}
-
-public abstract interface class io/github/alexandrepiveteau/graphs/builder/Vertices {
-	public abstract fun component1-IrpSQec ()I
-	public abstract fun component2-IrpSQec ()I
-	public abstract fun component3-IrpSQec ()I
-	public abstract fun component4-IrpSQec ()I
-	public abstract fun component5-IrpSQec ()I
-	public abstract fun component6-IrpSQec ()I
-	public abstract fun component7-IrpSQec ()I
-	public abstract fun component8-IrpSQec ()I
-	public abstract fun component9-IrpSQec ()I
-	public abstract fun invoke-IrpSQec ()I
-}
-
-public final class io/github/alexandrepiveteau/graphs/builder/Vertices$DefaultImpls {
-	public static fun component1-IrpSQec (Lio/github/alexandrepiveteau/graphs/builder/Vertices;)I
-	public static fun component2-IrpSQec (Lio/github/alexandrepiveteau/graphs/builder/Vertices;)I
-	public static fun component3-IrpSQec (Lio/github/alexandrepiveteau/graphs/builder/Vertices;)I
-	public static fun component4-IrpSQec (Lio/github/alexandrepiveteau/graphs/builder/Vertices;)I
-	public static fun component5-IrpSQec (Lio/github/alexandrepiveteau/graphs/builder/Vertices;)I
-	public static fun component6-IrpSQec (Lio/github/alexandrepiveteau/graphs/builder/Vertices;)I
-	public static fun component7-IrpSQec (Lio/github/alexandrepiveteau/graphs/builder/Vertices;)I
-	public static fun component8-IrpSQec (Lio/github/alexandrepiveteau/graphs/builder/Vertices;)I
-	public static fun component9-IrpSQec (Lio/github/alexandrepiveteau/graphs/builder/Vertices;)I
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/builder/UndirectedNetworkBuilder;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
 public final class io/github/alexandrepiveteau/graphs/internal/collections/IntDequeue {

@@ -5,12 +5,13 @@ package io.github.alexandrepiveteau.graphs.builder
 
 import io.github.alexandrepiveteau.graphs.Arc
 import io.github.alexandrepiveteau.graphs.DirectedGraph
+import io.github.alexandrepiveteau.graphs.MutableDirectedGraphScope
 import io.github.alexandrepiveteau.graphs.internal.graphs.AdjacencyListDirectedGraph
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
-/** A [DirectedGraphBuilderScope] is a [GraphBuilder] for [DirectedGraph]s. */
-public interface DirectedGraphBuilder : GraphBuilder, DirectedGraphBuilderScope {
+/** A [MutableDirectedGraphScope] is a [GraphBuilder] for [DirectedGraph]s. */
+public interface DirectedGraphBuilder : GraphBuilder, MutableDirectedGraphScope {
   override fun toGraph(): DirectedGraph
 }
 
@@ -26,7 +27,7 @@ public fun DirectedGraph.Companion.builder(): DirectedGraphBuilder =
  * @return the newly built graph.
  */
 public inline fun buildDirectedGraph(
-    scope: DirectedGraphBuilderScope.() -> Unit,
+    scope: MutableDirectedGraphScope.() -> Unit,
 ): DirectedGraph = DirectedGraph.builder().apply(scope).toGraph()
 
 /** A [MutableListGraphBuilder] for [DirectedGraphBuilder]. */

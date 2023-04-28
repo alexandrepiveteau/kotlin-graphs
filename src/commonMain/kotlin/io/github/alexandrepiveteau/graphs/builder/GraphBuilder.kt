@@ -1,16 +1,13 @@
 package io.github.alexandrepiveteau.graphs.builder
 
-import io.github.alexandrepiveteau.graphs.Graph
-import io.github.alexandrepiveteau.graphs.Vertex
-import io.github.alexandrepiveteau.graphs.VertexArray
-import io.github.alexandrepiveteau.graphs.asVertexArray
+import io.github.alexandrepiveteau.graphs.*
 import io.github.alexandrepiveteau.graphs.internal.collections.IntVector
 
 /**
- * A [GraphBuilder] is a [GraphBuilderScope] with which a graph can be built, using the [toGraph]
+ * A [GraphBuilder] is a [MutableGraphScope] with which a graph can be built, using the [toGraph]
  * method.
  */
-public interface GraphBuilder : GraphBuilderScope {
+public interface GraphBuilder : MutableGraphScope {
 
   /**
    * Returns a new [Graph] instance, which is built from the current state of the [GraphBuilder].
