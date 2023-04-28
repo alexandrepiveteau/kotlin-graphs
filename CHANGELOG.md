@@ -2,10 +2,16 @@
 
 ## [Unreleased]
 
-## Algorithms
+### Algorithms
 
 + Add Prim's minimum spanning tree algorithm.
 + Add overloads to `forEachNeighbor`, `forEachArc` and `forEachEdge` with weights.
+
+### API Changes
+
++ Introduce a bunch of interfaces to model mutable graphs.
+    - Added `MutableGraph`, `MutableNetwork` and directed/undirected variants.
+    - Renamed `GraphBuilderScope` and variants to `MutableGraphScope`, which is implemented by the new `MutableGraph` interface.
 
 ## [0.4.0] - 2023-04-27
 
