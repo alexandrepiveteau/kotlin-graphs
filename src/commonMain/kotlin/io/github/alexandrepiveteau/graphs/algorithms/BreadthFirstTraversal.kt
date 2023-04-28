@@ -23,15 +23,15 @@ import kotlin.jvm.JvmName
  */
 public inline fun Graph.forEachVertexBreadthFirst(from: Vertex, action: (Vertex) -> Unit) {
   contract { callsInPlace(action) }
-  val queue = IntDequeue().apply { addLast(from.index) }
-  val visited = BooleanArray(size).apply { this[from.index] = true }
+  val queue = IntDequeue().apply { addLast(get(from)) }
+  val visited = BooleanArray(size).apply { this[get(from)] = true }
   while (queue.size > 0) {
     val next = queue.removeFirst()
     action(get(next))
     forEachNeighbor(get(next)) {
-      if (!visited[it.index]) {
-        queue.addLast(it.index)
-        visited[it.index] = true
+      if (!visited[get(it)]) {
+        queue.addLast(get(it))
+        visited[get(it)] = true
       }
     }
   }
