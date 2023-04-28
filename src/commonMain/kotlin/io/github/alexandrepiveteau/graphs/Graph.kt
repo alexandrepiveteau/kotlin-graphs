@@ -10,49 +10,46 @@ package io.github.alexandrepiveteau.graphs
  */
 public interface Graph {
 
-  /** The number of vertices in this [UndirectedGraph]. */
+  /** The number of vertices in this [Graph]. */
   public val size: Int
 
-  /**
-   * Returns true if the given [vertex] is contained in this [UndirectedGraph], and false otherwise.
-   */
+  /** Returns true if the given [vertex] is contained in this [Graph], and false otherwise. */
   public operator fun contains(vertex: Vertex): Boolean = get(vertex) in 0 until size
 
   /**
-   * Returns the index of the given [vertex] in this [UndirectedGraph]. If the vertex is not
-   * contained in this [UndirectedGraph], a [NoSuchVertexException] is thrown.
+   * Returns the index of the given [vertex] in this [Graph]. If the vertex is not contained in this
+   * [Graph], a [NoSuchVertexException] is thrown.
    */
   public operator fun get(vertex: Vertex): Int
 
   /**
-   * Returns the [Vertex] at the given [index] in this [UndirectedGraph]. If the index is not
-   * contained in this [UndirectedGraph], an [IndexOutOfBoundsException] is thrown.
+   * Returns the [Vertex] at the given [index] in this [Graph]. If the index is not contained in
+   * this [Graph], an [IndexOutOfBoundsException] is thrown.
    */
   public operator fun get(index: Int): Vertex
 
   /**
-   * Returns the number of edges leaving the [Vertex] at the given index in this [UndirectedGraph].
-   * If the vertex is not contained in this [UndirectedGraph], an [IndexOutOfBoundsException] is
-   * thrown.
+   * Returns the number of edges leaving the [Vertex] at the given index in this [Graph]. If the
+   * vertex is not contained in this [Graph], an [IndexOutOfBoundsException] is thrown.
    */
   public fun neighborsSize(index: Int): Int
 
   /**
-   * Returns the number of edges leaving the given [vertex] in this [UndirectedGraph]. If the vertex
-   * is not contained in this [UndirectedGraph], a [NoSuchVertexException] is thrown.
+   * Returns the number of edges leaving the given [vertex] in this [Graph]. If the vertex is not
+   * contained in this [Graph], a [NoSuchVertexException] is thrown.
    */
   public fun neighborsSize(vertex: Vertex): Int = neighborsSize(get(vertex))
 
   /**
    * Returns the [Vertex] at the given [neighborIndex] index in the list of neighbors of the
-   * [Vertex] at the given [index] in this [UndirectedGraph]. If the vertex is not contained in this
-   * [UndirectedGraph], an [IndexOutOfBoundsException] is thrown.
+   * [Vertex] at the given [index] in this [Graph]. If the vertex is not contained in this [Graph],
+   * an [IndexOutOfBoundsException] is thrown.
    */
   public fun neighbor(index: Int, neighborIndex: Int): Vertex
 
   /**
    * Returns the [Vertex] at the given [neighborIndex] index in the list of neighbors of the given
-   * [vertex] in this [UndirectedGraph]. If the vertex is not contained in this [UndirectedGraph], a
+   * [vertex] in this [Graph]. If the vertex is not contained in this [Graph], a
    * [NoSuchVertexException], and if the neighbor index is not contained in the list of neighbors of
    * the vertex, an [IndexOutOfBoundsException] is thrown.
    */
