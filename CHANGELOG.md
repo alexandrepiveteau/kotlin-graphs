@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Improvements
+
++ Perform chunk copies in `IntDequeue.toIntArray()`.
+
 ## [0.5.0] - 2023-04-28
 
 ### Algorithms
