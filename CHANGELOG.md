@@ -13,6 +13,10 @@
     - Added `MutableGraph`, `MutableNetwork` and directed/undirected variants.
     - Renamed `GraphBuilderScope` and variants to `MutableGraphScope`, which is implemented by the new `MutableGraph` interface.
 
+### Bug fixes
+
++ Remove some references to `Vertex.index` from multiple algorithms.
+
 ## [0.4.0] - 2023-04-27
 
 ### Algorithms
