@@ -70,10 +70,36 @@ A `Graph` is a collection of `Vertex`, connected by `Edge`s (for undirected grap
 Each arc or edge may have an `Int` weight, in which case the graph is a `Network`.
 
 ```kotlin
-val undirectedGraph = buildUndirectedGraph { /* Write me. */}
-val directedGraph = buildDirectedGraph { /* Write me. */}
-val undirectedNetwork = buildUndirectedNetwork { /* Write me. */}
-val directedNetwork = buildDirectedNetwork { /* Write me. */}
+val undirectedGraph = buildUndirectedGraph {
+  val (a, b, c) = addVertices() // Insert multiple vertices at once ...
+  val d = addVertex() // ... or just one at a time.
+
+  val e1 = a edgeTo b // Create an edge between two vertices ...
+  addEdge(e1) // ... and insert it in the graph. Networks support weighted edges and arcs.
+}
+val directedGraph = buildDirectedGraph { /* ... */}
+val undirectedNetwork = buildUndirectedNetwork { /* ... */}
+val directedNetwork = buildDirectedNetwork { /* ... */}
+
+```
+
+You can then iterate over the vertices of the network.
+
+```kotlin
+directedGraph.forEachVertex { v -> println(v) }
+
+```
+
+Additionally, the edges or arcs of the graph can be iterated over.
+
+```kotlin
+undirectedGraph.forEachEdge { (u, v) -> println("$u <-> $v") }
+```
+
+Networks also provide the weight of their edges or arcs.
+
+```kotlin
+directedNetwork.forEachArc { (from, to), weight -> println("$from -> $to : $weight") }
 
 ```
 
