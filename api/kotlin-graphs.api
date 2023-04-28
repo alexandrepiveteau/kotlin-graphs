@@ -104,12 +104,40 @@ public final class io/github/alexandrepiveteau/graphs/Graph$DefaultImpls {
 	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Graph;I)I
 }
 
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableDirectedGraph : io/github/alexandrepiveteau/graphs/DirectedGraph, io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope, io/github/alexandrepiveteau/graphs/MutableGraph {
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableDirectedGraph$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;)Lio/github/alexandrepiveteau/graphs/Vertices;
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;I)I
+}
+
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope : io/github/alexandrepiveteau/graphs/MutableGraphScope {
 	public abstract fun addArc--OaZVeM (J)V
 }
 
 public final class io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope$DefaultImpls {
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraphScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableDirectedNetwork : io/github/alexandrepiveteau/graphs/DirectedNetwork, io/github/alexandrepiveteau/graphs/MutableDirectedNetworkScope, io/github/alexandrepiveteau/graphs/MutableNetwork {
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableDirectedNetwork$DefaultImpls {
+	public static fun addArc--OaZVeM (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;J)V
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;)Lio/github/alexandrepiveteau/graphs/Vertices;
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;I)I
+	public static fun weight--OaZVeM (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;J)I
+	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
+	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableDirectedNetworkScope : io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope, io/github/alexandrepiveteau/graphs/MutableNetworkScope {
@@ -123,6 +151,18 @@ public final class io/github/alexandrepiveteau/graphs/MutableDirectedNetworkScop
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetworkScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableGraph : io/github/alexandrepiveteau/graphs/Graph, io/github/alexandrepiveteau/graphs/MutableGraphScope {
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableGraph$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableGraph;)Lio/github/alexandrepiveteau/graphs/Vertices;
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableGraph;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableGraph;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableGraph;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableGraph;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableGraph;I)I
+}
+
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableGraphScope {
 	public abstract fun addVertex-IrpSQec ()I
 	public abstract fun addVertices ()Lio/github/alexandrepiveteau/graphs/Vertices;
@@ -132,11 +172,37 @@ public final class io/github/alexandrepiveteau/graphs/MutableGraphScope$DefaultI
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableGraphScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
 }
 
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableNetwork : io/github/alexandrepiveteau/graphs/MutableGraph, io/github/alexandrepiveteau/graphs/MutableNetworkScope, io/github/alexandrepiveteau/graphs/Network {
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableNetwork$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableNetwork;)Lio/github/alexandrepiveteau/graphs/Vertices;
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableNetwork;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableNetwork;I)I
+	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
+	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
+}
+
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableNetworkScope : io/github/alexandrepiveteau/graphs/MutableGraphScope {
 }
 
 public final class io/github/alexandrepiveteau/graphs/MutableNetworkScope$DefaultImpls {
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableNetworkScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableUndirectedGraph : io/github/alexandrepiveteau/graphs/MutableGraph, io/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope, io/github/alexandrepiveteau/graphs/UndirectedGraph {
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableUndirectedGraph$DefaultImpls {
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;)Lio/github/alexandrepiveteau/graphs/Vertices;
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;I)I
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope : io/github/alexandrepiveteau/graphs/MutableGraphScope {
@@ -145,6 +211,22 @@ public abstract interface class io/github/alexandrepiveteau/graphs/MutableUndire
 
 public final class io/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope$DefaultImpls {
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope;)Lio/github/alexandrepiveteau/graphs/Vertices;
+}
+
+public abstract interface class io/github/alexandrepiveteau/graphs/MutableUndirectedNetwork : io/github/alexandrepiveteau/graphs/MutableNetwork, io/github/alexandrepiveteau/graphs/MutableUndirectedNetworkScope, io/github/alexandrepiveteau/graphs/UndirectedNetwork {
+}
+
+public final class io/github/alexandrepiveteau/graphs/MutableUndirectedNetwork$DefaultImpls {
+	public static fun addEdge-zEWoN30 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;J)V
+	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;)Lio/github/alexandrepiveteau/graphs/Vertices;
+	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;I)Z
+	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
+	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
+	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
+	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;I)I
+	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
+	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
+	public static fun weight-zEWoN30 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;J)I
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableUndirectedNetworkScope : io/github/alexandrepiveteau/graphs/MutableNetworkScope, io/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope {
