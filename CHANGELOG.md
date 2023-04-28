@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.5.0] - 2023-04-28
+
 ### Algorithms
 
 + Add Prim's minimum spanning tree algorithm.
@@ -55,7 +57,9 @@
 Initial release
 
 
-[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.4.0...HEAD
+[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.5.0...HEAD
+
+[0.5.0]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.5.0
 
 [0.4.0]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.4.0
 
