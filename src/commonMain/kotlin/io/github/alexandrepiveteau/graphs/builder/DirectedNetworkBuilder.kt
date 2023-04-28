@@ -5,12 +5,13 @@ package io.github.alexandrepiveteau.graphs.builder
 
 import io.github.alexandrepiveteau.graphs.Arc
 import io.github.alexandrepiveteau.graphs.DirectedNetwork
+import io.github.alexandrepiveteau.graphs.MutableDirectedNetworkScope
 import io.github.alexandrepiveteau.graphs.internal.graphs.AdjacencyListDirectedNetwork
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
 /** A [DirectedNetworkBuilder] is a [DirectedGraphBuilder] which can also add arcs with a weight. */
-public interface DirectedNetworkBuilder : NetworkBuilder, DirectedNetworkBuilderScope {
+public interface DirectedNetworkBuilder : NetworkBuilder, MutableDirectedNetworkScope {
   override fun toGraph(): DirectedNetwork
 }
 
@@ -26,7 +27,7 @@ public fun DirectedNetwork.Companion.builder(): DirectedNetworkBuilder =
  * @return the newly built graph.
  */
 public inline fun buildDirectedNetwork(
-    scope: DirectedNetworkBuilderScope.() -> Unit,
+    scope: MutableDirectedNetworkScope.() -> Unit,
 ): DirectedNetwork = DirectedNetwork.builder().apply(scope).toGraph()
 
 /** A [MutableListNetworkBuilder] for [DirectedNetworkBuilder]. */

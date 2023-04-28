@@ -4,13 +4,14 @@
 package io.github.alexandrepiveteau.graphs.builder
 
 import io.github.alexandrepiveteau.graphs.Edge
+import io.github.alexandrepiveteau.graphs.MutableUndirectedGraphScope
 import io.github.alexandrepiveteau.graphs.UndirectedGraph
 import io.github.alexandrepiveteau.graphs.internal.graphs.AdjacencyListUndirectedGraph
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
 /** A [GraphBuilder] for [UndirectedGraph]s. */
-public interface UndirectedGraphBuilder : GraphBuilder, UndirectedGraphBuilderScope {
+public interface UndirectedGraphBuilder : GraphBuilder, MutableUndirectedGraphScope {
   override fun toGraph(): UndirectedGraph
 }
 
@@ -26,7 +27,7 @@ public fun UndirectedGraph.Companion.builder(): UndirectedGraphBuilder =
  * @return the newly built graph.
  */
 public inline fun buildUndirectedGraph(
-    scope: UndirectedGraphBuilderScope.() -> Unit,
+    scope: MutableUndirectedGraphScope.() -> Unit,
 ): UndirectedGraph = UndirectedGraph.builder().apply(scope).toGraph()
 
 /** A [MutableListGraphBuilder] for [UndirectedGraphBuilder]. */

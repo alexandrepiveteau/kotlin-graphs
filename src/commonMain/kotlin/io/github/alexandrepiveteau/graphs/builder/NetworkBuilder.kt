@@ -1,5 +1,6 @@
 package io.github.alexandrepiveteau.graphs.builder
 
+import io.github.alexandrepiveteau.graphs.MutableNetworkScope
 import io.github.alexandrepiveteau.graphs.Network
 import io.github.alexandrepiveteau.graphs.Vertex
 import io.github.alexandrepiveteau.graphs.VertexArray
@@ -9,7 +10,7 @@ import io.github.alexandrepiveteau.graphs.util.unpackInt1
 import io.github.alexandrepiveteau.graphs.util.unpackInt2
 
 /** A [NetworkBuilder] is a [GraphBuilder] for [Network]s. */
-public interface NetworkBuilder : GraphBuilder, NetworkBuilderScope {
+public interface NetworkBuilder : GraphBuilder, MutableNetworkScope {
   override fun toGraph(): Network
 }
 

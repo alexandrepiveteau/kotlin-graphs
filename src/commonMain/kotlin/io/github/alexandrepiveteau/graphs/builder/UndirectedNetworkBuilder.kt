@@ -4,13 +4,14 @@
 package io.github.alexandrepiveteau.graphs.builder
 
 import io.github.alexandrepiveteau.graphs.Edge
+import io.github.alexandrepiveteau.graphs.MutableUndirectedNetworkScope
 import io.github.alexandrepiveteau.graphs.UndirectedNetwork
 import io.github.alexandrepiveteau.graphs.internal.graphs.AdjacencyListUndirectedNetwork
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
 /** An [UndirectedNetworkBuilder] is a [NetworkBuilder] for [UndirectedNetwork]s. */
-public interface UndirectedNetworkBuilder : NetworkBuilder, UndirectedNetworkBuilderScope {
+public interface UndirectedNetworkBuilder : NetworkBuilder, MutableUndirectedNetworkScope {
   override fun toGraph(): UndirectedNetwork
 }
 
@@ -26,7 +27,7 @@ public fun UndirectedNetwork.Companion.builder(): UndirectedNetworkBuilder =
  * @return the newly built graph.
  */
 public inline fun buildUndirectedNetwork(
-    scope: UndirectedNetworkBuilderScope.() -> Unit
+    scope: MutableUndirectedNetworkScope.() -> Unit
 ): UndirectedNetwork = UndirectedNetwork.builder().apply(scope).toGraph()
 
 /** A [MutableListNetworkBuilder] for [UndirectedNetworkBuilder]. */

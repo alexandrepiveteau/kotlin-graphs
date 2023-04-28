@@ -1,10 +1,7 @@
-package io.github.alexandrepiveteau.graphs.builder
+package io.github.alexandrepiveteau.graphs
 
-import io.github.alexandrepiveteau.graphs.Graph
-import io.github.alexandrepiveteau.graphs.Vertex
-
-/** A [GraphBuilderScope] is scope which can be used to build a [Graph]. */
-public fun interface GraphBuilderScope {
+/** A [MutableGraphScope] is scope which can be used to build a [Graph]. */
+public fun interface MutableGraphScope {
 
   /** Adds a new vertex to the graph, and returns it. */
   public fun addVertex(): Vertex
