@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>MutableUndirectedNetwork</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>kotlin-graphs</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":dokkaHtml/commonMain">common</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="kotlin-graphs::io.github.alexandrepiveteau.graphs/MutableUndirectedNetwork///PointingToDeclaration//788909594">
+  <div class="breadcrumbs"><a href="../../../index.html">kotlin-graphs</a><span class="delimiter">/</span><a href="../index.html">io.github.alexandrepiveteau.graphs</a><span class="delimiter">/</span><span class="current">MutableUndirectedNetwork</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Mutable</span><wbr></wbr><span>Undirected</span><wbr></wbr><span><span>Network</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">MutableUndirectedNetwork</a> : <a href="../-undirected-network/index.html">UndirectedNetwork</a>, <a href="../-mutable-network/index.html">MutableNetwork</a>, <a href="../-mutable-undirected-network-scope/index.html">MutableUndirectedNetworkScope</a></div><p class="paragraph">An <a href="../-undirected-network/index.html">UndirectedNetwork</a> that is mutable.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="922331441%2FFunctions%2F788909594" anchor-label="addEdge" id="922331441%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-mutable-undirected-network-scope/add-edge.html"><span>add</span><wbr></wbr><span><span>Edge</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="922331441%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-mutable-undirected-network-scope/add-edge.html"><span class="token function">addEdge</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">edge<span class="token operator">: </span><a href="../-edge/index.html">Edge</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Adds a new edge to the graph.</p></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-mutable-undirected-network-scope/add-edge.html"><span class="token function">addEdge</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">edge<span class="token operator">: </span><a href="../-edge/index.html">Edge</a><span class="token punctuation">, </span></span><span class="parameter ">weight<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Adds a new weighted edge to the graph.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="381617293%2FFunctions%2F788909594" anchor-label="addVertex" id="381617293%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-mutable-graph-scope/add-vertex.html"><span>add</span><wbr></wbr><span><span>Vertex</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="381617293%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-mutable-graph-scope/add-vertex.html"><span class="token function">addVertex</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></div><div class="brief "><p class="paragraph">Adds a new vertex to the graph, and returns it.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-803210536%2FFunctions%2F788909594" anchor-label="addVertices" id="-803210536%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-mutable-graph-scope/add-vertices.html"><span>add</span><wbr></wbr><span><span>Vertices</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-803210536%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-mutable-graph-scope/add-vertices.html"><span class="token function">addVertices</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertices/index.html">Vertices</a></div><div class="brief "><p class="paragraph">Returns a new <a href="../-vertices/index.html">Vertices</a> instance.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-133751345%2FFunctions%2F788909594" anchor-label="connectedComponents" id="-133751345%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/connected-components.html"><span>connected</span><wbr></wbr><span><span>Components</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-133751345%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-undirected-graph/index.html">UndirectedGraph</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/connected-components.html"><span class="token function">connectedComponents</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html">Pair</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-undirected-graph/index.html">UndirectedGraph</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../-vertex-map/index.html">VertexMap</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Computes the strongly connected components of this <a href="../-undirected-graph/index.html">UndirectedGraph</a>, and returns a new <a href="../-undirected-graph/index.html">UndirectedGraph</a> where each vertex is a strongly connected component, and a <a href="../-vertex-map/index.html">VertexMap</a> which maps each vertex to its corresponding strongly connected component.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1912317460%2FFunctions%2F788909594" anchor-label="contains" id="1912317460%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-graph/contains.html"><span><span>contains</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1912317460%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="../-graph/contains.html"><span class="token function">contains</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns true if the given <a href="../-graph/contains.html">vertex</a> is contained in this <a href="../-graph/index.html">Graph</a>, and false otherwise.</p></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="../-undirected-graph/contains.html"><span class="token function">contains</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">edge<span class="token operator">: </span><a href="../-edge/index.html">Edge</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns true if the given <a href="../-undirected-graph/contains.html">edge</a> is contained in this <a href="../-undirected-graph/index.html">UndirectedGraph</a>, and false otherwise.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1752195353%2FFunctions%2F788909594" anchor-label="forEachEdge" id="-1752195353%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-edge.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span><span>Edge</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1752195353%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="../-undirected-graph/index.html">UndirectedGraph</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-edge.html"><span class="token function">forEachEdge</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../-edge/index.html">Edge</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Performs the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-edge.html">action</a> on each edge in this graph.</p></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="../-undirected-network/index.html">UndirectedNetwork</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-edge.html"><span class="token function">forEachEdge</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../-edge/index.html">Edge</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Performs the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-edge.html">action</a> on each edge in this graph, along with its weight.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-127470699%2FFunctions%2F788909594" anchor-label="forEachNeighbor" id="-127470699%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-neighbor.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span><span>Neighbor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-127470699%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="../-graph/index.html">Graph</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-neighbor.html"><span class="token function">forEachNeighbor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Performs the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-neighbor.html">action</a> on each neighbor of the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-neighbor.html">vertex</a>.</p></div><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="../-network/index.html">Network</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-neighbor.html"><span class="token function">forEachNeighbor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Performs the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-neighbor.html">action</a> on each neighbor of the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-neighbor.html">vertex</a>, along with its weight.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="592839055%2FFunctions%2F788909594" anchor-label="forEachVertex" id="592839055%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span><span>Vertex</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="592839055%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="../-graph/index.html">Graph</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex.html"><span class="token function">forEachVertex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Performs the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex.html">action</a> on each vertex of this graph.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1431548129%2FFunctions%2F788909594" anchor-label="forEachVertexBreadthFirst" id="1431548129%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-breadth-first.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span>Vertex</span><wbr></wbr><span>Breadth</span><wbr></wbr><span><span>First</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1431548129%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="../-graph/index.html">Graph</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-breadth-first.html"><span class="token function">forEachVertexBreadthFirst</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">from<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Traverses the graph in breadth-first order, starting from the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-breadth-first.html">from</a> vertex, and performs the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-breadth-first.html">action</a> on each vertex.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1071478129%2FFunctions%2F788909594" anchor-label="forEachVertexDepthFirst" id="-1071478129%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-depth-first.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span>Vertex</span><wbr></wbr><span>Depth</span><wbr></wbr><span><span>First</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1071478129%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="../-graph/index.html">Graph</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-depth-first.html"><span class="token function">forEachVertexDepthFirst</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">from<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">visited<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean-array/index.html">BooleanArray</a><span class="token operator"> = </span>BooleanArray(size)<span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Traverses the graph in depth-first order, starting from the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-depth-first.html">from</a> vertex, and performs the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-depth-first.html">action</a> on each vertex.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1712478607%2FFunctions%2F788909594" anchor-label="forEachVertexDepthFirstPostOrder" id="-1712478607%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-depth-first-post-order.html"><span>for</span><wbr></wbr><span>Each</span><wbr></wbr><span>Vertex</span><wbr></wbr><span>Depth</span><wbr></wbr><span>First</span><wbr></wbr><span>Post</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1712478607%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="../-graph/index.html">Graph</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-depth-first-post-order.html"><span class="token function">forEachVertexDepthFirstPostOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">from<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">visited<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean-array/index.html">BooleanArray</a><span class="token operator"> = </span>BooleanArray(size)<span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Traverses the graph in depth-first order, starting from the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-depth-first-post-order.html">from</a> vertex, and performs the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/for-each-vertex-depth-first-post-order.html">action</a> on each vertex after all its neighbors have been visited.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-194762118%2FFunctions%2F788909594" anchor-label="get" id="-194762118%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-graph/get.html"><span><span>get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-194762118%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="../-graph/get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Returns the index of the given <a href="../-graph/get.html">vertex</a> in this <a href="../-graph/index.html">Graph</a>. If the vertex is not contained in this <a href="../-graph/index.html">Graph</a>, a <a href="../-no-such-vertex-exception/index.html">NoSuchVertexException</a> is thrown.</p></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="../-graph/get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></div><div class="brief "><p class="paragraph">Returns the <a href="../-vertex/index.html">Vertex</a> at the given <a href="../-graph/get.html">index</a> in this <a href="../-graph/index.html">Graph</a>. If the index is not contained in this <a href="../-graph/index.html">Graph</a>, an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-index-out-of-bounds-exception/index.html">IndexOutOfBoundsException</a> is thrown.</p></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="../-graph/get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">neighborIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="../-graph/get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">neighborIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1017476219%2FFunctions%2F788909594" anchor-label="minimumSpanningForest" id="-1017476219%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/minimum-spanning-forest.html"><span>minimum</span><wbr></wbr><span>Spanning</span><wbr></wbr><span><span>Forest</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1017476219%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-undirected-network/index.html">UndirectedNetwork</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/minimum-spanning-forest.html"><span class="token function">minimumSpanningForest</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-undirected-network/index.html">UndirectedNetwork</a></div><div class="brief "><p class="paragraph">Returns an <a href="../-undirected-network/index.html">UndirectedNetwork</a> corresponding to the minimum spanning forest of the current <a href="../-undirected-network/index.html">UndirectedNetwork</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="327132683%2FFunctions%2F788909594" anchor-label="neighbor" id="327132683%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-graph/neighbor.html"><span><span>neighbor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="327132683%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-graph/neighbor.html"><span class="token function">neighbor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">neighborIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></div><div class="brief "><p class="paragraph">Returns the <a href="../-vertex/index.html">Vertex</a> at the given <a href="../-graph/neighbor.html">neighborIndex</a> index in the list of neighbors of the given <a href="../-graph/neighbor.html">vertex</a> in this <a href="../-graph/index.html">Graph</a>. If the vertex is not contained in this <a href="../-graph/index.html">Graph</a>, a <a href="../-no-such-vertex-exception/index.html">NoSuchVertexException</a>, and if the neighbor index is not contained in the list of neighbors of the vertex, an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-index-out-of-bounds-exception/index.html">IndexOutOfBoundsException</a> is thrown.</p></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-graph/neighbor.html"><span class="token function">neighbor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">neighborIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></div><div class="brief "><p class="paragraph">Returns the <a href="../-vertex/index.html">Vertex</a> at the given <a href="../-graph/neighbor.html">neighborIndex</a> index in the list of neighbors of the <a href="../-vertex/index.html">Vertex</a> at the given <a href="../-graph/neighbor.html">index</a> in this <a href="../-graph/index.html">Graph</a>. If the vertex is not contained in this <a href="../-graph/index.html">Graph</a>, an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-index-out-of-bounds-exception/index.html">IndexOutOfBoundsException</a> is thrown.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1483195769%2FFunctions%2F788909594" anchor-label="neighborsSize" id="1483195769%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-graph/neighbors-size.html"><span>neighbors</span><wbr></wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1483195769%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-graph/neighbors-size.html"><span class="token function">neighborsSize</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Returns the number of edges leaving the given <a href="../-graph/neighbors-size.html">vertex</a> in this <a href="../-graph/index.html">Graph</a>. If the vertex is not contained in this <a href="../-graph/index.html">Graph</a>, a <a href="../-no-such-vertex-exception/index.html">NoSuchVertexException</a> is thrown.</p></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-graph/neighbors-size.html"><span class="token function">neighborsSize</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Returns the number of edges leaving the <a href="../-vertex/index.html">Vertex</a> at the given index in this <a href="../-graph/index.html">Graph</a>. If the vertex is not contained in this <a href="../-graph/index.html">Graph</a>, an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-index-out-of-bounds-exception/index.html">IndexOutOfBoundsException</a> is thrown.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1528783767%2FFunctions%2F788909594" anchor-label="shortestPathBreadthFirst" id="-1528783767%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-breadth-first.html"><span>shortest</span><wbr></wbr><span>Path</span><wbr></wbr><span>Breadth</span><wbr></wbr><span><span>First</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1528783767%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-graph/index.html">Graph</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-breadth-first.html"><span class="token function">shortestPathBreadthFirst</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">from<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">to<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertex-array/index.html">VertexArray</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns a <a href="../-vertex-array/index.html">VertexArray</a> with the shortest path going from the <a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-breadth-first.html">from</a> vertex to the <a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-breadth-first.html">to</a> vertex, using breadth-first search.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="358325534%2FFunctions%2F788909594" anchor-label="shortestPathDijkstra" id="358325534%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-dijkstra.html"><span>shortest</span><wbr></wbr><span>Path</span><wbr></wbr><span><span>Dijkstra</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="358325534%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-network/index.html">Network</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-dijkstra.html"><span class="token function">shortestPathDijkstra</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">from<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-directed-network/index.html">DirectedNetwork</a></div><div class="brief "><p class="paragraph">Computes the shortest path from the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-dijkstra.html">from</a> vertex to all the other vertices in the network, using Dijkstra's algorithm.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-network/index.html">Network</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-dijkstra.html"><span class="token function">shortestPathDijkstra</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">from<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">to<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertex-array/index.html">VertexArray</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Computes the shortest path from the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-dijkstra.html">from</a> vertex to the <a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-dijkstra.html">to</a> vertex in the network, using Dijkstra's algorithm.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2055205588%2FFunctions%2F788909594" anchor-label="shortestPathFasterAlgorithm" id="-2055205588%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-faster-algorithm.html"><span>shortest</span><wbr></wbr><span>Path</span><wbr></wbr><span>Faster</span><wbr></wbr><span><span>Algorithm</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2055205588%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-network/index.html">Network</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-faster-algorithm.html"><span class="token function">shortestPathFasterAlgorithm</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">from<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-directed-network/index.html">DirectedNetwork</a></div><div class="brief "><p class="paragraph">Computes the shortest path from the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-faster-algorithm.html">from</a> vertex to all the other vertices in the network, using the <a href="https://en.wikipedia.org/wiki/Shortest_path_faster_algorithm">Shortest Path Faster Algorithm</a>, which is a variant of the Bellman-Ford algorithm specialized for sparse graphs.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-network/index.html">Network</a><span class="token punctuation">.</span><a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-faster-algorithm.html"><span class="token function">shortestPathFasterAlgorithm</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">from<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">to<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vertex-array/index.html">VertexArray</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Computes the shortest path from the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-faster-algorithm.html">from</a> vertex to the given <a href="../../io.github.alexandrepiveteau.graphs.algorithms/shortest-path-faster-algorithm.html">to</a> vertex in the network, using the <a href="https://en.wikipedia.org/wiki/Shortest_path_faster_algorithm">Shortest Path Faster Algorithm</a>, which is a variant of the Bellman-Ford algorithm specialized for sparse graphs.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1504819563%2FFunctions%2F788909594" anchor-label="toDirectedGraph" id="1504819563%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../to-directed-graph.html"><span>to</span><wbr></wbr><span>Directed</span><wbr></wbr><span><span>Graph</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1504819563%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-undirected-graph/index.html">UndirectedGraph</a><span class="token punctuation">.</span><a href="../to-directed-graph.html"><span class="token function">toDirectedGraph</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-directed-graph/index.html">DirectedGraph</a></div><div class="brief "><p class="paragraph">Transforms the <a href="../-undirected-graph/index.html">UndirectedGraph</a> into a <a href="../-directed-graph/index.html">DirectedGraph</a>, by adding an arc between each pair of vertices that are connected by an edge in both directions.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="929429959%2FFunctions%2F788909594" anchor-label="weight" id="929429959%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-network/weight.html"><span><span>weight</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="929429959%2FFunctions%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-network/weight.html"><span class="token function">weight</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">neighbor<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Returns the weight of the edge between the <a href="../-network/weight.html">vertex</a> and its <a href="../-network/weight.html">neighbor</a>.</p></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-network/weight.html"><span class="token function">weight</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertex<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a><span class="token punctuation">, </span></span><span class="parameter ">neighborIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Returns the weight of the edge between the <a href="../-network/weight.html">vertex</a> and the <a href="../-vertex/index.html">Vertex</a> at <a href="../-network/weight.html">neighborIndex</a>.</p></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-network/weight.html"><span class="token function">weight</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">neighbor<span class="token operator">: </span><a href="../-vertex/index.html">Vertex</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Returns the weight of the edge between the <a href="../-vertex/index.html">Vertex</a> at <a href="../-network/weight.html">index</a> and its <a href="../-network/weight.html">neighbor</a>.</p></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-network/weight.html"><span class="token function">weight</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">neighborIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Returns the weight of the edge between the <a href="../-vertex/index.html">Vertex</a> at <a href="../-network/weight.html">index</a> and the <a href="../-vertex/index.html">Vertex</a> at <a href="../-network/weight.html">neighborIndex</a>.</p></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-undirected-network/weight.html"><span class="token function">weight</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">edge<span class="token operator">: </span><a href="../-edge/index.html">Edge</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Returns the weight of the <a href="../-undirected-network/weight.html">edge</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1244238921%2FProperties%2F788909594" anchor-label="size" id="1244238921%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-graph/size.html"><span><span>size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1244238921%2FProperties%2F788909594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../-graph/size.html">size</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">The number of vertices in this <a href="../-graph/index.html">Graph</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
