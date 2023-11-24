@@ -57,7 +57,8 @@ dependencies {
 + Reasonably fast and avoids auto-boxing on JVM
 + Works on Kotlin/JVM, Kotlin/JS and Kotlin/Native
 
-> :warning: This library is still in heavy development, and you should expect
+> [!WARNING]
+> This library is still in heavy development, and you should expect
 > the following:
 >
 > + The API is not stable, and may change at any time.
