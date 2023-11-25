@@ -7,6 +7,8 @@ import io.github.alexandrepiveteau.graphs.Arc
 import io.github.alexandrepiveteau.graphs.DirectedNetwork
 import io.github.alexandrepiveteau.graphs.MutableDirectedNetworkScope
 import io.github.alexandrepiveteau.graphs.internal.graphs.AdjacencyListDirectedNetwork
+import kotlin.contracts.InvocationKind
+import kotlin.contracts.contract
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
@@ -28,7 +30,10 @@ public fun DirectedNetwork.Companion.builder(): DirectedNetworkBuilder =
  */
 public inline fun buildDirectedNetwork(
     scope: MutableDirectedNetworkScope.() -> Unit,
-): DirectedNetwork = DirectedNetwork.builder().apply(scope).toGraph()
+): DirectedNetwork {
+  contract { callsInPlace(scope, InvocationKind.EXACTLY_ONCE) }
+  return DirectedNetwork.builder().apply(scope).toGraph()
+}
 
 /** A [MutableListNetworkBuilder] for [DirectedNetworkBuilder]. */
 private class MutableListDirectedNetworkBuilder :
@@ -39,6 +44,7 @@ private class MutableListDirectedNetworkBuilder :
     neighbors[u.index] += v.index
     weights[u.index] += weight
   }
+
   override fun toGraph(): DirectedNetwork {
     val (n, w) = compactToVertexAndWeightsArray(neighbors, weights)
     return AdjacencyListDirectedNetwork(n, w)

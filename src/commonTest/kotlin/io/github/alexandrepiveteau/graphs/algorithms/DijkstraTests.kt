@@ -27,29 +27,38 @@ class DijkstraTests {
 
   @Test
   fun respectsArcsDirections() {
+    var a: Vertex
     val network = buildDirectedNetwork {
-      val (a, b) = addVertices()
+      a = addVertex()
+      val b = addVertex()
       addArc(b arcTo a, 1)
     }
     val expected = buildDirectedNetwork {
       addVertex()
       addVertex()
     }
-    val dijkstra = network.shortestPathDijkstra(network.vertex(0))
+    val dijkstra = network.shortestPathDijkstra(a)
     assertEquals(expected, dijkstra)
   }
 
   @Test
   fun directedEdge() {
+    var aN: Vertex
+    var bN: Vertex
     val network = buildDirectedNetwork {
-      val (a, b) = addVertices()
-      addArc(a arcTo b, 1)
+      aN = addVertex()
+      bN = addVertex()
+      addArc(aN arcTo bN, 1)
     }
+
+    var aE: Vertex
+    var bE: Vertex
     val expected = buildDirectedNetwork {
-      val (a, b) = addVertices()
-      addArc(a arcTo b, 1)
+      aE = addVertex()
+      bE = addVertex()
+      addArc(aE arcTo bE, 1)
     }
-    val dijkstra = network.shortestPathDijkstra(network.vertex(0))
+    val dijkstra = network.shortestPathDijkstra(aN)
     assertEquals(expected, dijkstra)
   }
 

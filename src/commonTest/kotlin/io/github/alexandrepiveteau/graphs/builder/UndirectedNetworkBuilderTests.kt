@@ -1,5 +1,6 @@
 package io.github.alexandrepiveteau.graphs.builder
 
+import io.github.alexandrepiveteau.graphs.Vertex
 import io.github.alexandrepiveteau.graphs.edgeTo
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -20,26 +21,30 @@ class UndirectedNetworkBuilderTests {
 
   @Test
   fun builderWithDuplicateEdgeAddsWeights() {
+    var a: Vertex
+    var b: Vertex
     val network = buildUndirectedNetwork {
-      val (a, b) = addVertices()
+      a = addVertex()
+      b = addVertex()
+
       addEdge(a edgeTo b, 1)
       addEdge(a edgeTo b, 2)
     }
 
-    val a = network.vertex(0)
-    val b = network.vertex(1)
     assertEquals(3, network.weight(a, b))
   }
 
   @Test
   fun builderWithDuplicateEdgesWithNegativeSum() {
+    var a: Vertex
+    var b: Vertex
     val network = buildUndirectedNetwork {
-      val (a, b) = addVertices()
+      a = addVertex()
+      b = addVertex()
+
       addEdge(a edgeTo b, 1)
       addEdge(a edgeTo b, -2)
     }
-    val a = network.vertex(0)
-    val b = network.vertex(1)
     assertEquals(-1, network.weight(a, b))
   }
 }

@@ -7,6 +7,8 @@ import io.github.alexandrepiveteau.graphs.Edge
 import io.github.alexandrepiveteau.graphs.MutableUndirectedGraphScope
 import io.github.alexandrepiveteau.graphs.UndirectedGraph
 import io.github.alexandrepiveteau.graphs.internal.graphs.AdjacencyListUndirectedGraph
+import kotlin.contracts.InvocationKind
+import kotlin.contracts.contract
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
@@ -28,7 +30,10 @@ public fun UndirectedGraph.Companion.builder(): UndirectedGraphBuilder =
  */
 public inline fun buildUndirectedGraph(
     scope: MutableUndirectedGraphScope.() -> Unit,
-): UndirectedGraph = UndirectedGraph.builder().apply(scope).toGraph()
+): UndirectedGraph {
+  contract { callsInPlace(scope, InvocationKind.EXACTLY_ONCE) }
+  return UndirectedGraph.builder().apply(scope).toGraph()
+}
 
 /** A [MutableListGraphBuilder] for [UndirectedGraphBuilder]. */
 private class MutableListUndirectedGraphBuilder :
@@ -39,6 +44,7 @@ private class MutableListUndirectedGraphBuilder :
     neighbors[u.index] += v.index
     neighbors[v.index] += u.index
   }
+
   override fun toGraph(): UndirectedGraph =
       AdjacencyListUndirectedGraph(compactToVertexArray(neighbors))
 }

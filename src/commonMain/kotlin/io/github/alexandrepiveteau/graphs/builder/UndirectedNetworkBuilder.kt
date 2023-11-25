@@ -7,6 +7,8 @@ import io.github.alexandrepiveteau.graphs.Edge
 import io.github.alexandrepiveteau.graphs.MutableUndirectedNetworkScope
 import io.github.alexandrepiveteau.graphs.UndirectedNetwork
 import io.github.alexandrepiveteau.graphs.internal.graphs.AdjacencyListUndirectedNetwork
+import kotlin.contracts.InvocationKind
+import kotlin.contracts.contract
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
@@ -28,7 +30,10 @@ public fun UndirectedNetwork.Companion.builder(): UndirectedNetworkBuilder =
  */
 public inline fun buildUndirectedNetwork(
     scope: MutableUndirectedNetworkScope.() -> Unit
-): UndirectedNetwork = UndirectedNetwork.builder().apply(scope).toGraph()
+): UndirectedNetwork {
+  contract { callsInPlace(scope, InvocationKind.EXACTLY_ONCE) }
+  return UndirectedNetwork.builder().apply(scope).toGraph()
+}
 
 /** A [MutableListNetworkBuilder] for [UndirectedNetworkBuilder]. */
 private class MutableListUndirectedNetworkBuilder() :

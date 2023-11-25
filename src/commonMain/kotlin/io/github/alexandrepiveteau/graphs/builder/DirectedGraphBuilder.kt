@@ -7,6 +7,8 @@ import io.github.alexandrepiveteau.graphs.Arc
 import io.github.alexandrepiveteau.graphs.DirectedGraph
 import io.github.alexandrepiveteau.graphs.MutableDirectedGraphScope
 import io.github.alexandrepiveteau.graphs.internal.graphs.AdjacencyListDirectedGraph
+import kotlin.contracts.InvocationKind
+import kotlin.contracts.contract
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
@@ -28,7 +30,10 @@ public fun DirectedGraph.Companion.builder(): DirectedGraphBuilder =
  */
 public inline fun buildDirectedGraph(
     scope: MutableDirectedGraphScope.() -> Unit,
-): DirectedGraph = DirectedGraph.builder().apply(scope).toGraph()
+): DirectedGraph {
+  contract { callsInPlace(scope, InvocationKind.EXACTLY_ONCE) }
+  return DirectedGraph.builder().apply(scope).toGraph()
+}
 
 /** A [MutableListGraphBuilder] for [DirectedGraphBuilder]. */
 private class MutableListDirectedGraphBuilder : MutableListGraphBuilder(), DirectedGraphBuilder {
@@ -37,5 +42,6 @@ private class MutableListDirectedGraphBuilder : MutableListGraphBuilder(), Direc
     checkLink(u, v)
     neighbors[u.index] += v.index
   }
+
   override fun toGraph() = AdjacencyListDirectedGraph(compactToVertexArray(neighbors))
 }
