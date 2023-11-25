@@ -33,7 +33,7 @@ public fun DirectedGraph.topologicalSort(): VertexArray {
 
   // 1. Compute the number of incoming edges for each vertex.
   val edges = IntArray(size)
-  forEachArc { (_, to) -> edges[get(to)]++ }
+  forEachArc { (_, to) -> edges[index(to)]++ }
 
   // 2. Add all the vertices with no incoming edges to the queue.
   for (i in edges.indices) {
@@ -50,8 +50,8 @@ public fun DirectedGraph.topologicalSort(): VertexArray {
     val vertex = queue.removeFirst()
     result.addLast(vertex)
 
-    forEachNeighbor(get(vertex)) {
-      val to = get(it)
+    forEachNeighbor(vertex(vertex)) {
+      val to = index(it)
       edges[to]--
       if (edges[to] == 0 && !sorted[to]) {
         queue.addLast(to)

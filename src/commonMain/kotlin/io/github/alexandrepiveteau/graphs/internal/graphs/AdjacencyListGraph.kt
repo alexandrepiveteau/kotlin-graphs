@@ -12,22 +12,22 @@ internal class AdjacencyListGraph(private val neighbors: Array<VertexArray>) : G
   override val size: Int
     get() = neighbors.size
 
-  override fun get(vertex: Vertex): Int {
+  override fun index(vertex: Vertex): Int {
     if (vertex.index < 0 || vertex.index >= size) throw NoSuchVertexException()
     return vertex.index
   }
 
-  override fun get(index: Int): Vertex {
+  override fun vertex(index: Int): Vertex {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     return Vertex(index)
   }
 
-  override fun neighborsSize(index: Int): Int {
+  override fun successorsSize(index: Int): Int {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     return neighbors[index].size
   }
 
-  override fun neighbor(index: Int, neighborIndex: Int): Vertex {
+  override fun successor(index: Int, neighborIndex: Int): Vertex {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     val neighbors = neighbors[index]
     if (neighborIndex < 0 || neighborIndex >= neighbors.size) throw IndexOutOfBoundsException()

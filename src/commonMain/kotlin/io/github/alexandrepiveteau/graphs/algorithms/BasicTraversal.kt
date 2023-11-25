@@ -17,7 +17,7 @@ import kotlin.jvm.JvmName
  */
 public inline fun Graph.forEachVertex(action: (Vertex) -> Unit) {
   contract { callsInPlace(action) }
-  for (i in 0 until size) action(get(i))
+  for (i in 0 until size) action(vertex(i))
 }
 
 /**
@@ -29,8 +29,8 @@ public inline fun Graph.forEachVertex(action: (Vertex) -> Unit) {
  */
 public inline fun Graph.forEachNeighbor(vertex: Vertex, action: (Vertex) -> Unit) {
   contract { callsInPlace(action) }
-  val index = get(vertex)
-  for (i in 0 until neighborsSize(index)) action(get(vertex, i))
+  val index = index(vertex)
+  for (i in 0 until successorsSize(index)) action(successor(vertex, i))
 }
 
 /**
@@ -42,8 +42,8 @@ public inline fun Graph.forEachNeighbor(vertex: Vertex, action: (Vertex) -> Unit
  */
 public inline fun Network.forEachNeighbor(vertex: Vertex, action: (Vertex, Int) -> Unit) {
   contract { callsInPlace(action) }
-  val index = get(vertex)
-  for (i in 0 until neighborsSize(index)) action(get(vertex, i), weight(vertex, i))
+  val index = index(vertex)
+  for (i in 0 until successorsSize(index)) action(successor(vertex, i), weight(vertex, i))
 }
 
 /**
@@ -79,7 +79,7 @@ public inline fun DirectedNetwork.forEachArc(action: (Arc, Int) -> Unit) {
  */
 public inline fun UndirectedGraph.forEachEdge(action: (Edge) -> Unit) {
   contract { callsInPlace(action) }
-  forEachVertex { u -> forEachNeighbor(u) { v -> if (get(u) <= get(v)) action(u edgeTo v) } }
+  forEachVertex { u -> forEachNeighbor(u) { v -> if (index(u) <= index(v)) action(u edgeTo v) } }
 }
 
 /**
@@ -91,5 +91,7 @@ public inline fun UndirectedGraph.forEachEdge(action: (Edge) -> Unit) {
  */
 public inline fun UndirectedNetwork.forEachEdge(action: (Edge, Int) -> Unit) {
   contract { callsInPlace(action) }
-  forEachVertex { u -> forEachNeighbor(u) { v, w -> if (get(u) <= get(v)) action(u edgeTo v, w) } }
+  forEachVertex { u ->
+    forEachNeighbor(u) { v, w -> if (index(u) <= index(v)) action(u edgeTo v, w) }
+  }
 }

@@ -51,9 +51,9 @@ object ShortestPathTestCases {
   /** Returns a [Sequence] of all the test cases with only positive weights. */
   fun positiveWeights() =
       sequenceOf(
-          Triple(WikipediaDijkstra, WikipediaDijkstra[0], WikipediaDijkstraSolution),
-          Triple(Singleton, Singleton[0], SingletonSolution),
-          Triple(SimpleGraph, SimpleGraph[0], SimpleGraphSolution),
+          Triple(WikipediaDijkstra, WikipediaDijkstra.vertex(0), WikipediaDijkstraSolution),
+          Triple(Singleton, Singleton.vertex(0), SingletonSolution),
+          Triple(SimpleGraph, SimpleGraph.vertex(0), SimpleGraphSolution),
       )
 
   private val NegativeEdge = buildDirectedNetwork {
@@ -90,8 +90,8 @@ object ShortestPathTestCases {
   /** Returns a [Sequence] of all the test cases with only negative weights. */
   fun negativeWeights() =
       sequenceOf(
-          Triple(NegativeEdge, NegativeEdge[0], NegativeEdgeSolution),
-          Triple(BellmanFordWikipedia, BellmanFordWikipedia[0], BellmanFordWikipediaSolution),
+          Triple(NegativeEdge, NegativeEdge.vertex(0), NegativeEdgeSolution),
+          Triple(BellmanFordWikipedia, BellmanFordWikipedia.vertex(0), BellmanFordWikipediaSolution),
       )
 
   /** Returns a [Sequence] of all the test cases with both positive and negative weights. */

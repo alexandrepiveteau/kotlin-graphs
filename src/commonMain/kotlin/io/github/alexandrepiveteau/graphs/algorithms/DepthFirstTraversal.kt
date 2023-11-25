@@ -81,25 +81,25 @@ internal inline fun Graph.forEachVertexDepthFirstHelper(
     callsInPlace(postOrderAction)
   }
   val counts = IntArray(size)
-  val path = IntDequeue().apply { addLast(get(from)) }
+  val path = IntDequeue().apply { addLast(index(from)) }
   while (path.size > 0) {
     val next = path.peekLast()
     if (!visited[next]) {
-      inOrderAction(get(next))
+      inOrderAction(vertex(next))
       visited[next] = true
     }
     var found = false
-    while (counts[next] < neighborsSize(next)) {
-      val neighbor = get(next, counts[next]++)
-      if (!visited[get(neighbor)]) {
+    while (counts[next] < successorsSize(next)) {
+      val neighbor = successor(next, counts[next]++)
+      if (!visited[index(neighbor)]) {
         found = true
-        path.addLast(get(neighbor))
+        path.addLast(index(neighbor))
         break
       }
     }
     if (!found) {
       val finished = path.removeLast()
-      postOrderAction(get(finished))
+      postOrderAction(vertex(finished))
     }
   }
 }

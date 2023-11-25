@@ -14,22 +14,22 @@ internal abstract class AdjacencyMatrixGraph(private val present: Array<BooleanA
   override val size: Int
     get() = present.size
 
-  override fun get(vertex: Vertex): Int {
+  override fun index(vertex: Vertex): Int {
     if (vertex.index < 0 || vertex.index >= size) throw NoSuchVertexException()
     return vertex.index
   }
 
-  override fun get(index: Int): Vertex {
+  override fun vertex(index: Int): Vertex {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     return Vertex(index)
   }
 
-  override fun neighborsSize(index: Int): Int {
+  override fun successorsSize(index: Int): Int {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     return present[index].count { it }
   }
 
-  override fun neighbor(index: Int, neighborIndex: Int): Vertex {
+  override fun successor(index: Int, neighborIndex: Int): Vertex {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     val neighbors = present[index]
     var remaining = neighborIndex

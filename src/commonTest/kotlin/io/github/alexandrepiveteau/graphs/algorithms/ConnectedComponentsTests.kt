@@ -24,7 +24,7 @@ class ConnectedComponentsTests {
       val graph = UndirectedGraph.complete(count)
       val (scc, map) = graph.connectedComponents()
       assertEquals(1, scc.size)
-      repeat(count) { assertEquals(scc[0], map[graph[it]]) }
+      repeat(count) { assertEquals(scc.vertex(0), map[graph.vertex(it)]) }
     }
   }
 
@@ -34,7 +34,7 @@ class ConnectedComponentsTests {
       val graph = buildUndirectedGraph { repeat(count) { addVertex() } }
       val (scc, map) = graph.connectedComponents()
       assertEquals(count, scc.size)
-      repeat(count) { assertEquals(scc[it], map[graph[it]]) }
+      repeat(count) { assertEquals(scc.vertex(it), map[graph.vertex(it)]) }
     }
   }
 }

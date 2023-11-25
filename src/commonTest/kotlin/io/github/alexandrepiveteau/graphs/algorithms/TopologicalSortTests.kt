@@ -63,7 +63,7 @@ class TopologicalSortTests {
         repeat(count - 1) { addArc(vertices[it] arcTo vertices[it + 1]) }
       }
       val order = graph.topologicalSort()
-      assertContentEquals(VertexArray(graph.size) { graph[it] }, order)
+      assertContentEquals(VertexArray(graph.size) { graph.vertex(it) }, order)
     }
   }
 
@@ -79,7 +79,15 @@ class TopologicalSortTests {
       addArc(v3 arcTo v1)
     }
     val order = graph.topologicalSort()
-    val expected = arrayOf(graph[4], graph[5], graph[0], graph[2], graph[3], graph[1])
+    val expected =
+        arrayOf(
+            graph.vertex(4),
+            graph.vertex(5),
+            graph.vertex(0),
+            graph.vertex(2),
+            graph.vertex(3),
+            graph.vertex(1),
+        )
     assertContentEquals(expected.toVertexArray(), order)
   }
 }

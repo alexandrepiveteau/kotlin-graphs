@@ -31,10 +31,8 @@ public final class io/github/alexandrepiveteau/graphs/DirectedGraph$Companion {
 
 public final class io/github/alexandrepiveteau/graphs/DirectedGraph$DefaultImpls {
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedGraph;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedGraph;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/DirectedGraph;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedGraph;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedGraph;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedGraph;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedGraph;I)I
 }
 
 public final class io/github/alexandrepiveteau/graphs/DirectedGraphKt {
@@ -52,10 +50,8 @@ public final class io/github/alexandrepiveteau/graphs/DirectedNetwork$Companion 
 
 public final class io/github/alexandrepiveteau/graphs/DirectedNetwork$DefaultImpls {
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;I)I
 	public static fun weight--OaZVeM (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;J)I
 	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/DirectedNetwork;II)I
@@ -85,23 +81,19 @@ public final class io/github/alexandrepiveteau/graphs/EdgeKt {
 
 public abstract interface class io/github/alexandrepiveteau/graphs/Graph {
 	public abstract fun contains-dT2TSiQ (I)Z
-	public abstract fun get-1Pv3iCI (I)I
-	public abstract fun get-_QOBl-4 (II)I
-	public abstract fun get-dT2TSiQ (I)I
-	public abstract fun get-vAesux8 (II)I
 	public abstract fun getSize ()I
-	public abstract fun neighbor-_QOBl-4 (II)I
-	public abstract fun neighbor-vAesux8 (II)I
-	public abstract fun neighborsSize (I)I
-	public abstract fun neighborsSize-dT2TSiQ (I)I
+	public abstract fun index-dT2TSiQ (I)I
+	public abstract fun successor-_QOBl-4 (II)I
+	public abstract fun successor-vAesux8 (II)I
+	public abstract fun successorsSize (I)I
+	public abstract fun successorsSize-dT2TSiQ (I)I
+	public abstract fun vertex-1Pv3iCI (I)I
 }
 
 public final class io/github/alexandrepiveteau/graphs/Graph$DefaultImpls {
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Graph;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Graph;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/Graph;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Graph;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Graph;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Graph;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Graph;I)I
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableDirectedGraph : io/github/alexandrepiveteau/graphs/DirectedGraph, io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope, io/github/alexandrepiveteau/graphs/MutableGraph {
@@ -110,10 +102,8 @@ public abstract interface class io/github/alexandrepiveteau/graphs/MutableDirect
 public final class io/github/alexandrepiveteau/graphs/MutableDirectedGraph$DefaultImpls {
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;)Lio/github/alexandrepiveteau/graphs/Vertices;
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedGraph;I)I
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableDirectedGraphScope : io/github/alexandrepiveteau/graphs/MutableGraphScope {
@@ -131,10 +121,8 @@ public final class io/github/alexandrepiveteau/graphs/MutableDirectedNetwork$Def
 	public static fun addArc--OaZVeM (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;J)V
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;)Lio/github/alexandrepiveteau/graphs/Vertices;
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;I)I
 	public static fun weight--OaZVeM (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;J)I
 	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/MutableDirectedNetwork;II)I
@@ -157,10 +145,8 @@ public abstract interface class io/github/alexandrepiveteau/graphs/MutableGraph 
 public final class io/github/alexandrepiveteau/graphs/MutableGraph$DefaultImpls {
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableGraph;)Lio/github/alexandrepiveteau/graphs/Vertices;
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableGraph;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableGraph;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableGraph;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableGraph;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableGraph;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableGraph;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableGraph;I)I
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableGraphScope {
@@ -178,10 +164,8 @@ public abstract interface class io/github/alexandrepiveteau/graphs/MutableNetwor
 public final class io/github/alexandrepiveteau/graphs/MutableNetwork$DefaultImpls {
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableNetwork;)Lio/github/alexandrepiveteau/graphs/Vertices;
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableNetwork;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableNetwork;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableNetwork;I)I
 	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/MutableNetwork;II)I
 }
@@ -199,10 +183,8 @@ public abstract interface class io/github/alexandrepiveteau/graphs/MutableUndire
 public final class io/github/alexandrepiveteau/graphs/MutableUndirectedGraph$DefaultImpls {
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;)Lio/github/alexandrepiveteau/graphs/Vertices;
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedGraph;I)I
 }
 
 public abstract interface class io/github/alexandrepiveteau/graphs/MutableUndirectedGraphScope : io/github/alexandrepiveteau/graphs/MutableGraphScope {
@@ -220,10 +202,8 @@ public final class io/github/alexandrepiveteau/graphs/MutableUndirectedNetwork$D
 	public static fun addEdge-zEWoN30 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;J)V
 	public static fun addVertices (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;)Lio/github/alexandrepiveteau/graphs/Vertices;
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;I)I
 	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;II)I
 	public static fun weight-zEWoN30 (Lio/github/alexandrepiveteau/graphs/MutableUndirectedNetwork;J)I
@@ -249,10 +229,8 @@ public abstract interface class io/github/alexandrepiveteau/graphs/Network : io/
 
 public final class io/github/alexandrepiveteau/graphs/Network$DefaultImpls {
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Network;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Network;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/Network;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Network;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Network;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/Network;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/Network;I)I
 	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/Network;II)I
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/Network;II)I
 }
@@ -279,10 +257,8 @@ public final class io/github/alexandrepiveteau/graphs/UndirectedGraph$Companion 
 
 public final class io/github/alexandrepiveteau/graphs/UndirectedGraph$DefaultImpls {
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedGraph;I)I
 }
 
 public final class io/github/alexandrepiveteau/graphs/UndirectedGraphKt {
@@ -306,10 +282,8 @@ public final class io/github/alexandrepiveteau/graphs/UndirectedNetwork$Companio
 
 public final class io/github/alexandrepiveteau/graphs/UndirectedNetwork$DefaultImpls {
 	public static fun contains-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;I)Z
-	public static fun get-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
-	public static fun get-vAesux8 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
-	public static fun neighbor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
-	public static fun neighborsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;I)I
+	public static fun successor-_QOBl-4 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
+	public static fun successorsSize-dT2TSiQ (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;I)I
 	public static fun weight-cK2_UGU (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
 	public static fun weight-iNgu2Tg (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;II)I
 	public static fun weight-zEWoN30 (Lio/github/alexandrepiveteau/graphs/UndirectedNetwork;J)I

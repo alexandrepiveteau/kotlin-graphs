@@ -14,7 +14,7 @@ class DepthFirstTraversalTests {
   fun dfsOnSingletonGraphVisitsOneVertex() {
     val graph = UndirectedGraph.complete(1)
     var visited = 0
-    graph.forEachVertexDepthFirst(graph[0]) { visited++ }
+    graph.forEachVertexDepthFirst(graph.vertex(0)) { visited++ }
     assertEquals(1, visited)
   }
 
@@ -30,7 +30,7 @@ class DepthFirstTraversalTests {
         }
       }
       val visited = BooleanArray(count)
-      graph.forEachVertexDepthFirst(graph[0]) { visited[it.index] = true }
+      graph.forEachVertexDepthFirst(graph.vertex(0)) { visited[it.index] = true }
       assertEquals(true, visited.all { it })
     }
   }

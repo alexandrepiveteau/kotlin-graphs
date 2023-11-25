@@ -31,21 +31,21 @@ public fun UndirectedNetwork.minimumSpanningForest(): UndirectedNetwork = buildU
 
   // Iterate over each tree in the forest.
   forEachVertex { start ->
-    if (!visited[get(start)]) {
-      queue[get(start)] = 0
+    if (!visited[index(start)]) {
+      queue[index(start)] = 0
       while (queue.size > 0) {
-        val v1 = get(queue.remove())
-        visited[get(v1)] = true
+        val v1 = vertex(queue.remove())
+        visited[index(v1)] = true
         if (parents[v1] != Vertex.Invalid) {
-          addEdge(v1 edgeTo parents[v1], weights[get(v1)])
+          addEdge(v1 edgeTo parents[v1], weights[index(v1)])
         }
         forEachNeighbor(v1) { v2, weight ->
-          if (!visited[get(v2)]) {
-            val d = if (queue.contains(get(v2))) queue[get(v2)] else Int.MAX_VALUE
+          if (!visited[index(v2)]) {
+            val d = if (queue.contains(index(v2))) queue[index(v2)] else Int.MAX_VALUE
             if (weight < d) {
               parents[v2] = v1
-              weights[get(v2)] = weight
-              queue[get(v2)] = weight
+              weights[index(v2)] = weight
+              queue[index(v2)] = weight
             }
           }
         }

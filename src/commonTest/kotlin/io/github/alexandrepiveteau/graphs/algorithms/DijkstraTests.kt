@@ -21,7 +21,7 @@ class DijkstraTests {
   fun singletonNetworkReturnsItself() {
     val network = buildUndirectedNetwork { addVertex() }
     val expected = buildUndirectedNetwork { addVertex() }
-    val dijkstra = network.shortestPathDijkstra(network[0])
+    val dijkstra = network.shortestPathDijkstra(network.vertex(0))
     assertEquals(expected, dijkstra)
   }
 
@@ -35,7 +35,7 @@ class DijkstraTests {
       addVertex()
       addVertex()
     }
-    val dijkstra = network.shortestPathDijkstra(network[0])
+    val dijkstra = network.shortestPathDijkstra(network.vertex(0))
     assertEquals(expected, dijkstra)
   }
 
@@ -49,7 +49,7 @@ class DijkstraTests {
       val (a, b) = addVertices()
       addArc(a arcTo b, 1)
     }
-    val dijkstra = network.shortestPathDijkstra(network[0])
+    val dijkstra = network.shortestPathDijkstra(network.vertex(0))
     assertEquals(expected, dijkstra)
   }
 
@@ -86,7 +86,7 @@ class DijkstraTests {
             if (i != start) addArc(vertices[start] arcTo vertices[i], 1)
           }
         }
-        val dijkstra = network.shortestPathDijkstra(network[start])
+        val dijkstra = network.shortestPathDijkstra(network.vertex(start))
         assertEquals(expected, dijkstra)
       }
     }

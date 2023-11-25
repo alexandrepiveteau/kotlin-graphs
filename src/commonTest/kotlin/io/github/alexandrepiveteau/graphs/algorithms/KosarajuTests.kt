@@ -30,7 +30,7 @@ class KosarajuTests {
 
     assertEquals(1, scc.size)
     assertEquals(1, map.size)
-    assertEquals(map[scc[0]], graph[0])
+    assertEquals(map[scc.vertex(0)], graph.vertex(0))
   }
 
   @Test
@@ -71,7 +71,7 @@ class KosarajuTests {
 
       assertEquals(1, scc.size)
       assertEquals(count, map.size)
-      assertEquals(setOf(scc[0].index), map.values().asIntArray().asSequence().distinct().toSet())
+      assertEquals(setOf(scc.vertex(0).index), map.values().asIntArray().asSequence().distinct().toSet())
     }
   }
 
@@ -89,7 +89,7 @@ class KosarajuTests {
       assertEquals(2, scc.size)
       assertEquals(2 * count, map.size)
       assertEquals(
-          mapOf(scc[0].index to count, scc[1].index to count),
+          mapOf(scc.vertex(0).index to count, scc.vertex(1).index to count),
           map.values().asIntArray().asSequence().groupingBy { it }.eachCount(),
       )
     }
@@ -112,21 +112,21 @@ class KosarajuTests {
     assertEquals(5, map.size)
 
     // First SCC (v0, v1, v2).
-    assertEquals(scc[map[graph[0]]], scc[map[graph[1]]])
-    assertEquals(scc[map[graph[1]]], scc[map[graph[2]]])
-    assertEquals(scc[map[graph[0]]], scc[map[graph[2]]])
+    assertEquals(scc.index(map[graph.vertex(0)]), scc.index(map[graph.vertex(1)]))
+    assertEquals(scc.index(map[graph.vertex(1)]), scc.index(map[graph.vertex(2)]))
+    assertEquals(scc.index(map[graph.vertex(0)]), scc.index(map[graph.vertex(2)]))
 
     // Second SCC (v3).
-    assertNotEquals(scc[map[graph[0]]], scc[map[graph[3]]])
-    assertNotEquals(scc[map[graph[1]]], scc[map[graph[3]]])
-    assertNotEquals(scc[map[graph[2]]], scc[map[graph[3]]])
-    assertNotEquals(scc[map[graph[4]]], scc[map[graph[3]]])
+    assertNotEquals(scc.index(map[graph.vertex(0)]), scc.index(map[graph.vertex(3)]))
+    assertNotEquals(scc.index(map[graph.vertex(1)]), scc.index(map[graph.vertex(3)]))
+    assertNotEquals(scc.index(map[graph.vertex(2)]), scc.index(map[graph.vertex(3)]))
+    assertNotEquals(scc.index(map[graph.vertex(4)]), scc.index(map[graph.vertex(3)]))
 
     // Third SCC (v4).
-    assertNotEquals(scc[map[graph[0]]], scc[map[graph[4]]])
-    assertNotEquals(scc[map[graph[1]]], scc[map[graph[4]]])
-    assertNotEquals(scc[map[graph[2]]], scc[map[graph[4]]])
-    assertNotEquals(scc[map[graph[3]]], scc[map[graph[4]]])
+    assertNotEquals(scc.index(map[graph.vertex(0)]), scc.index(map[graph.vertex(4)]))
+    assertNotEquals(scc.index(map[graph.vertex(1)]), scc.index(map[graph.vertex(4)]))
+    assertNotEquals(scc.index(map[graph.vertex(2)]), scc.index(map[graph.vertex(4)]))
+    assertNotEquals(scc.index(map[graph.vertex(3)]), scc.index(map[graph.vertex(4)]))
   }
 
   @Test

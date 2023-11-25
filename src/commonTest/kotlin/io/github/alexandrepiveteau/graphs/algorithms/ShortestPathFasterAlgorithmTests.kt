@@ -24,7 +24,7 @@ class ShortestPathFasterAlgorithmTests {
         val from = addVertex()
         repeat(count - 1) { addArc(from arcTo addVertex(), 1) }
       }
-      val spfa = graph.shortestPathFasterAlgorithm(graph[0])
+      val spfa = graph.shortestPathFasterAlgorithm(graph.vertex(0))
       assertEquals(expected, spfa)
     }
   }

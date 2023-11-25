@@ -20,24 +20,24 @@ private fun Network.shortestPathFasterAlgorithmParents(from: Vertex): VertexMap 
   val queue = IntDequeue()
   val parents = VertexMap(size) { Vertex.Invalid }
 
-  distances[get(from)] = 0
-  enqueued[get(from)] = true
-  queue.addLast(get(from))
+  distances[index(from)] = 0
+  enqueued[index(from)] = true
+  queue.addLast(index(from))
 
   // TODO : Handle negative cycles and throw an exception when one is found. This will be the case
   //        when the number of relaxations exceeds a certain threshold.
   while (queue.size > 0) {
-    val v1 = get(queue.removeFirst())
-    enqueued[get(v1)] = false
+    val v1 = vertex(queue.removeFirst())
+    enqueued[index(v1)] = false
     forEachNeighbor(v1) { v2, weight ->
-      val d1 = distances[get(v1)]
-      val d2 = distances[get(v2)]
+      val d1 = distances[index(v1)]
+      val d2 = distances[index(v2)]
       if (d1 != Int.MAX_VALUE && (d2 == Int.MAX_VALUE || d1 + weight < d2)) {
-        distances[get(v2)] = d1 + weight
+        distances[index(v2)] = d1 + weight
         parents[v2] = v1
-        if (!enqueued[get(v2)]) {
-          enqueued[get(v2)] = true
-          queue.addLast(get(v2))
+        if (!enqueued[index(v2)]) {
+          enqueued[index(v2)] = true
+          queue.addLast(index(v2))
         }
       }
     }

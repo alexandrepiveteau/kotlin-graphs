@@ -5,10 +5,10 @@ private object EmptyUndirectedGraph : UndirectedGraph {
   override val size = 0
   override fun contains(vertex: Vertex) = false
   override fun contains(edge: Edge) = false
-  override fun get(vertex: Vertex) = throw NoSuchVertexException()
-  override fun get(index: Int) = throw IndexOutOfBoundsException()
-  override fun neighborsSize(index: Int) = throw IndexOutOfBoundsException()
-  override fun neighbor(index: Int, neighborIndex: Int) = throw IndexOutOfBoundsException()
+  override fun index(vertex: Vertex) = throw NoSuchVertexException()
+  override fun vertex(index: Int) = throw IndexOutOfBoundsException()
+  override fun successorsSize(index: Int) = throw IndexOutOfBoundsException()
+  override fun successor(index: Int, neighborIndex: Int) = throw IndexOutOfBoundsException()
 }
 
 /** Returns an empty [UndirectedGraph], which is a graph with no vertices and no edges. */
@@ -29,19 +29,19 @@ private open class CompleteUndirectedGraph(override val size: Int) : UndirectedG
     val (u, v) = edge
     return u != v && u in this && v in this
   }
-  override fun get(vertex: Vertex): Int {
+  override fun index(vertex: Vertex): Int {
     if (vertex.index < 0 || vertex.index >= size) throw NoSuchVertexException()
     return vertex.index
   }
-  override fun get(index: Int): Vertex {
+  override fun vertex(index: Int): Vertex {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     return Vertex(index)
   }
-  override fun neighborsSize(index: Int): Int {
+  override fun successorsSize(index: Int): Int {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     return size - 1
   }
-  override fun neighbor(index: Int, neighborIndex: Int): Vertex {
+  override fun successor(index: Int, neighborIndex: Int): Vertex {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     if (neighborIndex < 0 || neighborIndex >= size - 1) throw IndexOutOfBoundsException()
     var vertex = neighborIndex

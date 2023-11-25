@@ -27,8 +27,8 @@ public fun UndirectedGraph.connectedComponents(): Pair<UndirectedGraph, VertexMa
     for (i in visited.indices) {
       if (!visited[i]) {
         val next = addVertex()
-        forEachVertexDepthFirst(get(i)) {
-          visited[get(it)] = true
+        forEachVertexDepthFirst(vertex(i)) {
+          visited[index(it)] = true
           map[it] = next
         }
       }

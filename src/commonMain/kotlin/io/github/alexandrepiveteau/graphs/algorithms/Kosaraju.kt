@@ -21,8 +21,8 @@ public fun DirectedGraph.stronglyConnectedComponentsKosaraju(): Pair<DirectedGra
   val visited = BooleanArray(size)
   val queue = IntDequeue()
   forEachVertex { v ->
-    if (!visited[get(v)]) {
-      forEachVertexDepthFirstPostOrder(v, visited) { queue.addFirst(get(it)) }
+    if (!visited[index(v)]) {
+      forEachVertexDepthFirstPostOrder(v, visited) { queue.addFirst(index(it)) }
     }
   }
 
@@ -34,8 +34,8 @@ public fun DirectedGraph.stronglyConnectedComponentsKosaraju(): Pair<DirectedGra
   var nextVertex = 0
   for (i in 0 until order.size) {
     val v = order[i]
-    if (!assigned[get(v)]) {
-      transposed.forEachVertexDepthFirst(v, assigned) { components[get(it)] = nextVertex }
+    if (!assigned[index(v)]) {
+      transposed.forEachVertexDepthFirst(v, assigned) { components[index(it)] = nextVertex }
       nextVertex++
     }
   }
@@ -44,10 +44,10 @@ public fun DirectedGraph.stronglyConnectedComponentsKosaraju(): Pair<DirectedGra
   val graph = buildDirectedGraph {
     val vertices = VertexArray(nextVertex) { addVertex() }
     forEachArc { (u, v) ->
-      val cu = vertices[components[get(u)]]
-      val cv = vertices[components[get(v)]]
+      val cu = vertices[components[index(u)]]
+      val cv = vertices[components[index(v)]]
       if (cu != cv) addArc(cu arcTo cv)
     }
   }
-  return graph to VertexMap(components.size) { graph[components[get(it)]] }
+  return graph to VertexMap(components.size) { graph.vertex(components[index(it)]) }
 }

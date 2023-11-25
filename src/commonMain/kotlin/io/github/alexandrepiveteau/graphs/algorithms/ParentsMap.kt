@@ -22,10 +22,10 @@ internal fun Graph.computePath(parents: VertexMap, from: Vertex, to: Vertex): Ve
   var current = to
   while (current != from) {
     if (current == Vertex.Invalid) return null
-    path.addFirst(get(current))
+    path.addFirst(index(current))
     current = parents[current]
   }
-  path.addFirst(get(from))
+  path.addFirst(index(from))
   return VertexArray(path.toIntArray())
 }
 

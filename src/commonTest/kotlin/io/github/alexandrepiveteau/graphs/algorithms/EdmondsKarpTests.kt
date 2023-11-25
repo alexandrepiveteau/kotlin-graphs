@@ -16,8 +16,8 @@ class EdmondsKarpTests {
       addVertex()
       addVertex()
     }
-    val a = capacities[0]
-    val b = capacities[1]
+    val a = capacities.vertex(0)
+    val b = capacities.vertex(1)
 
     val flow = capacities.maxFlowEdmondsKarp(a, b)
 
@@ -35,8 +35,8 @@ class EdmondsKarpTests {
       addArc(a arcTo b, 1)
     }
 
-    val a = capacities[0]
-    val b = capacities[1]
+    val a = capacities.vertex(0)
+    val b = capacities.vertex(1)
     val flow = capacities.maxFlowEdmondsKarp(a, b)
 
     assertFlowValid(flow, capacities, a, b, total = 1)
@@ -56,8 +56,8 @@ class EdmondsKarpTests {
       addArc(b arcTo c, 1)
     }
 
-    val a = capacities[0]
-    val c = capacities[2]
+    val a = capacities.vertex(0)
+    val c = capacities.vertex(2)
     val flow = capacities.maxFlowEdmondsKarp(a, c)
 
     assertFlowValid(flow, capacities, a, c, total = 1)
@@ -81,8 +81,8 @@ class EdmondsKarpTests {
       addArc(c arcTo d, 1)
     }
 
-    val a = capacities[0]
-    val d = capacities[3]
+    val a = capacities.vertex(0)
+    val d = capacities.vertex(3)
     val flow = capacities.maxFlowEdmondsKarp(a, d)
 
     assertFlowValid(flow, capacities, a, d, total = 2)
@@ -107,8 +107,8 @@ class EdmondsKarpTests {
       addArc(e arcTo g, 1)
     }
 
-    val a = capacities[0]
-    val g = capacities[6]
+    val a = capacities.vertex(0)
+    val g = capacities.vertex(6)
     val flow = capacities.maxFlowEdmondsKarp(a, g)
 
     assertFlowValid(flow, capacities, a, g, total = 5)
@@ -128,8 +128,8 @@ class EdmondsKarpTests {
         }
       }
 
-      val a = capacities[0]
-      val b = capacities[1]
+      val a = capacities.vertex(0)
+      val b = capacities.vertex(1)
       val flow = capacities.maxFlowEdmondsKarp(a, b)
 
       // The maximum flow is the number of vertices minus one, because we can reach the second

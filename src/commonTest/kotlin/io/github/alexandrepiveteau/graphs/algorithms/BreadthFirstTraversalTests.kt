@@ -14,7 +14,7 @@ class BreadthFirstTraversalTests {
   fun bfsOnSingletonGraphVisitsOneVertex() {
     val graph = UndirectedGraph.complete(1)
     var visited = 0
-    graph.forEachVertexBreadthFirst(graph[0]) { visited++ }
+    graph.forEachVertexBreadthFirst(graph.vertex(0)) { visited++ }
     assertEquals(1, visited)
   }
 
@@ -30,7 +30,7 @@ class BreadthFirstTraversalTests {
         }
       }
       val visited = BooleanArray(count)
-      graph.forEachVertexBreadthFirst(graph[0]) { visited[it.index] = true }
+      graph.forEachVertexBreadthFirst(graph.vertex(0)) { visited[it.index] = true }
       assertEquals(true, visited.all { it })
     }
   }

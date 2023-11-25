@@ -15,10 +15,10 @@ class UndirectedEmptyGraphTests {
     assertEquals(0, graph.size)
     assertFalse(graph.contains(Vertex(0)))
     assertFalse(graph.contains(Vertex(0) edgeTo Vertex(1)))
-    assertFailsWith<IndexOutOfBoundsException> { graph[0] }
-    assertFailsWith<NoSuchVertexException> { graph[Vertex(0)] }
-    assertFailsWith<IndexOutOfBoundsException> { graph.neighborsSize(0) }
-    assertFailsWith<IndexOutOfBoundsException> { graph.neighbor(0, 0) }
+    assertFailsWith<IndexOutOfBoundsException> { graph.vertex(0) }
+    assertFailsWith<NoSuchVertexException> { graph.index(Vertex(0)) }
+    assertFailsWith<IndexOutOfBoundsException> { graph.successorsSize(0) }
+    assertFailsWith<IndexOutOfBoundsException> { graph.successor(0, 0) }
   }
 }
 
@@ -36,8 +36,8 @@ class UndirectedCompleteGraphTests {
       for (i in 0 until count) {
         for (j in 0 until count) {
           if (i != j) {
-            val u = graph[i]
-            val v = graph[j]
+            val u = graph.vertex(i)
+            val v = graph.vertex(j)
             assertEquals(true, graph.contains(u edgeTo v))
           }
         }
@@ -50,7 +50,7 @@ class UndirectedCompleteGraphTests {
     for (count in 0..Repeats) {
       val graph = UndirectedGraph.complete(count)
       for (i in 0 until count) {
-        val v = graph[i]
+        val v = graph.vertex(i)
         assertEquals(false, graph.contains(v edgeTo v))
       }
     }

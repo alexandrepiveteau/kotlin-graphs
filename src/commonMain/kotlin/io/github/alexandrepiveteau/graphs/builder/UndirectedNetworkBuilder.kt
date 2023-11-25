@@ -41,6 +41,7 @@ private class MutableListUndirectedNetworkBuilder() :
     weights[u.index] += weight
     weights[v.index] += weight
   }
+
   override fun toGraph(): UndirectedNetwork {
     val (n, w) = compactToVertexAndWeightsArray(neighbors, weights)
     return AdjacencyListUndirectedNetwork(n, w)
