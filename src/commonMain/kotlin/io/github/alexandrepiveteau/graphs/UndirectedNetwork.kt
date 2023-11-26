@@ -9,7 +9,7 @@ public interface UndirectedNetwork : Network, UndirectedGraph {
    * @throws NoSuchVertexException if [edge] is not a valid edge for this [UndirectedNetwork].
    * @throws NoSuchEdgeException if there is no edge between the two vertices.
    */
-  public fun weight(edge: Edge): Int = weight(edge.component1(), edge.component2())
+  public fun weight(edge: Edge): Int = successorWeight(edge.component1(), edge.component2())
 
   /**
    * An object which serves as the companion of the [UndirectedNetwork], and which provides a number

@@ -14,7 +14,9 @@ import kotlin.jvm.JvmName
  * @param from the [Vertex] to start the search from.
  * @return the map of parents for each vertex in the shortest path tree from the [from] vertex.
  */
-private fun Network.shortestPathFasterAlgorithmParents(from: Vertex): VertexMap {
+private fun <N> N.shortestPathFasterAlgorithmParents(
+    from: Vertex,
+): VertexMap where N : SuccessorsWeight {
   val enqueued = BooleanArray(size)
   val distances = IntArray(size) { Int.MAX_VALUE }
   val queue = IntDequeue()
@@ -29,7 +31,7 @@ private fun Network.shortestPathFasterAlgorithmParents(from: Vertex): VertexMap 
   while (queue.size > 0) {
     val v1 = vertex(queue.removeFirst())
     enqueued[index(v1)] = false
-    forEachNeighbor(v1) { v2, weight ->
+    forEachSuccessor(v1) { v2, weight ->
       val d1 = distances[index(v1)]
       val d2 = distances[index(v2)]
       if (d1 != Int.MAX_VALUE && (d2 == Int.MAX_VALUE || d1 + weight < d2)) {
@@ -62,7 +64,9 @@ private fun Network.shortestPathFasterAlgorithmParents(from: Vertex): VertexMap 
  *   vertices in the network.
  * @throws NoSuchVertexException if the given [from] vertex is not in this graph.
  */
-public fun Network.shortestPathFasterAlgorithm(from: Vertex): DirectedNetwork {
+public fun <N> N.shortestPathFasterAlgorithm(
+    from: Vertex,
+): DirectedNetwork where N : SuccessorsWeight {
   if (from !in this) throw NoSuchVertexException()
   return computeNetwork(shortestPathFasterAlgorithmParents(from))
 }
@@ -84,7 +88,10 @@ public fun Network.shortestPathFasterAlgorithm(from: Vertex): DirectedNetwork {
  *   or `null` if no such path exists.
  * @throws NoSuchVertexException if the given [from] vertex or [to] vertex is not in this graph.
  */
-public fun Network.shortestPathFasterAlgorithm(from: Vertex, to: Vertex): VertexArray? {
+public fun <N> N.shortestPathFasterAlgorithm(
+    from: Vertex,
+    to: Vertex,
+): VertexArray? where N : SuccessorsWeight {
   if (from !in this) throw NoSuchVertexException()
   if (to !in this) throw NoSuchVertexException()
   return computePath(shortestPathFasterAlgorithmParents(from), from, to)

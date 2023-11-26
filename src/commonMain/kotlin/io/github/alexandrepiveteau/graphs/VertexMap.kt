@@ -15,7 +15,7 @@ public inline fun VertexMap(
     init: (index: Vertex) -> Vertex,
 ): VertexMap {
   return VertexMap(size).apply {
-    for (index in 0 until size) {
+    for (index in 0 ..< size) {
       this[Vertex(index)] = init(Vertex(index))
     }
   }
@@ -77,7 +77,7 @@ public value class VertexMap private constructor(private val array: VertexArray)
  * @receiver the [VertexMap] to iterate over.
  */
 public inline fun VertexMap.forEach(action: (Vertex, Vertex) -> Unit) {
-  for (index in 0 until size) {
+  for (index in 0 ..< size) {
     val v = Vertex(index)
     action(v, this[v])
   }

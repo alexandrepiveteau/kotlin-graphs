@@ -13,14 +13,14 @@ internal class AdjacencyListNetwork(
     private val weights: Array<IntArray>,
 ) : Network, Graph by AdjacencyListGraph(neighbors) {
 
-  override fun weight(index: Int, neighborIndex: Int): Int {
+  override fun successorWeight(index: Int, neighborIndex: Int): Int {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     val weights = weights[index]
     if (neighborIndex < 0 || neighborIndex >= weights.size) throw IndexOutOfBoundsException()
     return weights[neighborIndex]
   }
 
-  override fun weight(index: Int, neighbor: Vertex): Int {
+  override fun successorWeight(index: Int, neighbor: Vertex): Int {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     val neighbors = neighbors[index]
     val neighborIndex = neighbors.binarySearch(neighbor)

@@ -22,8 +22,8 @@ fun assertEquals(expected: Graph, actual: Graph) {
     )
     for (j in 0 until expected.successorsSize(i)) {
       assertEquals(
-          expected.successor(i, j),
-          actual.successor(i, j),
+          expected.successorVertex(i, j),
+          actual.successorVertex(i, j),
           "neighbor different: $i, $j",
       )
     }
@@ -41,7 +41,7 @@ fun assertEquals(expected: Network, actual: Network) {
   assertEqualsGraph(expected as Graph, actual as Graph)
   for (i in 0 until expected.size) {
     for (j in 0 until expected.successorsSize(i)) {
-      assertEquals(expected.weight(i, j), actual.weight(i, j))
+      assertEquals(expected.successorWeight(i, j), actual.successorWeight(i, j))
     }
   }
 }
@@ -66,8 +66,8 @@ fun assertFlowValid(
   val outgoing = IntArray(flow.size) { 0 }
   val incoming = IntArray(flow.size) { 0 }
   flow.forEachArc { (u, v) ->
-    val capacity = capacities.weight(u, v)
-    val weight = flow.weight(u, v)
+    val capacity = capacities.successorWeight(u, v)
+    val weight = flow.successorWeight(u, v)
     assertEquals(true, weight in 0..capacity)
     outgoing[u.index] += weight
     incoming[v.index] += weight

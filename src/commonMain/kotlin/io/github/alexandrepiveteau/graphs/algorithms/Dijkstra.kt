@@ -14,7 +14,9 @@ import kotlin.jvm.JvmName
  * @param from the [Vertex] to start the search from.
  * @return the map of parents for each vertex in the shortest path tree from the [from] vertex.
  */
-private fun Network.shortestPathDijkstraParents(from: Vertex): VertexMap {
+private fun <N> N.shortestPathDijkstraParents(
+    from: Vertex,
+): VertexMap where N : SuccessorsWeight {
   val parents = VertexMap(size) { Vertex.Invalid }
   val queue = IntMinPriorityQueue(size)
   val distances = IntArray(size) { Int.MAX_VALUE }
@@ -26,7 +28,7 @@ private fun Network.shortestPathDijkstraParents(from: Vertex): VertexMap {
   while (queue.size > 0) {
     val v1 = vertex(queue.remove())
     visited[index(v1)] = true
-    forEachNeighbor(v1) { v2, weight ->
+    forEachSuccessor(v1) { v2, weight ->
       if (!visited[index(v2)]) {
         // Note : we only throw on negative weights if they are visited, so a graph with negative
         //        weights in a component disconnected from the source will not throw.
@@ -61,7 +63,9 @@ private fun Network.shortestPathDijkstraParents(from: Vertex): VertexMap {
  * @throws NoSuchVertexException if the [from] vertex is not in this network.
  * @throws IllegalArgumentException if the network contains negative weights.
  */
-public fun Network.shortestPathDijkstra(from: Vertex): DirectedNetwork {
+public fun <N> N.shortestPathDijkstra(
+    from: Vertex,
+): DirectedNetwork where N : SuccessorsWeight {
   if (from !in this) throw NoSuchVertexException()
   return computeNetwork(shortestPathDijkstraParents(from))
 }
@@ -82,7 +86,10 @@ public fun Network.shortestPathDijkstra(from: Vertex): DirectedNetwork {
  * @throws NoSuchVertexException if the [from] or [to] vertices are not in this graph.
  * @throws IllegalArgumentException if the network contains negative weights.
  */
-public fun Network.shortestPathDijkstra(from: Vertex, to: Vertex): VertexArray? {
+public fun <N> N.shortestPathDijkstra(
+    from: Vertex,
+    to: Vertex,
+): VertexArray? where N : SuccessorsWeight {
   if (from !in this) throw NoSuchVertexException()
   if (to !in this) throw NoSuchVertexException()
   return computePath(shortestPathDijkstraParents(from), from, to)

@@ -29,16 +29,20 @@ internal abstract class AdjacencyMatrixGraph(private val present: Array<BooleanA
     return present[index].count { it }
   }
 
-  override fun successor(index: Int, neighborIndex: Int): Vertex {
+  override fun successorIndex(index: Int, neighborIndex: Int): Int {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     val neighbors = present[index]
     var remaining = neighborIndex
     for (i in neighbors.indices) {
       if (neighbors[i]) {
-        if (remaining == 0) return Vertex(i) else remaining--
+        if (remaining == 0) return i else remaining--
       }
     }
     throw IndexOutOfBoundsException()
+  }
+
+  override fun successorVertex(index: Int, neighborIndex: Int): Vertex {
+    return vertex(successorIndex(index, neighborIndex))
   }
 }
 

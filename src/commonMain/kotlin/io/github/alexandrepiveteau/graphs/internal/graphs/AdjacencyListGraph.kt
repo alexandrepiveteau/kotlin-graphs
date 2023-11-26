@@ -27,11 +27,15 @@ internal class AdjacencyListGraph(private val neighbors: Array<VertexArray>) : G
     return neighbors[index].size
   }
 
-  override fun successor(index: Int, neighborIndex: Int): Vertex {
+  override fun successorIndex(index: Int, neighborIndex: Int): Int {
     if (index < 0 || index >= size) throw IndexOutOfBoundsException()
     val neighbors = neighbors[index]
     if (neighborIndex < 0 || neighborIndex >= neighbors.size) throw IndexOutOfBoundsException()
-    return neighbors[neighborIndex]
+    return neighbors[neighborIndex].index
+  }
+
+  override fun successorVertex(index: Int, neighborIndex: Int): Vertex {
+    return vertex(successorIndex(index, neighborIndex))
   }
 }
 

@@ -1,9 +1,9 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-  kotlin("multiplatform") version "1.8.20"
-  id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.13.0"
-  id("org.jetbrains.dokka") version "1.8.10"
+  kotlin("multiplatform") version "1.9.21"
+  id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.13.2"
+  id("org.jetbrains.dokka") version "1.9.10"
   id("com.vanniktech.maven.publish") version "0.25.2"
 }
 

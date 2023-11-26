@@ -3,9 +3,7 @@
 
 package io.github.alexandrepiveteau.graphs.algorithms
 
-import io.github.alexandrepiveteau.graphs.DirectedGraph
-import io.github.alexandrepiveteau.graphs.VertexArray
-import io.github.alexandrepiveteau.graphs.asVertexArray
+import io.github.alexandrepiveteau.graphs.*
 import io.github.alexandrepiveteau.graphs.internal.collections.IntDequeue
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
@@ -23,7 +21,7 @@ import kotlin.jvm.JvmName
  * @receiver the [DirectedGraph] to sort topologically.
  * @throws IllegalArgumentException if the graph contains a cycle.
  */
-public fun DirectedGraph.topologicalSort(): VertexArray {
+public fun <G> G.topologicalSort(): VertexArray where G : Directed, G : Successors {
 
   // 0. Set up a queue of vertices to add to the topological sort, and a boolean array to keep track
   // of the vertices that have already been sorted.
@@ -50,7 +48,7 @@ public fun DirectedGraph.topologicalSort(): VertexArray {
     val vertex = queue.removeFirst()
     result.addLast(vertex)
 
-    forEachNeighbor(vertex(vertex)) {
+    forEachSuccessor(vertex(vertex)) {
       val to = index(it)
       edges[to]--
       if (edges[to] == 0 && !sorted[to]) {

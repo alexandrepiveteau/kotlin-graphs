@@ -39,6 +39,18 @@ internal class IntVector {
     size--
   }
 
+  /** Clears the vector. */
+  fun clear() {
+    size = 0
+  }
+
+  /** Returns the sum of all the elements in the vector. */
+  fun sum(): Int {
+    var sum = 0
+    for (i in 0 until size) sum += buffer[i]
+    return sum
+  }
+
   /** Returns a copy of the vector as an [IntArray]. */
   fun toIntArray(): IntArray = buffer.copyOf(size)
 }

@@ -19,9 +19,10 @@ class DijkstraTests {
 
   @Test
   fun singletonNetworkReturnsItself() {
-    val network = buildUndirectedNetwork { addVertex() }
+    var node: Vertex
+    val network = buildUndirectedNetwork { node = addVertex() }
     val expected = buildUndirectedNetwork { addVertex() }
-    val dijkstra = network.shortestPathDijkstra(network.vertex(0))
+    val dijkstra = network.shortestPathDijkstra(node)
     assertEquals(expected, dijkstra)
   }
 

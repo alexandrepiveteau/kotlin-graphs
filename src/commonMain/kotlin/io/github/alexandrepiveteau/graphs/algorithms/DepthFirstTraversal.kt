@@ -3,7 +3,7 @@
 
 package io.github.alexandrepiveteau.graphs.algorithms
 
-import io.github.alexandrepiveteau.graphs.Graph
+import io.github.alexandrepiveteau.graphs.Successors
 import io.github.alexandrepiveteau.graphs.Vertex
 import io.github.alexandrepiveteau.graphs.internal.collections.IntDequeue
 import kotlin.contracts.contract
@@ -23,11 +23,11 @@ import kotlin.jvm.JvmName
  * @param visited the vertices that have already been visited, which will be updated by the search.
  * @param action the action to execute on each vertex.
  */
-public inline fun Graph.forEachVertexDepthFirst(
+public inline fun <G> G.forEachVertexDepthFirst(
     from: Vertex,
     visited: BooleanArray = BooleanArray(size),
     action: (Vertex) -> Unit,
-) {
+) where G : Successors {
   contract { callsInPlace(action) }
   forEachVertexDepthFirstHelper(from, visited, action) {}
 }
@@ -45,11 +45,11 @@ public inline fun Graph.forEachVertexDepthFirst(
  * @param visited the vertices that have already been visited, which will be updated by the search.
  * @param action the action to execute on each vertex.
  */
-public inline fun Graph.forEachVertexDepthFirstPostOrder(
+public inline fun <G> G.forEachVertexDepthFirstPostOrder(
     from: Vertex,
     visited: BooleanArray = BooleanArray(size),
     action: (Vertex) -> Unit,
-) {
+) where G : Successors {
   contract { callsInPlace(action) }
   forEachVertexDepthFirstHelper(from, visited, {}, action)
 }
@@ -70,12 +70,12 @@ public inline fun Graph.forEachVertexDepthFirstPostOrder(
  * @param postOrderAction the action to execute on each vertex post order.
  */
 @PublishedApi
-internal inline fun Graph.forEachVertexDepthFirstHelper(
+internal inline fun <G> G.forEachVertexDepthFirstHelper(
     from: Vertex,
     visited: BooleanArray = BooleanArray(size),
     inOrderAction: (Vertex) -> Unit,
     postOrderAction: (Vertex) -> Unit,
-) {
+) where G : Successors {
   contract {
     callsInPlace(inOrderAction)
     callsInPlace(postOrderAction)
@@ -90,7 +90,7 @@ internal inline fun Graph.forEachVertexDepthFirstHelper(
     }
     var found = false
     while (counts[next] < successorsSize(next)) {
-      val neighbor = successor(next, counts[next]++)
+      val neighbor = successorVertex(next, counts[next]++)
       if (!visited[index(neighbor)]) {
         found = true
         path.addLast(index(neighbor))

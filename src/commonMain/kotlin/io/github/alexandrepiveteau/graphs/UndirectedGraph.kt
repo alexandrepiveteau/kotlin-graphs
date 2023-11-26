@@ -5,12 +5,7 @@ import io.github.alexandrepiveteau.graphs.algorithms.forEachVertex
 import io.github.alexandrepiveteau.graphs.builder.buildDirectedGraph
 
 /** A [UndirectedGraph] is a [Graph] where [Vertex]s are linked using [Edge]s. */
-public interface UndirectedGraph : Graph {
-
-  /**
-   * Returns true if the given [edge] is contained in this [UndirectedGraph], and false otherwise.
-   */
-  public operator fun contains(edge: Edge): Boolean
+public interface UndirectedGraph : Graph, Undirected {
 
   /**
    * An object which serves as the companion of [UndirectedGraph], and which provides a number of

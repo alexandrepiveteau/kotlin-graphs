@@ -15,9 +15,11 @@ import kotlin.jvm.JvmName
  * - **Time complexity**: O(|N|), where |N| is the number of vertices in this graph.
  * - **Space complexity**: O(1).
  */
-public inline fun Graph.forEachVertex(action: (Vertex) -> Unit) {
+public inline fun <G> G.forEachVertex(
+    action: (Vertex) -> Unit,
+) where G : VertexSet {
   contract { callsInPlace(action) }
-  for (i in 0 until size) action(vertex(i))
+  for (i in 0 ..< size) action(vertex(i))
 }
 
 /**
@@ -27,10 +29,13 @@ public inline fun Graph.forEachVertex(action: (Vertex) -> Unit) {
  * - **Time complexity**: O(|N|), where |N| is the number of neighbors of the given [vertex].
  * - **Space complexity**: O(1).
  */
-public inline fun Graph.forEachNeighbor(vertex: Vertex, action: (Vertex) -> Unit) {
+public inline fun <G> G.forEachSuccessor(
+    vertex: Vertex,
+    action: (Vertex) -> Unit,
+) where G : Successors {
   contract { callsInPlace(action) }
   val index = index(vertex)
-  for (i in 0 until successorsSize(index)) action(successor(vertex, i))
+  for (i in 0 ..< successorsSize(index)) action(successorVertex(vertex, i))
 }
 
 /**
@@ -40,10 +45,13 @@ public inline fun Graph.forEachNeighbor(vertex: Vertex, action: (Vertex) -> Unit
  * - **Time complexity**: O(|N|), where |N| is the number of neighbors of the given [vertex].
  * - **Space complexity**: O(1).
  */
-public inline fun Network.forEachNeighbor(vertex: Vertex, action: (Vertex, Int) -> Unit) {
+public inline fun <N> N.forEachSuccessor(
+    vertex: Vertex,
+    action: (Vertex, Int) -> Unit,
+) where N : SuccessorsWeight {
   contract { callsInPlace(action) }
   val index = index(vertex)
-  for (i in 0 until successorsSize(index)) action(successor(vertex, i), weight(vertex, i))
+  for (i in 0 ..< successorsSize(index)) action(successorVertex(vertex, i), successorWeight(vertex, i))
 }
 
 /**
@@ -53,9 +61,11 @@ public inline fun Network.forEachNeighbor(vertex: Vertex, action: (Vertex, Int) 
  * - **Time complexity**: O(|A|), where |A| is the number of arcs in this graph.
  * - **Space complexity**: O(1).
  */
-public inline fun DirectedGraph.forEachArc(action: (Arc) -> Unit) {
+public inline fun <G> G.forEachArc(
+    action: (Arc) -> Unit,
+) where G : Directed, G : Successors {
   contract { callsInPlace(action) }
-  forEachVertex { u -> forEachNeighbor(u) { v -> action(u arcTo v) } }
+  forEachVertex { u -> forEachSuccessor(u) { v -> action(u arcTo v) } }
 }
 
 /**
@@ -65,9 +75,11 @@ public inline fun DirectedGraph.forEachArc(action: (Arc) -> Unit) {
  * - **Time complexity**: O(|A|), where |A| is the number of arcs in this graph.
  * - **Space complexity**: O(1).
  */
-public inline fun DirectedNetwork.forEachArc(action: (Arc, Int) -> Unit) {
+public inline fun <N> N.forEachArc(
+    action: (Arc, Int) -> Unit,
+) where N : Directed, N : SuccessorsWeight {
   contract { callsInPlace(action) }
-  forEachVertex { u -> forEachNeighbor(u) { v, w -> action(u arcTo v, w) } }
+  forEachVertex { u -> forEachSuccessor(u) { v, w -> action(u arcTo v, w) } }
 }
 
 /**
@@ -77,9 +89,11 @@ public inline fun DirectedNetwork.forEachArc(action: (Arc, Int) -> Unit) {
  * - **Time complexity**: O(|E|), where |E| is the number of edges in this graph.
  * - **Space complexity**: O(1).
  */
-public inline fun UndirectedGraph.forEachEdge(action: (Edge) -> Unit) {
+public inline fun <G> G.forEachEdge(
+    action: (Edge) -> Unit,
+) where G : Undirected, G : Successors {
   contract { callsInPlace(action) }
-  forEachVertex { u -> forEachNeighbor(u) { v -> if (index(u) <= index(v)) action(u edgeTo v) } }
+  forEachVertex { u -> forEachSuccessor(u) { v -> if (index(u) <= index(v)) action(u edgeTo v) } }
 }
 
 /**
@@ -89,9 +103,11 @@ public inline fun UndirectedGraph.forEachEdge(action: (Edge) -> Unit) {
  * - **Time complexity**: O(|E|), where |E| is the number of edges in this graph.
  * - **Space complexity**: O(1).
  */
-public inline fun UndirectedNetwork.forEachEdge(action: (Edge, Int) -> Unit) {
+public inline fun <N> N.forEachEdge(
+    action: (Edge, Int) -> Unit,
+) where N : Undirected, N : SuccessorsWeight {
   contract { callsInPlace(action) }
   forEachVertex { u ->
-    forEachNeighbor(u) { v, w -> if (index(u) <= index(v)) action(u edgeTo v, w) }
+    forEachSuccessor(u) { v, w -> if (index(u) <= index(v)) action(u edgeTo v, w) }
   }
 }

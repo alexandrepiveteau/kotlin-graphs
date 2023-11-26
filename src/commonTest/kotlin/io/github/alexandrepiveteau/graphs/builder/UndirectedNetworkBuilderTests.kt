@@ -31,7 +31,7 @@ class UndirectedNetworkBuilderTests {
       addEdge(a edgeTo b, 2)
     }
 
-    assertEquals(3, network.weight(a, b))
+    assertEquals(3, network.successorWeight(a, b))
   }
 
   @Test
@@ -45,6 +45,6 @@ class UndirectedNetworkBuilderTests {
       addEdge(a edgeTo b, 1)
       addEdge(a edgeTo b, -2)
     }
-    assertEquals(-1, network.weight(a, b))
+    assertEquals(-1, network.successorWeight(a, b))
   }
 }

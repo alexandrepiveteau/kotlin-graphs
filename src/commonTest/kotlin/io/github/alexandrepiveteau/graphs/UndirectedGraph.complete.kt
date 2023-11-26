@@ -18,7 +18,7 @@ class UndirectedEmptyGraphTests {
     assertFailsWith<IndexOutOfBoundsException> { graph.vertex(0) }
     assertFailsWith<NoSuchVertexException> { graph.index(Vertex(0)) }
     assertFailsWith<IndexOutOfBoundsException> { graph.successorsSize(0) }
-    assertFailsWith<IndexOutOfBoundsException> { graph.successor(0, 0) }
+    assertFailsWith<IndexOutOfBoundsException> { graph.successorVertex(0, 0) }
   }
 }
 

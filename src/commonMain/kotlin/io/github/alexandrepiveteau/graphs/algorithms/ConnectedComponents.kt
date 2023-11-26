@@ -3,6 +3,8 @@
 
 package io.github.alexandrepiveteau.graphs.algorithms
 
+import io.github.alexandrepiveteau.graphs.Successors
+import io.github.alexandrepiveteau.graphs.Undirected
 import io.github.alexandrepiveteau.graphs.UndirectedGraph
 import io.github.alexandrepiveteau.graphs.VertexMap
 import io.github.alexandrepiveteau.graphs.builder.buildUndirectedGraph
@@ -19,7 +21,9 @@ import kotlin.jvm.JvmName
  *   of edges in this graph.
  * - **Space complexity**: `O(|N|)`, where |N| is the number of vertices in this graph.
  */
-public fun UndirectedGraph.connectedComponents(): Pair<UndirectedGraph, VertexMap> {
+public fun <G> G.connectedComponents(): Pair<UndirectedGraph, VertexMap> where
+G : Undirected,
+G : Successors {
   val map = VertexMap(size)
   val visited = BooleanArray(size)
   // TODO : We could use a specific implementation of Graph which has no edges between vertices.

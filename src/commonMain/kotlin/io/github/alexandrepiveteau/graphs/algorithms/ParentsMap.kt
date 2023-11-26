@@ -15,7 +15,11 @@ import io.github.alexandrepiveteau.graphs.internal.collections.IntDequeue
  *   the [to] vertex.
  * @receiver the [Graph] on which the traversal was performed.
  */
-internal fun Graph.computePath(parents: VertexMap, from: Vertex, to: Vertex): VertexArray? {
+internal fun <G> G.computePath(
+    parents: VertexMap,
+    from: Vertex,
+    to: Vertex,
+): VertexArray? where G : VertexSet {
   if (from == Vertex.Invalid) throw IllegalArgumentException()
   if (to == Vertex.Invalid) throw IllegalArgumentException()
   val path = IntDequeue()
@@ -36,12 +40,14 @@ internal fun Graph.computePath(parents: VertexMap, from: Vertex, to: Vertex): Ve
  * @return the [DirectedNetwork] for the subgraph of this [Network] defined by the [parents] map.
  * @receiver the [Network] to transform.
  */
-internal fun Network.computeNetwork(parents: VertexMap): DirectedNetwork {
+internal fun <N> N.computeNetwork(
+    parents: VertexMap,
+): DirectedNetwork where N : SuccessorsWeight {
   return buildDirectedNetwork {
     forEachVertex { addVertex() }
     parents.forEach { vertex, parent ->
       if (parent != Vertex.Invalid) {
-        addArc(parent arcTo vertex, weight(parent, vertex))
+        addArc(parent arcTo vertex, successorWeight(parent, vertex))
       }
     }
   }

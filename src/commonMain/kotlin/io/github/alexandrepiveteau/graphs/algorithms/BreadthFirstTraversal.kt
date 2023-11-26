@@ -21,14 +21,17 @@ import kotlin.jvm.JvmName
  * @param from the vertex from which to start the search.
  * @param action the action to execute on each vertex.
  */
-public inline fun Graph.forEachVertexBreadthFirst(from: Vertex, action: (Vertex) -> Unit) {
+public inline fun <G> G.forEachVertexBreadthFirst(
+    from: Vertex,
+    action: (Vertex) -> Unit,
+) where G : Successors {
   contract { callsInPlace(action) }
   val queue = IntDequeue().apply { addLast(index(from)) }
   val visited = BooleanArray(size).apply { this[index(from)] = true }
   while (queue.size > 0) {
     val next = queue.removeFirst()
     action(vertex(next))
-    forEachNeighbor(vertex(next)) {
+    forEachSuccessor(vertex(next)) {
       if (!visited[index(it)]) {
         queue.addLast(index(it))
         visited[index(it)] = true
@@ -51,14 +54,17 @@ public inline fun Graph.forEachVertexBreadthFirst(from: Vertex, action: (Vertex)
  * @return the [VertexArray] with the shortest path going from the [from] vertex to the [to] vertex,
  *   or `null` if there is no path between the two vertices.
  */
-public fun Graph.shortestPathBreadthFirst(from: Vertex, to: Vertex): VertexArray? {
+public fun <G> G.shortestPathBreadthFirst(
+    from: Vertex,
+    to: Vertex,
+): VertexArray? where G : Successors {
   if (from !in this) throw NoSuchVertexException()
   if (to !in this) throw NoSuchVertexException()
 
   val parents = VertexMap(size) { Vertex.Invalid }
 
   forEachVertexBreadthFirst(from) { u ->
-    forEachNeighbor(u) { v ->
+    forEachSuccessor(u) { v ->
       if (parents[v] == Vertex.Invalid) parents[v] = u
       if (v == to) return computePath(parents, from, to)
     }

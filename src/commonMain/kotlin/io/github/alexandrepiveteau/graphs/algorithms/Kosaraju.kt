@@ -16,7 +16,9 @@ import kotlin.jvm.JvmName
  *   connected component.
  * @receiver the [DirectedGraph] to transform.
  */
-public fun DirectedGraph.stronglyConnectedComponentsKosaraju(): Pair<DirectedGraph, VertexMap> {
+public fun <G> G.stronglyConnectedComponentsKosaraju(): Pair<DirectedGraph, VertexMap> where
+G : Directed,
+G : Successors {
   // 1. Traverse all vertices in post-order fashion, and prepend them to the queue.
   val visited = BooleanArray(size)
   val queue = IntDequeue()
@@ -32,7 +34,7 @@ public fun DirectedGraph.stronglyConnectedComponentsKosaraju(): Pair<DirectedGra
   val assigned = BooleanArray(size)
   val order = queue.toIntArray().asVertexArray()
   var nextVertex = 0
-  for (i in 0 until order.size) {
+  for (i in 0 ..< order.size) {
     val v = order[i]
     if (!assigned[index(v)]) {
       transposed.forEachVertexDepthFirst(v, assigned) { components[index(it)] = nextVertex }
