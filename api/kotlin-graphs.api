@@ -62,6 +62,7 @@ public final class io/github/alexandrepiveteau/graphs/DirectedNetwork$DefaultImp
 
 public final class io/github/alexandrepiveteau/graphs/DirectedNetworkKt {
 	public static final fun successorWeight-hOs2cps (Lio/github/alexandrepiveteau/graphs/Directed;J)I
+	public static final fun transposed (Lio/github/alexandrepiveteau/graphs/Directed;)Lio/github/alexandrepiveteau/graphs/DirectedNetwork;
 }
 
 public final class io/github/alexandrepiveteau/graphs/Edge {
