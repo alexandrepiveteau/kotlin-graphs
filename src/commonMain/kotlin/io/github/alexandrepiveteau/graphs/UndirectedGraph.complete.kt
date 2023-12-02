@@ -1,7 +1,7 @@
 package io.github.alexandrepiveteau.graphs
 
 /** An implementation of [UndirectedGraph] which is empty. */
-private object EmptyUndirectedGraph : UndirectedGraph {
+private data object EmptyUndirectedGraph : UndirectedGraph {
 
   override val size = 0
 
@@ -24,7 +24,7 @@ private object EmptyUndirectedGraph : UndirectedGraph {
 public fun UndirectedGraph.Companion.empty(): UndirectedGraph = EmptyUndirectedGraph
 
 /** An implementation of [UndirectedNetwork] which is empty. */
-private object EmptyUndirectedNetwork : UndirectedNetwork, UndirectedGraph by EmptyUndirectedGraph {
+private data object EmptyUndirectedNetwork : UndirectedNetwork, UndirectedGraph by EmptyUndirectedGraph {
 
   override fun successorWeight(index: Int, neighborIndex: Int) = throw IndexOutOfBoundsException()
 

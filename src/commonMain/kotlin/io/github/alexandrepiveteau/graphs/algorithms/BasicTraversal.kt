@@ -19,7 +19,7 @@ public inline fun <G> G.forEachVertex(
     action: (Vertex) -> Unit,
 ) where G : VertexSet {
   contract { callsInPlace(action) }
-  for (i in 0 ..< size) action(vertex(i))
+  repeat(size) { action(vertex(it)) }
 }
 
 /**
@@ -34,8 +34,7 @@ public inline fun <G> G.forEachSuccessor(
     action: (Vertex) -> Unit,
 ) where G : Successors {
   contract { callsInPlace(action) }
-  val index = index(vertex)
-  for (i in 0 ..< successorsSize(index)) action(successorVertex(vertex, i))
+  repeat(successorsSize(index(vertex))) { action(successorVertex(vertex, it)) }
 }
 
 /**
@@ -50,8 +49,9 @@ public inline fun <N> N.forEachSuccessor(
     action: (Vertex, Int) -> Unit,
 ) where N : SuccessorsWeight {
   contract { callsInPlace(action) }
-  val index = index(vertex)
-  for (i in 0 ..< successorsSize(index)) action(successorVertex(vertex, i), successorWeight(vertex, i))
+  repeat(successorsSize(index(vertex))) {
+    action(successorVertex(vertex, it), successorWeight(vertex, it))
+  }
 }
 
 /**

@@ -28,8 +28,10 @@ public interface SuccessorsWeight : Successors {
    * @throws NoSuchVertexException if [vertex] or [neighbor] are not valid vertices.
    * @throws NoSuchEdgeException if there is no edge between [vertex] and [neighbor].
    */
-  public fun successorWeight(vertex: Vertex, neighbor: Vertex): Int =
-      successorWeight(index(vertex), neighbor)
+  public fun successorWeight(
+      vertex: Vertex,
+      neighbor: Vertex,
+  ): Int = successorWeight(index(vertex), neighbor)
 
   /**
    * Returns the weight of the edge between the [vertex] and the [Vertex] at [neighborIndex].
@@ -37,6 +39,8 @@ public interface SuccessorsWeight : Successors {
    * @throws NoSuchVertexException if [vertex] is not a valid vertex.
    * @throws IndexOutOfBoundsException if [neighborIndex] is not a valid index.
    */
-  public fun successorWeight(vertex: Vertex, neighborIndex: Int): Int =
-      successorWeight(index(vertex), neighborIndex)
+  public fun successorWeight(
+      vertex: Vertex,
+      neighborIndex: Int,
+  ): Int = successorWeight(index(vertex), neighborIndex)
 }
