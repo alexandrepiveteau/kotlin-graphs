@@ -2,9 +2,12 @@
 
 ## [Unreleased]
 
+## [0.6.0] - 2023-04-29
+
 ### Improvements
 
 + Perform chunk copies in `IntDequeue.toIntArray()`.
++ Support contracts in graph builders.
 
 ## [0.5.0] - 2023-04-28
 
@@ -17,7 +20,8 @@
 
 + Introduce a bunch of interfaces to model mutable graphs.
     - Added `MutableGraph`, `MutableNetwork` and directed/undirected variants.
-    - Renamed `GraphBuilderScope` and variants to `MutableGraphScope`, which is implemented by the new `MutableGraph` interface.
+    - Renamed `GraphBuilderScope` and variants to `MutableGraphScope`, which is implemented by the new `MutableGraph`
+      interface.
 
 ### Bug fixes
 
@@ -61,7 +65,9 @@
 Initial release
 
 
-[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.5.0...HEAD
+[Unreleased]: https://github.com/alexandrepiveteau/kotlin-graphs/compare/0.6.0...HEAD
+
+[0.6.0]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.6.0
 
 [0.5.0]: https://github.com/alexandrepiveteau/kotlin-graphs/releases/tag/0.5.0
 
